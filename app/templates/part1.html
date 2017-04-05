@@ -1,0 +1,628 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="row">
+    <div class="col m8 offset-m2">
+        <div class="card hoverable">
+            <div class="card-content">
+                <p>
+                    <h5>ชุดที่ 1 แบบประเมินผลการรักษาผู้ป่วยสูงอายุภาวะสมองเสื่อมในสถานบริการ</h5>
+                    <p>ประกอบด้วยสองส่วน</p>
+                    <ul class="collection">
+                        <li class="collection-item">ส่วนที่ 1 ข้อมูลทั่วไปของสถานบริการสุขภาพ</li>
+                    </ul>
+                </p>
+                <div class="row">
+                    <div class="col s12 input-field">
+                        <input id="hospitalName" data-bind="value: hospitalName" type="text">
+                        <label for="hospitalName">ชื่อโรงพยาบาล</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6 input-field">
+                        <input id="streetAddr" type="text" data-bind="value: hospitalStreetAddr">
+                        <label for="streetAddr">สถานที่ตั้ง</label>
+                    </div>
+                    <div class="col s6 input-field">
+                        <input id="road" type="text" data-bind="value: hospitalRoad">
+                        <label for="road">ถนน</label>
+                    </div>
+                    <div class="col s6 input-field">
+                        <input id="district" type="text" data-bind="value: hospitalDistrict">
+                        <label for="district">อำเภอ</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6 input-field">
+                        <input id="province" type="text" data-bind="value: hospitalProvince">
+                        <label for="province">จังหวัด</label>
+                    </div>
+                    <div class="col s6 input-field">
+                        <input id="zipcode" type="text" data-bind="value: hospitalZipcode">
+                        <label for="zipcode">รหัสไปรษณีย์</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6 input-field">
+                        <input id="telephone" type="text" data-bind="value: hospitalTel">
+                        <label for="telephone">โทรศัพท์</label>
+                    </div>
+                    <div class="col s6 input-field">
+                        <input id="email" type="email" class="validate" data-bind="value: hospitalEmail">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select id="hospitalSize" data-bind="value: hospitalSize">
+                            <option value="" disabled selected>ระดับการให้บริการ</option>
+                            <option value="A">โรงพยาบาลศูนย์ (A)</option>
+                            <option value="S">โรงพยาบาลทั่วไประดับจังหวัด (S)</option>
+                            <option value="M2">โรงพยาบาลชุมชนแม่ข่าย (M2)</option>
+                            <option value="M1">โรงพยาบาลทั่วไปขนาดเล็ก (M1)</option>
+                            <option value="F3">โรงพยาบาลชุมชนขนาดเล็ก (F3)</option>
+                            <option value="F2">โรงพยาบาลชุมชนขนาดกลาง (F2)</option>
+                            <option value="F1">โรงพยาบาลชุมชนขนาดใหญ่ (F1)</option>
+                            <label for="hospitalSize">ระดับการให้บริการ</label>
+                        </select>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" id="numBed" data-bind="value: hospitalNumBed">
+                        <label for="numBed">จำนวนเตียง</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <label for="surveyDate">วันที่ตรวจประเมิน</label>
+                        <input type="date" id="surveyDate" class="datepicker" data-bind="value: hospitalSurveyDate">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="assessor">ผู้ประสาน/ร่วมตรวจประเมิน</label>
+                        <input type="text" id="assessor" data-bind="value: hospitalAssessor">
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="assessorPosition">ตำแหน่ง</label>
+                        <input type="text" id="assessorPosition" data-bind="value: hospitalAssessorPosition">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="assessorTel">โทรศัพท์</label>
+                        <input type="text" id="assessorTel" data-bind="value: hospitalAssessorTel">
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="assessorEmail">Email</label>
+                        <input type="email" id="assessorEmail" class="validate" data-bind="value: hospitalAssessorEmail">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <p>มาตรฐานที่โรงพยาบาลได้รับ</p>
+                        <input type="checkbox" id="HAAccredit" data-bind="checked: checkedHA"/>
+                        <label for="HAAccredit">HA</label>
+                        <input type="checkbox" id="HAHPAccredit" data-bind="checked: checkedHAHP"/>
+                        <label for="HAHPAccredit">HAHP</label>
+                        <input type="checkbox" id="ISOAccredit" data-bind="checked: checkedISO"/>
+                        <label for="ISOAccredit">ISO</label>
+                        <input type="checkbox" id="OtherAccredit" data-bind="checked: checkedOther"/>
+                        <label for="OtherAccredit">Other</label>
+                    </div>
+                    <div data-bind="visible: checkedISO" class="input-field col s6">
+                        <input type="text" data-bind="value: ISONum" id="ISONum" placeholder="Please enter ISO number">
+                        <label for="ISONum"></label>   
+                    </div>   
+                    <div data-bind="visible: checkedOther" class="input-field col s6">
+                        <input type="text" data-bind="value: OtherAccredit" id="OtherAccredit" placeholder="Please enter accreditation">
+                        <label for="OtherAccredit"></label>   
+                    </div>   
+                </div>
+            </div> <!-- card-content -->
+        </div> <!-- card -->
+    </div>
+</div>
+<div class="row">
+    <div class="col m8 offset-m2">
+        <div class="card hoverable">
+            <div class="card-content">
+                <p>
+                    <ul class="collection">
+                        <li class="collection-item">ส่วนที่ 2 แบบประเมินผลการรักษาผู้ป่วยสูงอายุภาวะสมองเสื่อม</li>
+                    </ul>
+                </p>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <table class="striped">
+                            <thead>
+                                <tr>
+                                    <th width="5%">ลำดับ</th>
+                                    <th width="30%">การประเมิน</th>
+                                    <th width="30%">ความคิดเห็น</th>
+                                    <th width="35%">หลักฐาน</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>การดูแลด้านการพยาบาล</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>การประเมินทางการพยาบาล</td>
+                                    <td><input type="radio" id="hcare1-1-yes" class="with-gap" name="hcare1-1" value="1" data-bind="checked: hcare1_1"/>
+                                        <label for="hcare1-1-yes">มี</label>
+                                        <input type="radio" id="hcare1-1-no" class="with-gap" name="hcare1-1" value="0" data-bind="checked: hcare1_1"/>
+                                        <label for="hcare1-1-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare1-1-comment" data-bind="value: hcare1_1_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>การดูแลความสะอาดร่างกายทั่วไป</td>
+                                    <td><input type="radio" id="hcare1-2-yes" class="with-gap" name="hcare1-2" value="1" data-bind="checked: hcare1_2"/>
+                                        <label for="hcare1-2-yes">มี</label>
+                                        <input type="radio" id="hcare1-2-no" class="with-gap" name="hcare1-2" value="0" data-bind="checked: hcare1_2"/>
+                                        <label for="hcare1-2-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare1-2-comment" data-bind="value: hcare1_2_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>การดูแลช่องปาก</td>
+                                    <td><input type="radio" id="hcare1-3-yes" class="with-gap" name="hcare1-3"
+                                            value="1" data-bind="checked: hcare1_3"/>
+                                        <label for="hcare1-3-yes">มี</label>
+                                        <input type="radio" id="hcare1-3-no" class="with-gap" name="hcare1-3"
+                                            value="0" data-bind="checked: hcare1_3"/>
+                                        <label for="hcare1-3-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare1-3-comment" data-bind="value: hcare1_3_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>การให้อาหารทางสายยาง</td>
+                                    <td><input type="radio" id="hcare1-4-yes" class="with-gap" name="hcare1-4"
+                                            value="1" data-bind="checked: hcare1_4"/>
+                                        <label for="hcare1-4-yes">มี</label>
+                                        <input type="radio" id="hcare1-4-no" class="with-gap" name="hcare1-4"
+                                            value="0" data-bind="checked: hcare1_4"/>
+                                        <label for="hcare1-4-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare1-4-comment" data-bind="value: hcare1_4_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>การทำแผล (ถ้ามี)</td>
+                                    <td><input type="radio" id="hcare1-5-yes" class="with-gap" name="hcare1-5"
+                                            value="1" data-bind="checked: hcare1_5"/>
+                                        <label for="hcare1-5-yes">มี</label>
+                                        <input type="radio" id="hcare1-5-no" class="with-gap" name="hcare1-5"
+                                            value="0" data-bind="checked: hcare1_5"/>
+                                        <label for="hcare1-5-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare1-5-comment" data-bind="value: hcare1_5_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>การพลิกตะแคงตัว</td>
+                                    <td><input type="radio" id="hcare1-6-yes" class="with-gap" name="hcare1-6"
+                                             value="1" data-bind="checked: hcare1_6"/>
+                                        <label for="hcare1-6-yes">มี</label>
+                                        <input type="radio" id="hcare1-6-no" class="with-gap" name="hcare1-6"
+                                             value="0" data-bind="checked: hcare1_6"/>
+                                        <label for="hcare1-6-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare1-6-comment" data-bind="value: hcare1_6_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>การบริหารจัดการยา</td>
+                                    <td><input type="radio" id="hcare1-7-yes" class="with-gap" name="hcare1-7"
+                                             value="1" data-bind="checked: hcare1_7"/>
+                                        <label for="hcare1-7-yes">มี</label>
+                                        <input type="radio" id="hcare1-7-no" class="with-gap" name="hcare1-7"
+                                             value="0" data-bind="checked: hcare1_7"/>
+                                        <label for="hcare1-7-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare1-7-comment" data-bind="value: hcare1_7_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>การนอนหลับ</td>
+                                    <td><input type="radio" id="hcare1-8-yes" class="with-gap" name="hcare1-8"
+                                             value="1" data-bind="checked: hcare1_8"/>
+                                        <label for="hcare1-8-yes">มี</label>
+                                        <input type="radio" id="hcare1-8-no" class="with-gap" name="hcare1-8"
+                                             value="0" data-bind="checked: hcare1_8"/>
+                                        <label for="hcare1-8-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare1-8-comment" data-bind="value: hcare1_8_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>มาตรการป้องกันการพลัดตกหกล้ม</td>
+                                    <td><input type="radio" id="hcare1-9-yes" class="with-gap" name="hcare1-9"
+                                            value="1" data-bind="checked: hcare1_9"/>
+                                        <label for="hcare1-9-yes">มี</label>
+                                        <input type="radio" id="hcare1-9-no" class="with-gap" name="hcare1-9"
+                                             value="0" data-bind="checked: hcare1_9"/>
+                                        <label for="hcare1-9-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare1-9-comment" data-bind="value: hcare1_9_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>การดูแลอาการที่เกี่ยวข้องกับภาวะสมองเสื่อม</td>
+                                    <td><input type="radio" id="hcare1-10-yes" class="with-gap" name="hcare1-10"
+                                            value="1" data-bind="checked: hcare1_10"/>
+                                        <label for="hcare1-10-yes">มี</label>
+                                        <input type="radio" id="hcare1-10-no" class="with-gap" name="hcare1-10"
+                                            value="0" data-bind="checked: hcare1_10"/>
+                                        <label for="hcare1-10-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare1-10-comment" data-bind="value: hcare1_10_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>การดูแลป้องกันเรื่องของการพลัดหลง</td>
+                                    <td><input type="radio" id="hcare1-11-yes" class="with-gap" name="hcare1-11"
+                                            value="1" data-bind="checked: hcare1_11"/>
+                                        <label for="hcare1-11-yes">มี</label>
+                                        <input type="radio" id="hcare1-11-no" class="with-gap" name="hcare1-11"
+                                             value="0" data-bind="checked: hcare1_11"/>
+                                        <label for="hcare1-11-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare1-11-comment" data-bind="value: hcare1_11_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>การดูแลเรื่องเวชศาสตร์ฟื้นฟูและ<br/>การเคลื่อนไหวระยะแรกที่สามารถทำได้ (rehabilitation and early ambulation)</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>การประเมินทางกายภาพบำบัด</td>
+                                    <td><input type="radio" id="hcare2-1-yes" class="with-gap" name="hcare2-1"
+                                             value="1" data-bind="checked: hcare2_1"/>
+                                        <label for="hcare2-1-yes">มี</label>
+                                        <input type="radio" id="hcare2-1-no" class="with-gap" name="hcare2-1"
+                                             value="0" data-bind="checked: hcare2_1"/>
+                                        <label for="hcare2-1-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare2-1-comment" data-bind="value: hcare2_1_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>การจัดเตรียมอุปกรณ์ เครื่องช่วยในการเคลื่อนไหว</td>
+                                    <td><input type="radio" id="hcare2-2-yes" class="with-gap" name="hcare2-2"
+                                             value="1" data-bind="checked: hcare2_2"/>
+                                        <label for="hcare2-2-yes">มี</label>
+                                        <input type="radio" id="hcare2-2-no" class="with-gap" name="hcare2-2"
+                                             value="0" data-bind="checked: hcare2_2"/>
+                                        <label for="hcare2-2-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare2-2-comment" data-bind="value: hcare2_2_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>การสอนและสาธิตการเคลื่อนที่ การเคลื่อนไหวที่เหมาะสม</td>
+                                    <td><input type="radio" id="hcare2-3-yes" class="with-gap" name="hcare2-3"
+                                             value="1" data-bind="checked: hcare2_3"/>
+                                        <label for="hcare2-3-yes">มี</label>
+                                        <input type="radio" id="hcare2-3-no" class="with-gap" name="hcare2-3"
+                                             value="0" data-bind="checked: hcare2_3"/>
+                                        <label for="hcare2-3-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare2-3-comment" data-bind="value: hcare2_3_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>การวางแผนจำหน่ายผู้ป่วยภาวะสมองเสื่อม (discharge planning)</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>3.1</td>
+                                    <td>การประเมินปัญหาและความต้องการการดูแล ภายหลังจำหน่าย</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>ประเมินสภาพร่างกาย จิตใจและความต้องการด้านสังคมของผู้ป่วย</td>
+                                    <td><input type="radio" id="hcare3-1-1-yes" class="with-gap" name="hcare3-1-1"
+                                            value="1" data-bind="checked: hcare3_1_1"/>
+                                        <label for="hcare3-1-1-yes">มี</label>
+                                        <input type="radio" id="hcare3-1-1-no" class="with-gap" name="hcare3-1-1"
+                                             value="0" data-bind="checked: hcare3_1_1"/>
+                                        <label for="hcare3-1-1-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare3-1-1-comment" data-bind="value: hcare3_1_1_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>ประเมินความพร้อมทางร่างกาย จิตใจ และการปฏิบัติกิจวัตรประจำวัน รวมทั้งผู้ดูแลและแหล่งบริการสุขภาพใกล้บ้าน</td>
+                                    <td><input type="radio" id="hcare3-1-2-yes" class="with-gap" name="hcare3-1-2"
+                                             value="1" data-bind="checked: hcare3_1_2"/>
+                                        <label for="hcare3-1-2-yes">มี</label>
+                                        <input type="radio" id="hcare3-1-2-no" class="with-gap" name="hcare3-1-2"
+                                             value="0" data-bind="checked: hcare3_1_2"/>
+                                        <label for="hcare3-1-2-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare3-1-2-comment" data-bind="value: hcare3_1_2_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>ประเมินปัญหาและความต้องการดูแลหลังจำหน่าย</td>
+                                    <td><input type="radio" id="hcare3-1-3-yes" class="with-gap" name="hcare3-1-3"
+                                             value="1" data-bind="checked: hcare3_1_3"/>
+                                        <label for="hcare3-1-3-yes">มี</label>
+                                        <input type="radio" id="hcare3-1-3-no" class="with-gap" name="hcare3-1-3"
+                                             value="0" data-bind="checked: hcare3_1_3"/>
+                                        <label for="hcare3-1-3-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare3-1-3-comment" data-bind="value: hcare3_1_3_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3.2</td>
+                                    <td>การวางแผนจำหน่ายผู้ป่วย</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>วางแผนการจำหน่ายผู้ป่วยร่วมกันของทีมสหสาขาวิชาชีพ</td>
+                                    <td><input type="radio" id="hcare3-2-1-yes" class="with-gap" name="hcare3-2-1"
+                                             value="1" data-bind="checked: hcare3_2_1"/>
+                                        <label for="hcare3-2-1-yes">มี</label>
+                                        <input type="radio" id="hcare3-2-1-no" class="with-gap" name="hcare3-2-1"
+                                             value="0" data-bind="checked: hcare3_2_1"/>
+                                        <label for="hcare3-2-1-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare3-2-1-comment" data-bind="value: hcare3_2_1_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>วางแผนจำหน่ายผู้ป่วยร่วมกับผู้ป่วยและผู้ดูแล</td>
+                                    <td><input type="radio" id="hcare3-2-2-yes" class="with-gap" name="hcare3-2-2"
+                                             value="1" data-bind="checked: hcare3_2_2"/>
+                                        <label for="hcare3-2-2-yes">มี</label>
+                                        <input type="radio" id="hcare3-2-2-no" class="with-gap" name="hcare3-2-2"
+                                             value="0" data-bind="checked: hcare3_2_2"/>
+                                        <label for="hcare3-2-2-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare3-2-2-comment" data-bind="value: hcare3_2_2_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>กำหนดกิจกรรมการวางแผนจำหน่ายผู้ป่วยตามรูปแบบ M-E-T-H-O-D</td>
+                                    <td><input type="radio" id="hcare3-2-3-yes" class="with-gap" name="hcare3-2-3"
+                                             value="1" data-bind="checked: hcare3_2_3"/>
+                                        <label for="hcare3-2-3-yes">มี</label>
+                                        <input type="radio" id="hcare3-2-3-no" class="with-gap" name="hcare3-2-3"
+                                             value="0" data-bind="checked: hcare3_2_3"/>
+                                        <label for="hcare3-2-3-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare3-2-3-comment" data-bind="value: hcare3_2_3_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3.3</td>
+                                    <td>ปฏิบัติตามแผนการจำหน่ายผู้ป่วยและการประเมินผล</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>มอบหมายแผนการจำหน่ายผู้ป่วยเฉพาะรายกับทีมสหสาขาวิชาชีพ</td>
+                                    <td><input type="radio" id="hcare3-3-1-yes" class="with-gap" name="hcare3-3-1"
+                                             value="1" data-bind="checked: hcare3_3_1"/>
+                                        <label for="hcare3-3-1-yes">มี</label>
+                                        <input type="radio" id="hcare3-3-1-no" class="with-gap" name="hcare3-3-1"
+                                             value="0" data-bind="checked: hcare3_3_1"/>
+                                        <label for="hcare3-3-1-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare3-3-1-comment" data-bind="value: hcare3_3_1_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>ปฏิบัติตามแผนการจำหน่ายผู้ป่วยร่วมกับผู้ดูแล</td>
+                                    <td><input type="radio" id="hcare3-3-2-yes" class="with-gap" name="hcare3-3-2"
+                                             value="1" data-bind="checked: hcare3_3_2"/>
+                                        <label for="hcare3-3-2-yes">มี</label>
+                                        <input type="radio" id="hcare3-3-2-no" class="with-gap" name="hcare3-3-2"
+                                             value="0" data-bind="checked: hcare3_3_2"/>
+                                        <label for="hcare3-3-2-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare3-3-2-comment" data-bind="value: hcare3_3_2_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>การประเมินผล</td>
+                                    <td><input type="radio" id="hcare3-3-3-yes" class="with-gap" name="hcare3-3-3"
+                                            value="1" data-bind="checked: hcare3_3_3"/>
+                                        <label for="hcare3-3-3-yes">มี</label>
+                                        <input type="radio" id="hcare3-3-3-no" class="with-gap" name="hcare3-3-3"
+                                            value="0" data-bind="checked: hcare3_3_3"/>
+                                        <label for="hcare3-3-3-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare3-3-3-comment" data-bind="value: hcare3_3_3_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>การให้สุขศึกษา (health promotion)</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>4.1</td>
+                                    <td>ให้ความรู้ผู้ป่วยเกี่ยวกับการดูแลตนเองที่เหมาะสม</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>อธิบายเกี่ยวกับเรื่องโรค</td>
+                                    <td><input type="radio" id="hcare4-1-1-yes" class="with-gap" name="hcare4-1-1"
+                                            value="1" data-bind="checked: hcare4_1_1"/>
+                                        <label for="hcare4-1-1-yes">มี</label>
+                                        <input type="radio" id="hcare4-1-1-no" class="with-gap" name="hcare4-1-1"
+                                            value="0" data-bind="checked: hcare4_1_1"/>
+                                        <label for="hcare4-1-1-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare4-1-1-comment" data-bind="value: hcare4_1_1_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>การดูแลสุขวิทยาส่วนบุคคล</td>
+                                    <td><input type="radio" id="hcare4-1-2-yes" class="with-gap" name="hcare4-1-2"
+                                            value="1" data-bind="checked: hcare4_1_2"/>
+                                        <label for="hcare4-1-2-yes">มี</label>
+                                        <input type="radio" id="hcare4-1-2-no" class="with-gap" name="hcare4-1-2"
+                                            value="0" data-bind="checked: hcare4_1_2"/>
+                                        <label for="hcare4-1-2-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare4-1-2-comment" data-bind="value: hcare4_1_2_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>การสังเกตอาการหรือภาวะแทรกซ้อนในแต่ละโรค</td>
+                                    <td><input type="radio" id="hcare4-1-3-yes" class="with-gap" name="hcare4-1-3"
+                                            value="1" data-bind="checked: hcare4_1_3"/>
+                                        <label for="hcare4-1-3-yes">มี</label>
+                                        <input type="radio" id="hcare4-1-3-no" class="with-gap" name="hcare4-1-3"
+                                            value="0" data-bind="checked: hcare4_1_3"/>
+                                        <label for="hcare4-1-3-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare4-1-3-comment" data-bind="value: hcare4_1_3_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4.2</td>
+                                    <td>อธิบายให้ผู้ป่วยทราบเกี่ยวกับวิธีการรับประทานยา เวลา ขนาดและผลข้างเคียง</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>สอนและอธิบายวิธีการรับประทานยา ขนาดของยาด้วยตนเอง</td>
+                                    <td><input type="radio" id="hcare4-2-1-yes" class="with-gap" name="hcare4-2-1"
+                                            value="1" data-bind="checked: hcare4_2_1"/>
+                                        <label for="hcare4-2-1-yes">มี</label>
+                                        <input type="radio" id="hcare4-2-1-no" class="with-gap" name="hcare4-2-1"
+                                            value="0" data-bind="checked: hcare4_2_1"/>
+                                        <label for="hcare4-2-1-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare4-2-1-comment" data-bind="value: hcare4_2_1_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>ประเมินวิธีการปฏิบัติ การรับประทานยาตามขนาดและเวลาของผู้ป่วยและญาติหรือผู้ดูแล</td>
+                                    <td><input type="radio" id="hcare4-2-2-yes" class="with-gap" name="hcare4-2-2"
+                                            value="1" data-bind="checked: hcare4_2_2"/>
+                                        <label for="hcare4-2-2-yes">มี</label>
+                                        <input type="radio" id="hcare4-2-2-no" class="with-gap" name="hcare4-2-2"
+                                            value="0" data-bind="checked: hcare4_2_2"/>
+                                        <label for="hcare4-2-2-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare4-2-2-comment" data-bind="value: hcare4_2_2_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4.3</td>
+                                    <td>ให้คำแนะนำเกี่ยวกับอาหารที่สอดคล้องตามสภาพของโรค</td>
+                                    <td><input type="radio" id="hcare4-3-yes" class="with-gap" name="hcare4-3"
+                                            value="1" data-bind="checked: hcare4_3"/>
+                                        <label for="hcare4-3-yes">มี</label>
+                                        <input type="radio" id="hcare4-3-no" class="with-gap" name="hcare4-3"
+                                            value="0" data-bind="checked: hcare4_3"/>
+                                        <label for="hcare4-3-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare4-3-comment" data-bind="value: hcare4_3_cmnt">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4.4</td>
+                                    <td>สอนและสาธิตเกี่ยวกับทักษะการฟื้นฟูสมรรถภาพที่จำเป็นแก่ผู้ป่วย</td>
+                                    <td><input type="radio" id="hcare4-4-yes" class="with-gap" name="hcare4-4"
+                                            value="1" data-bind="checked: hcare4_4"/>
+                                        <label for="hcare4-4-yes">มี</label>
+                                        <input type="radio" id="hcare4-4-no" class="with-gap" name="hcare4-4"
+                                            value="0" data-bind="checked: hcare4_4"/>
+                                        <label for="hcare4-4-no">ไม่มี</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="hcare4-4-comment" data-bind="value: hcare4_4_cmnt">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    <div class="center-align">
+                        <a href="{{ url_for('parttwo') }}"
+                            class="waves-effect waves-light btn">ทำต่อส่วนที่ 2</a>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- card-content -->
+        </div> <!-- card -->
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,269 @@
+{% extends "base.html" %}
+{% block page_content %}
+<div class="row">
+    <div class="col m8 offset-m2">
+        <div class="card hoverable">
+            <div class="card-content">
+                <div class="row">
+                    <p>
+                        3. แบบบันทึการตรวจทางห้องปฏิบัติการ
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input type="text" id="patientName">
+                        <label for="patientName">ชื่อ สกุลผู้ป่วย</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" id="patientAge">
+                        <label for="patientAge">อายุ</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" id="patientHN">
+                        <label for="patientHN">HN</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" id="patientAN">
+                        <label for="patientAN">AN</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" id="patientDiag">
+                        <label for="patientDiag">การวินิจฉัยโรค</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" id="patientAdmit">
+                        <label for="patientAdmit">วันที่เข้า ร.พ.</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" id="patientDischarged">
+                        <label for="patientDischarged">วันที่จำหน่าย</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <table class="striped">
+                        <thead>
+                            <tr>
+                                <th>ชนิดของการตรวจทางห้องปฏิบัติการ</th>
+                                <th>การประเมินครั้งที่ 1</th>
+                                <th>ผลการตรวจทางห้องปฏิบัติการ</th>
+                                <th>การประเมินครั้งที่ 2</th>
+                                <th>ผลการตรวจทางห้องปฏิบัติการ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CBC พร้อมดู peripheral blood smear</td>
+                                <td>
+                                    <input type="checkbox" id="lab-1-1-chk">
+                                    <label for="lab-1-1-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-1-1">
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="lab-1-2-chk">
+                                    <label for="lab-1-2-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-1-2">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fasting plasma glucose</td>
+                                <td>
+                                    <input type="checkbox" id="lab-2-1-chk">
+                                    <label for="lab-2-1-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-2-1">
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="lab-2-2-chk">
+                                    <label for="lab-2-2-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-2-2">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Electrolyte</td>
+                                <td>
+                                    <input type="checkbox" id="lab-3-1-chk">
+                                    <label for="lab-3-1-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-3-1">
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="lab-3-2-chk">
+                                    <label for="lab-3-2-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-3-2">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>BUN/creatinine</td>
+                                <td>
+                                    <input type="checkbox" id="lab-4-1-chk">
+                                    <label for="lab-4-1-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-4-1">
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="lab-4-2-chk">
+                                    <label for="lab-4-2-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-4-2">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Liver function test</td>
+                                <td>
+                                    <input type="checkbox" id="lab-5-1-chk">
+                                    <label for="lab-5-1-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-5-1">
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="lab-5-2-chk">
+                                    <label for="lab-5-2-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-5-2">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>free TH4, TSH</td>
+                                <td>
+                                    <input type="checkbox" id="lab-6-1-chk">
+                                    <label for="lab-6-1-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-6-1">
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="lab-6-2-chk">
+                                    <label for="lab-6-2-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-6-2">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Serum VDRL or PPR</td>
+                                <td>
+                                    <input type="checkbox" id="lab-7-1-chk">
+                                    <label for="lab-7-1-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-7-1">
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="lab-7-2-chk">
+                                    <label for="lab-7-2-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-7-2">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>CT scan or MRI brain</td>
+                                <td>
+                                    <input type="checkbox" id="lab-8-1-chk">
+                                    <label for="lab-8-1-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-8-1">
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="lab-8-2-chk">
+                                    <label for="lab-8-2-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-8-2">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Calcium</td>
+                                <td>
+                                    <input type="checkbox" id="lab-9-1-chk">
+                                    <label for="lab-9-1-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-9-1">
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="lab-9-2-chk">
+                                    <label for="lab-9-2-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-9-2">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Anti HIV</td>
+                                <td>
+                                    <input type="checkbox" id="lab-10-1-chk">
+                                    <label for="lab-10-1-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-10-1">
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="lab-10-2-chk">
+                                    <label for="lab-10-2-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-10-2">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>LP and CSF examination</td>
+                                <td>
+                                    <input type="checkbox" id="lab-11-1-chk">
+                                    <label for="lab-11-1-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-11-1">
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="lab-11-2-chk">
+                                    <label for="lab-11-2-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-11-2">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Serum vitamin B12, folate</td>
+                                <td>
+                                    <input type="checkbox" id="lab-12-1-chk">
+                                    <label for="lab-12-1-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-12-1">
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="lab-12-2-chk">
+                                    <label for="lab-12-2-chk"></label>
+                                </td>
+                                <td>
+                                    <input type="text" id="lab-12-2">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="center-align">
+                        <a href="{{ url_for('main') }}"
+                            class="waves-effect waves-light btn">Submit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,1353 @@
+{% extends "base.html" %}
+{% block page_content %}
+<div class="row">
+    <div class="col m8 offset-m2">
+        <div class="card hoverable">
+            <div class="card-content">
+                <p>
+                    <h5>ชุดที่ 2 แบบประเมินภาวะสุขภาพ 4 ด้าน</h5>
+                </p>
+                <div class="row">
+                    <p>
+                        2.1 แบบประเมินความสามารถในการทำกิจวัตรประจำวัน ดัชนีบาร์เธลเอดีแอล (Barthel ADL Index: BAL)
+                    </p>
+                    <br/>
+                    <table class="striped">
+                        <tbody>
+                            <tr>
+                                <td>1.</td>
+                                <td>Feeding (รับประทานอาหารเมื่อเตรียมไว้ให้เรียบร้อยต่อหน้า)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-1-1"
+                                        name="bal-1" class="with-gap" value="0" data-bind="checked: bal1"/>
+                                    <label for="bal-1-1">ไม่สามารถตักอาหารเข้าปากได้ ต้องมีคนป้อน</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-1-2"
+                                        name="bal-1" class="with-gap" value="1" data-bind="checked: bal1"/>
+                                    <label for="bal-1-2">ตักอาหารเองได้ แต่ต้องมีคนช่วย เช่น ช่วยใช้ช้อนตักเตรียมไว้ให้ หรือตัดให้เป็นเล็กๆ ไว้ล่วงหน้า</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-1-3"
+                                        name="bal-1" class="with-gap" value="2" data-bind="checked: bal1"/>
+                                    <label for="bal-1-3">ตักอาหารและช่วยตัวเองได้เป็นปกติ</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2.</td>
+                                <td>Grooming (ล้างหน้า, หวีผม, แปรงฟัน, โกนหนวด, ในระยะ 24-48 ชั่วโมงที่ผ่านมา)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-2-1"
+                                        name="bal-2" class="with-gap" value="0" data-bind="checked: bal2"/>
+                                    <label for="bal-2-1">ต้องการความช่วยเหลือ</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-2-2"
+                                        name="bal-2" class="with-gap" value="1" data-bind="checked: bal2"/>
+                                    <label for="bal-2-2">ทำได้เอง รวมทั้งที่ทำได้เองถ้าเตรียมอุปกรณ์ไว้ให้</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3.</td>
+                                <td>Transfer (ลุกนั่งจากที่นอน หรือจากเตียงไปยังเก้าอี้)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-3-1"
+                                        name="bal-3" class="with-gap" value="0" data-bind="checked: bal3"/>
+                                    <label for="bal-3-1">ไม่สามารถนั่งได้ (นั่งแล้วจะล้มเสมอ) หรือต้องใช้คนสองคนช่วยกันยกขึ้น</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-3-2"
+                                        name="bal-3" class="with-gap" value="1" data-bind="checked: bal3"/>
+                                    <label for="bal-3-2">ต้องการความช่วยเหลืออย่างมากถึงจะนั่งได้ เช่นต้องใช้คนที่แข็งแรงหรือมีทักษะ 1 คนหรือใช้คนทั่วไป 2 คนพยุง หรือดันขึ้นมาจึงจะนั่งได้</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-3-3"
+                                        name="bal-3" class="with-gap" value="2" data-bind="checked: bal3"/>
+                                    <label for="bal-3-3">ต้องการความช่วยเหลือบ้าง เช่น บอกให้ทำตาม หรือช่วยพยุงเล็กน้อย หรือต้องมีคนดูแลเพื่อความปลอดภัย</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-3-4"
+                                        name="bal-3" class="with-gap" value="3" data-bind="checked: bal3"/>
+                                    <label for="bal-3-4">ทำได้เอง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4.</td>
+                                <td>Toilet use (การใช้ห้องสุขา)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-4-1"
+                                        name="bal-4" class="with-gap" value="0" data-bind="checked: bal4"/>
+                                    <label for="bal-4-1">ช่วยตัวเองไม่ได้</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-4-2"
+                                        name="bal-4" class="with-gap" value="1" data-bind="checked: bal4"/>
+                                    <label for="bal-4-2">ทำเองได้บ้าง (อย่างน้อยทำความสะอาดตัวเองได้หลังเสร็จธุระ) แต่ต้องการความช่วยเหลือบ้างในบางครั้ง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-4-3"
+                                        name="bal-4" class="with-gap" value="2" data-bind="checked: bal4"/>
+                                    <label for="bal-4-3">ช่วยตัวเองได้ดี (ขึ้นนั่งและลงจากโถส้วมได้เอง, ทำความสะอาดได้เรียบร้อยหลังจากเสร็จธุระ, ถอดใส่เสื้อผ้าได้เรียบร้อย)</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5.</td>
+                                <td>Mobility (การเคลื่อนที่ภายในห้องหรือภายในบ้าน)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-5-1"
+                                        name="bal-5" class="with-gap" value="0" data-bind="checked: bal5"/>
+                                    <label for="bal-5-1">เคลื่อนที่ไปไหนไม่ได้</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-5-2"
+                                        name="bal-5" class="with-gap" value="1" data-bind="checked: bal5"/>
+                                    <label for="bal-5-2">ต้องใช้รถเข็นช่วยตัวเองให้เคลื่อนที่ได้เอง (ไม่ต้องมีคนเข็นให้) และจะต้องเข้าออกมุมหรือประตูห้องได้</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-5-3"
+                                        name="bal-5" class="with-gap" value="2" data-bind="checked: bal5"/>
+                                    <label for="bal-5-3">เดินหรือเคลื่อนที่โดยมีคนช่วย เช่น พยุง หรือบอกให้ทำตาม</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-5-4"
+                                        name="bal-5" class="with-gap" value="3" data-bind="checked: bal5"/>
+                                    <label for="bal-5-4">เดินหรือเคลื่อนที่ได้เอง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6.</td>
+                                <td>Dressing (การสวมใส่เสื้อผ้า)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-6-1"
+                                        name="bal-6" class="with-gap" value="0" data-bind="checked: bal6"/>
+                                    <label for="bal-6-1">ต้องมีคนสวมใส่ให้ ช่วยตัวเองไม่ได้หรือได้น้อย</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-6-2"
+                                        name="bal-6" class="with-gap" value="1" data-bind="checked: bal6"/>
+                                    <label for="bal-6-2">ช่วยตัวเองได้ราวร้อยละ 50 ที่เหลือต้องมีคนช่วย</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-6-3"
+                                        name="bal-6" class="with-gap" value="2" data-bind="checked: bal6"/>
+                                    <label for="bal-6-3">ช่วยตัวเองได้ดี (รวมทั้งการติดกระดุม รูดซิป หรือใช้เสื้อผ้าที่ดัดแปลงให้เหมาะสมได้)</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7.</td>
+                                <td>Stairs (การขึ้นลงบันได 1 ชั้น)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-7-1"
+                                        name="bal-7" class="with-gap" value="0" data-bind="checked: bal7"/>
+                                    <label for="bal-7-1">ไม่สามารถทำได้</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-7-2"
+                                        name="bal-7" class="with-gap" value="1" data-bind="checked: bal7"/>
+                                    <label for="bal-7-2">ต้องการคนช่วย</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-7-3"
+                                        name="bal-7" class="with-gap" value="2" data-bind="checked: bal7"/>
+                                    <label for="bal-7-3">ขึ้นลงได้เอง (ถ้าต้องใช้เครื่องช่วยเดินเช่น walker จะต้องเอาขึ้นลงได้ด้วย)</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8.</td>
+                                <td>Bathing (การอาบน้ำ)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-8-1"
+                                        name="bal-8" class="with-gap" value="0" data-bind="checked: bal8"/>
+                                    <label for="bal-8-1">ต้องมีคนช่วย หรือทำให้</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-8-2"
+                                        name="bal-8" class="with-gap" value="1" data-bind="checked: bal8"/>
+                                    <label for="bal-8-2">อาบน้ำเองได้</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>9.</td>
+                                <td>Bowels (การกลั้นการถ่ายอุจจาระในระยะ 1 สัปดาห์ที่ผ่านมา)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-9-1"
+                                        name="bal-9" class="with-gap" value="0" data-bind="checked: bal9"/>
+                                    <label for="bal-9-1">กลั้นไม่ได้ หรือต้องการการสวนอุจจาระอยู่เสมอ</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-9-2"
+                                        name="bal-9" class="with-gap" value="1" data-bind="checked: bal9"/>
+                                    <label for="bal-9-2">กลั้นได้บางครั้ง (เป็นน้อยกว่าวันละครั้ง)</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-9-3"
+                                        name="bal-9" class="with-gap" value="2" data-bind="checked: bal9"/>
+                                    <label for="bal-9-3">กลั้นได้ปกติ</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10.</td>
+                                <td>Bladder (การกลั้นการถ่ายปัสสาวะในระยะ 1 สัปดาห์ที่ผ่านมา)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-10-1"
+                                        name="bal-10" class="with-gap" value="0" data-bind="checked: bal10"/>
+                                    <label for="bal-9-1">กลั้นไม่ได้ หรือใส่สายสวนปัสสาวะแต่ไม่สามารถดูแลเองได้</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-10-2"
+                                        name="bal-10" class="with-gap" value="1" data-bind="checked: bal10"/>
+                                    <label for="bal-10-2">กลั้นได้บางครั้ง (เป็นน้อยกว่าวันละครั้ง)</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="bal-10-3"
+                                        name="bal-10" class="with-gap" value="2" data-bind="checked: bal10"/>
+                                    <label for="bal-10-3">กลั้นได้ปกติ</label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div data-bind="visible: balScore() > -1">
+                        Total BAL score is <span data-bind="text: balScore()"></span>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col m8 offset-m2">
+        <div class="card hoverable">
+            <div class="card-content">
+                <div class="row">
+                    <p>
+                        2.2 แบบประเมินภาวะซึมเศร้าสำหรับผู้สูงอายุไทย
+                    </p>
+                    <br/>
+                    <table class="striped">
+                        <thead>
+                            <tr>
+                                <th>ข้อ</th>
+                                <th>หัวข้อ</th>
+                                <th colspan="2">คำตอบ</th>
+                            </tr>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>โดยทั่วไปแล้วคุณพึงพอใจกับชีวิตตัวเองหรือไม่</td>
+                                <td>
+                                    <input type="radio" name="tgds-1"
+                                        id="tgds-1-1" class="with-gap" value="0" data-bind="checked: tgds1">
+                                    <label for="tgds-1-1">ใช่</label>
+                                </td>
+                                <td>
+                                    <input type="radio" name="tgds-1" id="tgds-1-0"
+                                        class="with-gap" value="1" data-bind="checked: tgds1">
+                                    <label for="tgds-1-0">ไม่ใช่</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>คุณลดกิจกรรมหรือความสนใจในสิ่งต่างๆ ลงหรือไม่</td>
+                                <td>
+                                    <input type="radio" name="tgds-2" id="tgds-2-1"
+                                        class="with-gap" value="1" data-bind="checked: tgds2">
+                                    <label for="tgds-2-1">ใช่</label>
+                                </td>
+                                <td>
+                                    <input type="radio" name="tgds-2" id="tgds-2-0"
+                                        class="with-gap" value="0" data-bind="checked: tgds2">
+                                    <label for="tgds-2-0">ไม่ใช่</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>คุณรู้สึกว่าชีวิตคุณว่างเปล่าหรือไม่</td>
+                                <td>
+                                    <input type="radio" name="tgds-3" id="tgds-3-1"
+                                        class="with-gap" value="1" data-bind="checked: tgds3">
+                                    <label for="tgds-3-1">ใช่</label>
+                                </td>
+                                <td>
+                                    <input type="radio" name="tgds-3" id="tgds-3-0"
+                                        class="with-gap" value="0" data-bind="checked: tgds3">
+                                    <label for="tgds-3-0">ไม่ใช่</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>คุณรู้สึกเบื่อๆ อยู่บ่อยครั้งหรือไม่</td>
+                                <td>
+                                    <input type="radio" name="tgds-4" id="tgds-4-1"
+                                        class="with-gap" value="1" data-bind="checked: tgds4">
+                                    <label for="tgds-4-1">ใช่</label>
+                                </td>
+                                <td>
+                                    <input type="radio" name="tgds-4" id="tgds-4-0"
+                                        class="with-gap" value="0" data-bind="checked: tgds4">
+                                    <label for="tgds-4-0">ไม่ใช่</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>คุณอารมณ์ดีเป็นส่วนใหญ่หรือไม่</td>
+                                <td>
+                                    <input type="radio" name="tgds-5" id="tgds-5-1"
+                                        class="with-gap" value="0" data-bind="checked: tgds5">
+                                    <label for="tgds-5-1">ใช่</label>
+                                </td>
+                                <td>
+                                    <input type="radio" name="tgds-5" id="tgds-5-0"
+                                        class="with-gap" value="1" data-bind="checked: tgds5">
+                                    <label for="tgds-5-0">ไม่ใช่</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>คุณกลัวอะไรร้ายๆ จะเกิดขึ้นกับคุณหรือไม่</td>
+                                <td>
+                                    <input type="radio" name="tgds-6" id="tgds-6-1"
+                                        class="with-gap" value="1" data-bind="checked: tgds6">
+                                    <label for="tgds-6-1">ใช่</label>
+                                </td>
+                                <td>
+                                    <input type="radio" name="tgds-6" id="tgds-6-0"
+                                        class="with-gap" value="0" data-bind="checked: tgds6">
+                                    <label for="tgds-6-0">ไม่ใช่</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>คุณมีความรู้สึกมีความสุขเป็นส่วนใหญ่หรือไม่</td>
+                                <td>
+                                    <input type="radio" name="tgds-7" id="tgds-7-1"
+                                        class="with-gap" value="0" data-bind="checked: tgds7">
+                                    <label for="tgds-7-1">ใช่</label>
+                                </td>
+                                <td>
+                                    <input type="radio" name="tgds-7" id="tgds-7-0"
+                                        class="with-gap" value="1" data-bind="checked: tgds7">
+                                    <label for="tgds-7-0">ไม่ใช่</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>คุณรู้สึกหมดหนทางอยู่บ่อยๆ ใช่หรือไม่</td>
+                                <td>
+                                    <input type="radio" name="tgds-8" id="tgds-8-1"
+                                        class="with-gap" value="1" data-bind="checked: tgds8">
+                                    <label for="tgds-8-1">ใช่</label>
+                                </td>
+                                <td>
+                                    <input type="radio" name="tgds-8" id="tgds-8-0"
+                                        class="with-gap" value="0" data-bind="checked: tgds8">
+                                    <label for="tgds-8-0">ไม่ใช่</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>คุณชอบอยู่กับบ้านมากกว่าออกไปหาอะไรทำนอกบ้านหรือไม่</td>
+                                <td>
+                                    <input type="radio" name="tgds-9" id="tgds-9-1"
+                                        class="with-gap" value="1" data-bind="checked: tgds9">
+                                    <label for="tgds-9-1">ใช่</label>
+                                </td>
+                                <td>
+                                    <input type="radio" name="tgds-9" id="tgds-9-0"
+                                        class="with-gap" value="0" data-bind="checked: tgds9">
+                                    <label for="tgds-9-0">ไม่ใช่</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>คุณรู้สึกว่ามีปัญหาความจำมากกว่าใครๆ หรือไม่</td>
+                                <td>
+                                    <input type="radio" name="tgds-10" id="tgds-10-1"
+                                        class="with-gap" value="1" data-bind="checked: tgds10">
+                                    <label for="tgds-10-1">ใช่</label>
+                                </td>
+                                <td>
+                                    <input type="radio" name="tgds-10" id="tgds-10-0"
+                                        class="with-gap" value="0" data-bind="checked: tgds10">
+                                    <label for="tgds-10-0">ไม่ใช่</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>คุณคิดว่าการมีชีวิตอยู่มาได้จนทุกวันนี้มันช่างแสนวิเศษใช่หรือไม่</td>
+                                <td>
+                                    <input type="radio" name="tgds-11" id="tgds-11-1"
+                                        class="with-gap" value="0" data-bind="checked: tgds11">
+                                    <label for="tgds-11-1">ใช่</label>
+                                </td>
+                                <td>
+                                    <input type="radio" name="tgds-11" id="tgds-11-0"
+                                        class="with-gap" value="1" data-bind="checked: tgds11">
+                                    <label for="tgds-11-0">ไม่ใช่</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>คุณรู้สึกหรือไม่ว่าชีวิตที่กำลังเป็นอยู่ตอนนี้ช่างไร้ค่าเหลือเกิน</td>
+                                <td>
+                                    <input type="radio" name="tgds-12" id="tgds-12-1"
+                                        class="with-gap" value="1" data-bind="checked: tgds12">
+                                    <label for="tgds-12-1">ใช่</label>
+                                </td>
+                                <td>
+                                    <input type="radio" name="tgds-12" id="tgds-12-0"
+                                        class="with-gap" value="0" data-bind="checked: tgds12">
+                                    <label for="tgds-12-0">ไม่ใช่</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>คุณรู้สึกมีกำลังเต็มที่หรือไม่</td>
+                                <td>
+                                    <input type="radio" name="tgds-13" id="tgds-13-1"
+                                        class="with-gap" value="0" data-bind="checked: tgds13">
+                                    <label for="tgds-13-1">ใช่</label>
+                                </td>
+                                <td>
+                                    <input type="radio" name="tgds-13" id="tgds-13-0"
+                                        class="with-gap" value="1" data-bind="checked: tgds13">
+                                    <label for="tgds-13-0">ไม่ใช่</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>คุณรู้สึกหมดหวังกับสิ่งที่คุณกำลังเผชิญอยู่หรือไม่</td>
+                                <td>
+                                    <input type="radio" name="tgds-14" id="tgds-14-1"
+                                        class="with-gap" value="1" data-bind="checked: tgds14">
+                                    <label for="tgds-14-1">ใช่</label>
+                                </td>
+                                <td>
+                                    <input type="radio" name="tgds-14" id="tgds-14-0"
+                                        class="with-gap" value="0" data-bind="checked: tgds14">
+                                    <label for="tgds-14-0">ไม่ใช่</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>คุณคิดว่าคนอื่นๆ ดีกว่าคุณหรือไม่</td>
+                                <td>
+                                    <input type="radio" name="tgds-15" id="tgds-15-1"
+                                        class="with-gap" value="1" data-bind="checked: tgds15">
+                                    <label for="tgds-15-1">ใช่</label>
+                                </td>
+                                <td>
+                                    <input type="radio" name="tgds-15" id="tgds-15-0"
+                                        class="with-gap" value="0" data-bind="checked: tgds15">
+                                    <label for="tgds-15-0">ไม่ใช่</label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div data-bind="visible: tgdsScore() > -1">
+                        Total score is <span data-bind="text: tgdsScore()"></span>  
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- card-content -->
+        </div> <!-- card -->
+    </div>
+</div>
+<div class="row">
+    <div class="col m8 offset-m2">
+        <div class="card hoverable">
+            <div class="card-content">
+                <div class="row">
+                    <p>
+                        2.3 แบบทดสอบสมองเสื่อมเบื้องต้นฉบับภาษาไทย (MMSE - Thai 2002)
+                    </p>
+                    <br/>
+                    <table class="striped">
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td colspan="3">Orientation for time (5 points)</td>
+                            </tr>
+                            <tr>
+                                <td>1.1</td>
+                                <td>วันนี้วันที่เท่าไร</td>
+                                <td><input type="text" data-bind="value: mmse1_1_cmnt"/></td>
+                                <td>
+                                    <input type="checkbox" id="mmse-1-1" data-bind="checked: mmse1_1_chk"/>
+                                    <label for="mmse-1-1">ถูกต้อง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1.2</td>
+                                <td>วันนี้วันอะไร</td>
+                                <td><input type="text" data-bind="value: mmse1_2_cmnt"/></td>
+                                <td>
+                                    <input type="checkbox" id="mmse-1-2" data-bind="checked: mmse1_2_chk"/>
+                                    <label for="mmse-1-2">ถูกต้อง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1.3</td>
+                                <td>เดือนนี้เดือนอะไร</td>
+                                <td><input type="text" data-bind="value: mmse1_3_cmnt"/></td>
+                                <td>
+                                    <input type="checkbox" id="mmse-1-3" data-bind="checked: mmse1_3_chk"/>
+                                    <label for="mmse-1-3">ถูกต้อง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1.4</td>
+                                <td>ปีนี้ปีอะไร</td>
+                                <td><input type="text" data-bind="value: mmse1_4_cmnt"/></td>
+                                <td>
+                                    <input type="checkbox" id="mmse-1-4" data-bind="checked: mmse1_4_chk"/>
+                                    <label for="mmse-1-4">ถูกต้อง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1.5</td>
+                                <td>ฤดูนี้ฤดูอะไร</td>
+                                <td><input type="text" data-bind="value: mmse1_5_cmnt"/></td>
+                                <td>
+                                    <input type="checkbox" id="mmse-1-5" data-bind="checked: mmse1_5_chk"/>
+                                    <label for="mmse-1-5">ถูกต้อง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td colspan="3">Orientation for place (5 points)</td>
+                            </tr>
+                            <tr>
+                                <td>2.1</td>
+                                <td colspan="3">กรณีอยู่สถานพยาบาล</td>
+                            </tr>
+                            <tr>
+                                <td>2.1.1</td>
+                                <td>สถานที่ตรงนี้เรียกว่าอะไร และชื่อว่าอะไร</td>
+                                <td><input type="text" data-bind="value: mmse2_1_1_cmnt"/></td>
+                                <td>
+                                    <input type="checkbox" id="mmse-2-1-1" data-bind="checked: mmse2_1_1_chk"/>
+                                    <label for="mmse-2-1-1">ถูกต้อง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2.1.2</td>
+                                <td>ขณะนี้ท่านอยู่ที่ชั้นที่เท่าไหร่ของตัวอาคาร</td>
+                                <td><input type="text" data-bind="value: mmse2_1_2_cmnt"/></td>
+                                <td>
+                                    <input type="checkbox" id="mmse-2-1-2" data-bind="checked: mmse2_1_2_chk"/>
+                                    <label for="mmse-2-1-2">ถูกต้อง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2.1.3</td>
+                                <td>ที่อยู่ในอำเภอ หรือเขตอะไร</td>
+                                <td><input type="text" data-bind="value: mmse2_1_3_cmnt"/></td>
+                                <td>
+                                    <input type="checkbox" id="mmse-2-1-3" data-bind="checked: mmse2_1_3_chk"/>
+                                    <label for="mmse-2-1-3">ถูกต้อง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2.1.4</td>
+                                <td>ที่นี่จังหวัดอะไร</td>
+                                <td><input type="text" data-bind="value: mmse2_1_4_cmnt"/></td>
+                                <td>
+                                    <input type="checkbox" id="mmse-2-1-4" data-bind="checked: mmse2_1_4_chk"/>
+                                    <label for="mmse-2-1-4">ถูกต้อง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2.1.5</td>
+                                <td>ที่นี่ภาคอะไร</td>
+                                <td><input type="text" data-bind="value: mmse2_1_5_cmnt"/></td>
+                                <td>
+                                    <input type="checkbox" id="mmse-2-1-5" data-bind="checked: mmse2_1_5_chk"/>
+                                    <label for="mmse-2-1-5">ถูกต้อง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2.2</td>
+                                <td colspan="3">กรณีอยู่บ้านของผู้ถูกทดสอบ</td>
+                            </tr>
+                            <tr>
+                                <td>2.2.1</td>
+                                <td>สถานที่ตรงนี้เรียกว่าอะไร และบ้านเลขที่เท่าไหร่</td>
+                                <td><input type="text" data-bind="value: mmse2_2_1_cmnt"/></td>
+                                <td>
+                                    <input type="checkbox" id="mmse-2-2-1" data-bind="checked: mmse2_2_1_chk"/>
+                                    <label for="mmse-2-2-1">ถูกต้อง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2.2.2</td>
+                                <td>ที่นี่อยู่หมู่บ้าน หรือละแวก/คุ้ม/ย่าน/ถนนอะไร</td>
+                                <td><input type="text" data-bind="value: mmse2_2_2_cmnt"/></td>
+                                <td>
+                                    <input type="checkbox" id="mmse-2-2-2" data-bind="checked: mmse2_2_2_chk"/>
+                                    <label for="mmse-2-2-2">ถูกต้อง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2.2.3</td>
+                                <td>ที่อยู่ในอำเภอ หรือเขตอะไร</td>
+                                <td><input type="text" data-bind="value: mmse2_2_3_cmnt"/></td>
+                                <td>
+                                    <input type="checkbox" id="mmse-2-2-3" data-bind="checked: mmse2_2_3_chk"/>
+                                    <label for="mmse-2-2-3">ถูกต้อง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2.2.4</td>
+                                <td>ที่นี่จังหวัดอะไร</td>
+                                <td><input type="text" data-bind="value: mmse2_2_4_cmnt"/></td>
+                                <td>
+                                    <input type="checkbox" id="mmse-2-2-4" data-bind="checked: mmse2_2_4_chk"/>
+                                    <label for="mmse-2-2-4">ถูกต้อง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2.2.5</td>
+                                <td>ที่นี่ภาคอะไร</td>
+                                <td><input type="text" data-bind="value: mmse2_2_5_cmnt"/></td>
+                                <td>
+                                    <input type="checkbox" id="mmse-2-2-5" data-bind="checked: mmse2_2_5_chk"/>
+                                    <label for="mmse-2-2-5">ถูกต้อง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td colspan="3">Registration</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">ต่อไปนี้เป็นการทดสอบความจำ  ผม (ดิฉัน) จะบอกชื่อของ 3 อย่าง คุณ (ตา , ยาย....) ตั้งใจฟังให้ดีนะเพราะจะบอกเพียงครั้งเดียว  ไม่มีการบอกซ้ำอีก  เมื่อ  ผม (ดิฉัน) พูดจบ ให้ คุณ(ตา,ยาย....) พูดทบทวนตามที่ได้ยิน ให้ครบทั้ง 3 ชื่อ  แล้วพยามจำไว้ให้ดีเดี๋ยวดิฉันจะถามซ้ำ การบอกชื่อแต่ละคำให้ห่างกันประมาณหนึ่งวินาที  ต้องไม่ช้าหรือเร็วเกินไป (ตอบถูก 1 คำได้ 1 คะแนน)</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <input type="checkbox" id="reg-1-1" data-bind="checked: reg1_1">
+                                    <label for="reg-1-1">ดอกไม้</label>
+                                    <input type="checkbox" id="reg-1-2" data-bind="checked: reg1_2">
+                                    <label for="reg-1-2">แม่น้ำ</label>
+                                    <input type="checkbox" id="reg-1-3" data-bind="checked: reg1_3">
+                                    <label for="reg-1-3">รถยนต์</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">ในกรณีทำซ้ำภายในสองเดือนให้ใช้คำว่า</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <input type="checkbox" id="reg-2-1" data-bind="checked: reg2_1">
+                                    <label for="reg-2-1">ต้นไม้</label>
+                                    <input type="checkbox" id="reg-2-2" data-bind="checked: reg2_2">
+                                    <label for="reg-2-2">ทะเล</label>
+                                    <input type="checkbox" id="reg-2-3" data-bind="checked: reg2_3">
+                                    <label for="reg-2-3">รถยนต์</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td colspan="3">Attention/Calculation (5 points ให้เลือกข้อใดข้อหนึ่ง)</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">ข้อนี้เป็นการคิดเลขในใจเพื่อทดสอบสมาธิ  คุณ (ตา,ยาย....) คิดเลขในใจเป็นไหม? ถ้าตอบคิดเป็นทำข้อ 4.1 ถ้าตอบคิดไม่เป็นหรือไม่ตอบให้ทำข้อ 4.2</td>
+                            </tr>
+                            <tr>
+                                <td>4.1</td>
+                                <td>ข้อนี้คิดในใจเอา 100 ตั้ง ลบออกทีละ 7 ไปเรื่อยๆ ได้ผลเท่าไรบอกมา</td>
+                                <td colspan="2">
+                                    <input type="text" id="mmse-4-1-result" class="col s6" data-bind="value: mmse4_1_cmnt">
+                                    <input type="checkbox" id="mmse-4-1-check" data-bind="checked: mmse4_1_chk">
+                                    <label for="mmse-4-1-check">ได้ทำ</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4.2</td>
+                                <td>ผม (ดิฉัน) จะสะกดคำว่า มะนาว ให้คุณ (ตา, ยาย....) ฟังแล้วให้คุณ (ตา, ยาย....) สะกดถอยหลังจากพยัญชนะตัวหลังไปตัวแรก  คำว่ามะนาวสะกดว่า มอม้า-สระอะ-นอหนู-สระอา-วอแหวน ไหนคุณ (ตา,ยาย....) สะกดถอยหลัง ให้ฟังซิ</td>
+                                <td colspan="2">
+                                    <input type="text" id="mmse-4-2-result" class="col s6" data-bind="value: mmse4_2_cmnt">
+                                    <input type="checkbox" id="mmse-4-2-check" data-bind="checked: mmse4_2_chk">
+                                    <label for="mmse-4-2-check">ได้ทำ</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td colspan="3">Recall (3 points)</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">เมื่อครู่ที่ให้จำของ 3 อย่างจำได้ไหมมีอะไรบ้าง (ตอบถูกได้ 1 คะแนนต่อ 1 คำ)</td> 
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <input type="checkbox" id="recall-1-1" data-bind="checked: recall1_1">
+                                    <label for="recall-1-1">ดอกไม้</label>
+                                    <input type="checkbox" id="recall-1-2" data-bind="checked: recall1_2">
+                                    <label for="recall-1-2">แม่น้ำ</label>
+                                    <input type="checkbox" id="recall-1-3" data-bind="checked: recall1_3">
+                                    <label for="recall-1-3">รถยนต์</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">ในกรณีทำซ้ำภายในสองเดือนให้ใช้คำว่า</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <input type="checkbox" id="recall-2-1" data-bind="checked: recall2_1">
+                                    <label for="recall-2-1">ต้นไม้</label>
+                                    <input type="checkbox" id="recall-2-2" data-bind="checked: recall2_2">
+                                    <label for="recall-2-2">ทะเล</label>
+                                    <input type="checkbox" id="recall-2-3" data-bind="checked: recall2_3">
+                                    <label for="recall-2-3">รถยนต์</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td colspan="3">Naming (2 points)</td>
+                            </tr>
+                            <tr>
+                                <td>6.1</td>
+                                <td>ยื่นดินสอให้ผู้ถูกทดสอบดูแล้วถามว่า สิ่งนี้เรียกว่าอะไร</td>
+                                <td><input type="text" id="mmse-6-1" data-bind="value: mmse6_1_cmnt"></td>
+                                <td>
+                                    <input type="checkbox" id="mmse-6-1-chk" data-bind="checked: mmse6_1_chk">
+                                    <label for="mmse-6-1-chk"></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6.2</td>
+                                <td>ชี้นาฬิกาข้อมือแล้วถามว่า สิ่งนี้เรียกว่าอะไร</td>
+                                <td><input type="text" id="mmse-6-2" data-bind="value: mmse6_2_cmnt"></td>
+                                <td>
+                                    <input type="checkbox" id="mmse-6-2-chk" data-bind="value: mmse6_2_chk">
+                                    <label for="mmse-6-2-chk"></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td colspan="3">Repetition (1 point)</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">ตั้งใจฟังผม (ดิฉัน) เมื่อผม (ดิฉัน) พูดข้อความนี้
+		“แล้วให้คุณ (ตา, ยาย) พูดตาม ผม (ดิฉัน) จะบอกเพียงครั้งเดียว”
+ 	“ใครใคร่ขายไก่ไข่”</td>
+                                <td>
+                                    <input type="text" id="mmse-7" data-bind="value: mmse7_cmnt">
+                                </td>
+                                <td>
+                                    <input type="checkbox" id="mmse-7-chk" data-bind="checked: mmse7_chk">
+                                    <label for="mmse-7-chk"></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td colspan="3">Verbal command (3 point)</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">“ฟังดีๆ นะเดี๋ยวผม (ดิฉัน) จะส่งกระดาษให้คุณ แล้วให้คุณ (ตา, ยาย....) รับด้วยมือขวา  พับครึ่งกระดาษ  แล้ววางไว้ที่............”(พื้น,โต๊ะ,เตียง) ผู้ทดสอบแสดงกระดาษเปล่าขนาดประมาณ เอ-4 ไม่มีรอยพับ ให้ผู้ถูกทดสอบ</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <input type="checkbox" id="mmse-8-1-chk" data-bind="checked: mmse8_1_chk">
+                                    <label for="mmse-8-1-chk">รับด้วยมือขวา</label>
+                                    <input type="checkbox" id="mmse-8-2-chk" data-bind="checked: mmse8_2_chk">
+                                    <label for="mmse-8-2-chk">พับครึ่งกระดาษ</label>
+                                    <input type="checkbox" id="mmse-8-3-chk" data-bind="checked: mmse8_3_chk">
+                                    <label for="mmse-8-3-chk">วางไว้ที่ (โต๊ะ พื้น เตียง)</label>
+                                    <input type="text" id="mmse-8-1" class="col s6" data-bind="value: mmse8_cmnt">
+                                    <br>
+                                    <input type="checkbox" id="mmse-8-4-chk" data-bind="checked: mmse8_4_chk">
+                                    <label for="mmse-8-4-chk"></label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td colspan="3">Written command (1 point)</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">ต่อไปเป็นคำสั่งที่เขียนเป็นตัวหนังสือ  ต้องการให้คุณ (ตา , ยาย....) อ่านแล้วทำตาม (ตา , ยาย....)  จะอ่านออกเสียงหรืออ่านในใจก็ได้ ผู้ทดสอบแสดงกระดาษที่เขียนว่า “หลับตา”</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><h1 class="center-align">หลับตา</h1></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <input type="checkbox" id="mmse-9-chk" data-bind="checked: mmse9_chk">
+                                    <label for="mmse-9-chk">หลับตาได้</label>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td colspan="3">Writing (1 point)</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">ข้อนี้จะเป็นคำสั่ง “ให้คุณ (ตา, ยาย....) เขียนข้อความอะไรก็ได้ที่อ่านแล้วรู้เรื่อง หรือมีความหมายมา 1 ประโยค”</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <input type="checkbox" id="mmse-10-1-chk" data-bind="checked: mmse10_chk">
+                                    <label for="mmse-10-1-chk">ประโยคมีความหมาย</label>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td colspan="3">Visuoconstruction (1 point)</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    จงวาดภาพให้เหมือนตัวอย่าง
+                                </td>
+                                <td><img src="{{ url_for('static', filename='img/visuo.png') }}"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <input type="checkbox" id="mmse-11-chk" data-bind="checked: mmse11_chk">
+                                    <label for="mmse-11-chk">ทำได้</label>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div> <!-- card-content -->
+        </div> <!-- card -->
+    </div>
+</div>
+<div class="row">
+    <div class="col m8 offset-m2">
+        <div class="card hoverable">
+            <div class="card-content">
+                <div class="row">
+                    <p>
+                        2.4 แบบประเมินภาวะโภชนาการ (MNA: Mini Nutrition Assessment)
+                    </p>
+                    <br/>
+                    <table class="striped">
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    น้ำหนัก (กก.)
+                                    <div class="input-field inline">
+                                        <input type="text" id="mna-weight" data-bind="value: mna_weight">
+                                    </div>
+                                    ส่วนสูง (ซม.)
+                                    <div class="input-field inline">
+                                        <input type="text" id="mna-height" data-bind="value: mna_height">
+                                    </div>
+                                    วันที่
+                                    <div class="input-field inline">
+                                        <input type="date"  class="datepicker" id="mna-date" data-bind="mna_date">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="10%">A</td>
+                                <td>ในช่วง 3 เดือนที่ผ่านมารับประทานอาหารได้น้อยลง เนื่องจากความอยากอาหารน้อยลง มีปัญหาการเคี้ยว หรือการกลืนหรือไม่
+                                    <span data-bind="text: 'value= ' + mna_1()"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="mna-1-1-rad" name="mna-1"
+                                        value="0" data-bind="checked: mna_1">
+                                    <label for="mna-1-1-rad">ความอยากอาหารลดลงอย่างมาก</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="mna-1-2-rad" name="mna-1"
+                                        value="1" data-bind="checked: mna_1">
+                                    <label for="mna-1-2-rad">ความอยากอาหารลดลงปานกลาง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="mna-1-3-rad" name="mna-1"
+                                        value="2" data-bind="checked: mna_1">
+                                    <label for="mna-1-3-rad">ความอยากอาหารไม่ลดลง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="10%">B</td>
+                                <td>ในช่วง 3 เดือนที่ผ่านมาน้ำหนักลดลงหรือไม่
+                                    <span data-bind="text: 'value= ' + mna_2()"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="mna-2-1-rad" name="mna-2"
+                                        value="0" data-bind="checked: mna_2">
+                                    <label for="mna-2-1-rad">ลดลงมากกว่า 3 กิโลกรัม</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="mna-2-2-rad" name="mna-2"
+                                        value="1" data-bind="checked: mna_2">
+                                    <label for="mna-2-2-rad">ไม่ทราบ</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="mna-2-3-rad" name="mna-2"
+                                        value="2" data-bind="checked: mna_2">
+                                    <label for="mna-2-3-rad">น้ำหนักลดลงระหว่าง 1-3 กิโลกรัม</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="mna-2-4-rad" name="mna-2"
+                                        value="3" data-bind="checked: mna_2">
+                                    <label for="mna-2-4-rad">น้ำหนักไม่ลดลง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="10%">C</td>
+                                <td>สามารถเคลื่อนไหวได้เองหรือไม่
+                                    <span data-bind="text: 'value= ' + mna_3()"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="mna-3-1-rad" name="mna-3"
+                                        value="0" data-bind="checked: mna_3">
+                                    <label for="mna-3-1-rad">นอนบนเตียง หรือต้องอาศัยรถเข็นตลอด</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="mna-3-2-rad" name="mna-3"
+                                        value="1" data-bind="checked: mna_3">
+                                    <label for="mna-3-2-rad">ลุกจากเตียงหรือรถเข็นได้บ้าง แต่ไม่สามารถไปข้างนอกได้เอง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="mna-3-3-rad" name="mna-3"
+                                        value="2" data-bind="checked: mna_3">
+                                    <label for="mna-3-3-rad">เดิน หรือเคลื่อนไหวได้ตามปกติ</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="10%">D</td>
+                                <td>ใน 3 เดือนที่ผ่านมามีความเครียดรุนแรงหรือเจ็บป่วยเฉียบพลันหรือไม่
+                                    <span data-bind="text: 'value= ' + mna_4()"></span>   
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="mna-4-1-rad" name="mna-4"
+                                        value="0" data-bind="checked: mna_4">
+                                    <label for="mna-4-1-rad">มี</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="mna-4-2-rad" name="mna-4"
+                                        value="1" data-bind="checked: mna_4">
+                                    <label for="mna-4-2-rad">ไม่มี</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="10%">E</td>
+                                <td>มีปัญหาทางจิตประสาท (Neuropsychological problems) หรือไม่
+                                    <span data-bind="text: 'value= ' + mna_5()"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="mna-5-1-rad" name="mna-5"
+                                        value="0" data-bind="checked: mna_5">
+                                    <label for="mna-5-1-rad">ความจำเสื่อม หรือซึมเศร้าอย่างรุนแรง</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="mna-5-2-rad" name="mna-5"
+                                        value="1" data-bind="checked: mna_5">
+                                    <label for="mna-5-2-rad">ความจำเสื่อมเล็กน้อย</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="radio" id="mna-5-3-rad" name="mna-5"
+                                        value="2" data-bind="checked: mna_5">
+                                    <label for="mna-5-3-rad">ไม่มีปัญหาทางระบบประสาท</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="10%">F</td>
+                                <td>ดัชนีมวลกาย = <span data-bind="text: bmi()"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <span data-bind="text: 'MNA score = ' + mnaScore()"></span>   
+                </div>
+            </div> <!-- card-content -->
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col m8 offset-m2">
+        <div class="card hoverable">
+            <div class="card-content">
+                <div class="row">
+                    <p>
+                        2.5 แบบประเมินสิ่งแวดล้อมสำหรับผู้สูงอายุภาวะสมองเสื่อม
+                    </p>
+                    <table class="striped">
+                        <thead>
+                            <tr>
+                                <th>ลำดับ</th>
+                                <th>การประเมิน</th>
+                                <th colspan="2">ความคิดเห็น</th>
+                                <th>หมายเหตุ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>ลดสิ่งกระตุ้นที่ทำให้อาการเลวลง
+                                    <span data-bind="text: 'value = ' + env_1()"></span>
+                                </td>  
+                                <td>
+                                    <input type="radio" id="env-1-1-rad"
+                                        name="env-1" value="1" data-bind="checked: env_1">
+                                    <label for="env-1-1-rad">มี</label>
+                                </td>
+                                <td>
+                                    <input type="radio" id="env-1-0-rad"
+                                        name="env-1" value="0" data-bind="checked: env_1">
+                                    <label for="env-1-0-rad">ไม่มี</label>
+                                </td>
+                                <td width="20%">
+                                    <input type="text" id="env-1-comment">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>ติดสัญลักษณ์หรือตัวหนังสือบอกตำแหน่งห้องน้ำเลือกใช้นาฬิกาตัวเลขขนาดใหญ่
+                                    <span data-bind="text: 'value = ' + env_2()"></span>
+                                </td>  
+                                <td>
+                                    <input type="radio" id="env-2-1-rad" name="env-2"
+                                        value="1" data-bind="checked: env_2">
+                                    <label for="env-2-1-rad">มี</label>
+                                </td>
+                                <td>
+                                    <input type="radio" id="env-2-0-rad" name="env-2"
+                                        value="0" data-bind="checked: env_2">
+                                    <label for="env-2-0-rad">ไม่มี</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="env-2-comment">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>แสงสว่างเพียงพอ ติดตั้งหลอดไฟที่สว่างขึ้นเองโดยอัตโนมัติในบริเวณมุมมืดที่เดินผ่านบ่อยๆ
+                                    <span data-bind="text: 'value = ' + env_3()"></span></td>  
+                                <td>
+                                    <input type="radio" id="env-3-1-rad" name="env-3"
+                                        value="1" data-bind="checked: env_3">
+                                    <label for="env-3-1-rad">มี</label>
+                                </td>
+                                <td>
+                                    <input type="radio" id="env-3-0-rad" name="env-3"
+                                        value="0" data-bind="checked: env_3">
+                                    <label for="env-3-0-rad">ไม่มี</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="env-3-comment">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>เตียงนอน เก้าอี้ โถส้วมมีความสูงพอเหมาะ ไม่เตี้ยเกินไป
+                                    <span data-bind="text: 'value = ' + env_4()"></span></td>  
+                                <td>
+                                    <input type="radio" id="env-4-1-rad" name="env-4"
+                                        value="1" data-bind="checked: env_4">
+                                    <label for="env-4-1-rad">มี</label>
+                                </td>
+                                <td>
+                                    <input type="radio" id="env-4-0-rad" name="env-4"
+                                        value="0" data-bind="checked: env_4">
+                                    <label for="env-4-0-rad">ไม่มี</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="env-4-comment">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>ทางเดิน ควรมีราวจับตลอด
+                                    <span data-bind="text: 'value = ' + env_5()"></span></td>  
+                                <td>
+                                    <input type="radio" id="env-5-1-rad" name="env-5"
+                                        value="1" data-bind="checked: env_5">
+                                    <label for="env-5-1-rad">มี</label>
+                                </td>
+                                <td>
+                                    <input type="radio" id="env-5-0-rad" name="env-5"
+                                        value="0" data-bind="checked: env_5">
+                                    <label for="env-5-0-rad">ไม่มี</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="env-5-comment">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>พื้นห้องสม่ำเสมอและไม่ลื่น จุดเชื่อมต่อระหว่างห้องควรอยู่ระดับเดียวกัน
+                                    <span data-bind="text: 'value = ' + env_6()"></span></td>  
+                                <td>
+                                    <input type="radio" id="env-6-1-rad" name="env-6"
+                                        value="1" data-bind="checked: env_6">
+                                    <label for="env-6-1-rad">มี</label>
+                                </td>
+                                <td>
+                                    <input type="radio" id="env-6-0-rad" name="env-6"
+                                        value="0" data-bind="checked: env_6">
+                                    <label for="env-6-0-rad">ไม่มี</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="env-6-comment">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>ควรระวังอุบัติเหตุ โดยเฉพาะอย่างยิ่งการหกล้มจากการทำกิจกรรมต่างๆ ภายในหอผู้ป่วย
+                                    <span data-bind="text: 'value = ' + env_7()"></span></td>
+                                <td>
+                                    <input type="radio" id="env-7-1-rad" name="env-7"
+                                        value="1" data-bind="checked: env_7">
+                                    <label for="env-7-1-rad">มี</label>
+                                </td>
+                                <td>
+                                    <input type="radio" id="env-7-0-rad" name="env-7"
+                                        value="0" data-bind="checked: env_7">
+                                    <label for="env-7-0-rad">ไม่มี</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="env-7-comment">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>ห้องน้ำกว้างพอสำหรับการมีผู้ดูแลช่วยเหลือ ควรแยกส่วนแห้ง ส่วนเปียก พื้นควรใช้วัสดุที่ป้องกันการลื่น อุปกรณ์อาบน้ำควรอยู่ในระดับสายตาเพื่อให้สะดวกในการใช้ มีราวสำหรับจับยึด เกาะ ไม่มีขั้นหรือธรณีประตู ห้องน้ำควรเป็นทางลาด มีประตูใหญ่พอที่รถเข็นเข้าได้ ประตูห้องน้ำสามารถเปิดจากด้านนอกได้ เข้าถึงได้ง่าย สามารถทราบว่ามีคนอยู่ข้างในได้แม้ตอนกลางคืน
+                                    <span data-bind="text: 'value = ' + env_8()"></span>
+                                </td>
+                                <td>
+                                    <input type="radio" id="env-8-1-rad" name="env-8"
+                                        value="1" data-bind="checked: env_8">
+                                    <label for="env-8-1-rad">มี</label>
+                                </td>
+                                <td>
+                                    <input type="radio" id="env-8-0-rad" name="env-8"
+                                        value="0" data-bind="checked: env_8">
+                                    <label for="env-8-0-rad">ไม่มี</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="env-8-comment">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>ควรใช้วัสดุกั้นห้อง โดยหลีกเลี่ยงกระจก หรือกระจกเงา
+                                    <span data-bind="text: 'value = ' + env_9()"></span> 
+                                </td>
+                                <td>
+                                    <input type="radio" id="env-9-1-rad" name="env-9"
+                                        value="1" data-bind="checked: env_9">
+                                    <label for="env-9-1-rad">มี</label>
+                                </td>
+                                <td>
+                                    <input type="radio" id="env-9-0-rad" name="env-9"
+                                        value="0" data-bind="checked: env_9">
+                                    <label for="env-9-0-rad">ไม่มี</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="env-9-comment">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>เฟอร์นิเจอร์มีเท่าที่จำเป็น สูงจากพื้น มองเห็นง่าย ไม่ลื่น เลี่ยงสิ่งของมีล้อ
+                                    <span data-bind="text: 'value = ' + env_10"></span>
+                                </td>
+                                <td>
+                                    <input type="radio" id="env-10-1-rad" name="env-10"
+                                        value="1" data-bind="checked: env_10">
+                                    <label for="env-10-1-rad">มี</label>
+                                </td>
+                                <td>
+                                    <input type="radio" id="env-10-0-rad" name="env-10"
+                                        value="0" data-bind="checked: env_10">
+                                    <label for="env-10-0-rad">ไม่มี</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="env-10-comment">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>เก็บสิ่งของชิ้นเล็กๆ ที่อาจเอาเข้าปากและจมูก ซึ่งอาจทำให้เกิดอันตรายได้
+                                    <span data-bind="text: 'value = ' + env_11()"></span>
+                                </td>
+                                <td>
+                                    <input type="radio" id="env-11-1-rad" name="env-11"
+                                        value="1" data-bind="checked: env_11">
+                                    <label for="env-11-1-rad">มี</label>
+                                </td>
+                                <td>
+                                    <input type="radio" id="env-11-0-rad" name="env-11"
+                                        value="0" data-bind="checked: env_11">
+                                    <label for="env-11-0-rad">ไม่มี</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="env-11-comment">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>ให้อยู่ในสิ่งแวดล้อมที่คุ้นเคย สีห้องและสีม่านควรเป็นสีโทนเดียว สบายตา ไม่มีลวดลาย ใช้เฟอร์นิเจอร์และของใช้ที่บ่งบอกตัวผู้ป่วยหรือความหลังหากเป็นไปได้ เช่น รูปที่ผู้ป่วยคุ้นเคย ภาพบุคคลที่เป็นที่รัก คนในครอบครัว ภาพกิจกรรมที่มีความสุข
+                                    <span data-bind="text: 'value = ' + env_12()"></span>    
+                                </td>
+                                <td>
+                                    <input type="radio" id="env-12-1-rad" name="env-12"
+                                        value="1" data-bind="checked: env_12">
+                                    <label for="env-12-1-rad">มี</label>
+                                </td>
+                                <td>
+                                    <input type="radio" id="env-12-0-rad" name="env-12"
+                                        value="0" data-bind="checked: env_12">
+                                    <label for="env-12-0-rad">ไม่มี</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="env-12-comment">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <span data-bind="text: 'Total score for the environment = ' + envScore()"
+                    <div class="center-align">
+                        <a href="{{ url_for('partthree') }}"
+                            class="waves-effect waves-light btn">ทำต่อส่วนที่ 3</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
