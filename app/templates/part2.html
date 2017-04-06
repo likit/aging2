@@ -1284,7 +1284,7 @@
                             <tr>
                                 <td>10</td>
                                 <td>เฟอร์นิเจอร์มีเท่าที่จำเป็น สูงจากพื้น มองเห็นง่าย ไม่ลื่น เลี่ยงสิ่งของมีล้อ
-                                    <span data-bind="text: 'value = ' + env_10"></span>
+                                    <span data-bind="text: 'value = ' + env_10()"></span>
                                 </td>
                                 <td>
                                     <input type="radio" id="env-10-1-rad" name="env-10"
@@ -1340,7 +1340,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <span data-bind="text: 'Total score for the environment = ' + envScore()"
+                    <span data-bind="text: 'Total score for the environment = ' + envScore()"></span> 
                     <div class="center-align">
                         <a href="{{ url_for('partthree') }}"
                             class="waves-effect waves-light btn">ทำต่อส่วนที่ 3</a>
