@@ -323,7 +323,9 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>โดยทั่วไปแล้วคุณพึงพอใจกับชีวิตตัวเองหรือไม่</td>
+                                <td>โดยทั่วไปแล้วคุณพึงพอใจกับชีวิตตัวเองหรือไม่
+                                    <span data-bind="text: tgds1()"></span>
+                                </td>
                                 <td>
                                     <input type="radio" name="tgds-1"
                                         id="tgds-1-1" class="with-gap" value="0" data-bind="checked: tgds1">
@@ -337,7 +339,9 @@
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>คุณไม่อยากทำในสิ่งที่เคยสนใจหรือเคยทำประจำ</td>
+                                <td>คุณไม่อยากทำในสิ่งที่เคยสนใจหรือเคยทำประจำ
+                                    <span data-bind="text: tgds2()"></span>
+                                </td>
                                 <td>
                                     <input type="radio" name="tgds-2" id="tgds-2-1"
                                         class="with-gap" value="1" data-bind="checked: tgds2">
@@ -351,7 +355,9 @@
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td>คุณรู้สึกว่าชีวิตคุณว่างเปล่าไม่รู้จะทำอะไร</td>
+                                <td>คุณรู้สึกว่าชีวิตคุณว่างเปล่าไม่รู้จะทำอะไร
+                                    <span data-bind="text: tgds3()"></span>
+                                </td>
                                 <td>
                                     <input type="radio" name="tgds-3" id="tgds-3-1"
                                         class="with-gap" value="1" data-bind="checked: tgds3">
@@ -365,7 +371,7 @@
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td>คุณรู้สึกเบื่อๆ อยู่บ่อยครั้งหรือไม่</td>
+                                <td>คุณรู้สึกเบื่อๆ อยู่บ่อยครั้งหรือไม่ <span data-bind="text: tgds4()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-4" id="tgds-4-1"
                                         class="with-gap" value="1" data-bind="checked: tgds4">
@@ -379,7 +385,7 @@
                             </tr>
                             <tr>
                                 <td>5</td>
-                                <td>คุณหวังว่าจะมีสิ่งที่ดีเกิดขึ้นในวันข้างหน้า</td>
+                                <td>คุณหวังว่าจะมีสิ่งที่ดีเกิดขึ้นในวันข้างหน้า<span data-bind="text: tgds5()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-5" id="tgds-5-1"
                                         class="with-gap" value="0" data-bind="checked: tgds5">
@@ -393,7 +399,7 @@
                             </tr>
                             <tr>
                                 <td>6</td>
-                                <td>คุณมีเรื่องกังวลตลอดเวลาและเลิกคิดไม่ได้</td>
+                                <td>คุณมีเรื่องกังวลตลอดเวลาและเลิกคิดไม่ได้<span data-bind="text: tgds6()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-6" id="tgds-6-1"
                                         class="with-gap" value="1" data-bind="checked: tgds6">
@@ -407,7 +413,7 @@
                             </tr>
                             <tr>
                                 <td>7</td>
-                                <td>ส่วนใหญ่แล้วคุณรู้สึกอารมณ์ดี</td>
+                                <td>ส่วนใหญ่แล้วคุณรู้สึกอารมณ์ดี<span data-bind="text: tgds7()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-7" id="tgds-7-1"
                                         class="with-gap" value="0" data-bind="checked: tgds7">
@@ -421,7 +427,7 @@
                             </tr>
                             <tr>
                                 <td>8</td>
-                                <td>คุณรู้สึกกลัวว่าจะมีสิ่งไม่ดีเกิดขึ้นกับคุณ</td>
+                                <td>คุณรู้สึกกลัวว่าจะมีสิ่งไม่ดีเกิดขึ้นกับคุณ<span data-bind="text: tgds8()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-8" id="tgds-8-1"
                                         class="with-gap" value="1" data-bind="checked: tgds8">
@@ -435,21 +441,21 @@
                             </tr>
                             <tr>
                                 <td>9</td>
-                                <td>ส่วนใหญ่คุณรู้สึกมีความสุข</td>
+                                <td>ส่วนใหญ่คุณรู้สึกมีความสุข<span data-bind="text: tgds9()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-9" id="tgds-9-1"
-                                        class="with-gap" value="1" data-bind="checked: tgds9">
+                                        class="with-gap" value="0" data-bind="checked: tgds9">
                                     <label for="tgds-9-1">ใช่</label>
                                 </td>
                                 <td>
                                     <input type="radio" name="tgds-9" id="tgds-9-0"
-                                        class="with-gap" value="0" data-bind="checked: tgds9">
+                                        class="with-gap" value="1" data-bind="checked: tgds9">
                                     <label for="tgds-9-0">ไม่ใช่</label>
                                 </td>
                             </tr>
                             <tr>
                                 <td>10</td>
-                                <td>บ่อยครั้งที่คุณรู้สึกไม่มีที่พึ่ง</td>
+                                <td>บ่อยครั้งที่คุณรู้สึกไม่มีที่พึ่ง<span data-bind="text: tgds10()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-10" id="tgds-10-1"
                                         class="with-gap" value="1" data-bind="checked: tgds10">
@@ -463,21 +469,21 @@
                             </tr>
                             <tr>
                                 <td>11</td>
-                                <td>คุณรู้สึกกระวนกระวาย กระสับกระส่ายบ่อยๆ</td>
+                                <td>คุณรู้สึกกระวนกระวาย กระสับกระส่ายบ่อยๆ<span data-bind="text: tgds11()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-11" id="tgds-11-1"
-                                        class="with-gap" value="0" data-bind="checked: tgds11">
+                                        class="with-gap" value="1" data-bind="checked: tgds11">
                                     <label for="tgds-11-1">ใช่</label>
                                 </td>
                                 <td>
                                     <input type="radio" name="tgds-11" id="tgds-11-0"
-                                        class="with-gap" value="1" data-bind="checked: tgds11">
+                                        class="with-gap" value="0" data-bind="checked: tgds11">
                                     <label for="tgds-11-0">ไม่ใช่</label>
                                 </td>
                             </tr>
                             <tr>
                                 <td>12</td>
-                                <td>คุณชอบอยู่กับบ้านมากกว่าที่ออกนอกบ้าน</td>
+                                <td>คุณชอบอยู่กับบ้านมากกว่าที่ออกนอกบ้าน<span data-bind="text: tgds12()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-12" id="tgds-12-1"
                                         class="with-gap" value="1" data-bind="checked: tgds12">
@@ -491,21 +497,21 @@
                             </tr>
                             <tr>
                                 <td>13</td>
-                                <td>บ่อยครั้งที่คุณรู้สึกวิตกกังวลเกี่ยวกับชีวิตข้างหน้า</td>
+                                <td>บ่อยครั้งที่คุณรู้สึกวิตกกังวลเกี่ยวกับชีวิตข้างหน้า<span data-bind="text: tgds13()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-13" id="tgds-13-1"
-                                        class="with-gap" value="0" data-bind="checked: tgds13">
+                                        class="with-gap" value="1" data-bind="checked: tgds13">
                                     <label for="tgds-13-1">ใช่</label>
                                 </td>
                                 <td>
                                     <input type="radio" name="tgds-13" id="tgds-13-0"
-                                        class="with-gap" value="1" data-bind="checked: tgds13">
+                                        class="with-gap" value="0" data-bind="checked: tgds13">
                                     <label for="tgds-13-0">ไม่ใช่</label>
                                 </td>
                             </tr>
                             <tr>
                                 <td>14</td>
-                                <td>คุณคิดว่าความจำของคุณไม่ดีเท่าคนอื่น</td>
+                                <td>คุณคิดว่าความจำของคุณไม่ดีเท่าคนอื่น<span data-bind="text: tgds14()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-14" id="tgds-14-1"
                                         class="with-gap" value="1" data-bind="checked: tgds14">
@@ -519,35 +525,35 @@
                             </tr>
                             <tr>
                                 <td>15</td>
-                                <td>การที่มีชีวิตอยู่ถึงปัจจุบันเป็นเรื่องน่ายินดีหรือไม่</td>
+                                <td>การที่มีชีวิตอยู่ถึงปัจจุบันเป็นเรื่องน่ายินดีหรือไม่<span data-bind="text: tgds15()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-15" id="tgds-15-1"
-                                        class="with-gap" value="1" data-bind="checked: tgds15">
+                                        class="with-gap" value="0" data-bind="checked: tgds15">
                                     <label for="tgds-15-1">ใช่</label>
                                 </td>
                                 <td>
                                     <input type="radio" name="tgds-15" id="tgds-15-0"
-                                        class="with-gap" value="0" data-bind="checked: tgds15">
+                                        class="with-gap" value="1" data-bind="checked: tgds15">
                                     <label for="tgds-15-0">ไม่ใช่</label>
                                 </td>
                             </tr>
                             <tr>
                                 <td>16</td>
-                                <td>คุณรู้สึกหมดกำลังใจหรือเศร้าใจบ่อยๆ</td>
+                                <td>คุณรู้สึกหมดกำลังใจหรือเศร้าใจบ่อยๆ<span data-bind="text: tgds16()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-16" id="tgds-16-1"
-                                        class="with-gap" value="1" data-bind="checked: tgds15">
+                                        class="with-gap" value="1" data-bind="checked: tgds16">
                                     <label for="tgds-16-1">ใช่</label>
                                 </td>
                                 <td>
                                     <input type="radio" name="tgds-16" id="tgds-16-0"
-                                        class="with-gap" value="0" data-bind="checked: tgds15">
+                                        class="with-gap" value="0" data-bind="checked: tgds16">
                                     <label for="tgds-16-0">ไม่ใช่</label>
                                 </td>
                             </tr>
                             <tr>
                                 <td>17</td>
-                                <td>คุณรู้สึกว่าชีวิตคุณไม่ค่อยมีคุณค่า</td>
+                                <td>คุณรู้สึกว่าชีวิตคุณไม่ค่อยมีคุณค่า<span data-bind="text: tgds17()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-17" id="tgds-17-1"
                                         class="with-gap" value="1" data-bind="checked: tgds17">
@@ -561,7 +567,7 @@
                             </tr>
                             <tr>
                                 <td>18</td>
-                                <td>คุณรู้สึกกังวลมากกับชีวิตที่ผ่านมา</td>
+                                <td>คุณรู้สึกกังวลมากกับชีวิตที่ผ่านมา<span data-bind="text: tgds18()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-18" id="tgds-18-1"
                                         class="with-gap" value="1" data-bind="checked: tgds18">
@@ -575,21 +581,21 @@
                             </tr>
                             <tr>
                                 <td>19</td>
-                                <td>คุณรู้สึกว่าชีวิตนี้ยังมีเรื่องสนุกอีกมาก</td>
+                                <td>คุณรู้สึกว่าชีวิตนี้ยังมีเรื่องสนุกอีกมาก<span data-bind="text: tgds19()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-19" id="tgds-19-1"
-                                        class="with-gap" value="1" data-bind="checked: tgds19">
+                                        class="with-gap" value="0" data-bind="checked: tgds19">
                                     <label for="tgds-19-1">ใช่</label>
                                 </td>
                                 <td>
                                     <input type="radio" name="tgds-19" id="tgds-19-0"
-                                        class="with-gap" value="0" data-bind="checked: tgds19">
+                                        class="with-gap" value="1" data-bind="checked: tgds19">
                                     <label for="tgds-19-0">ไม่ใช่</label>
                                 </td>
                             </tr>
                             <tr>
                                 <td>20</td>
-                                <td>คุณรู้สึกลำบากที่จะเริ่มต้นอะไรใหม่ๆ</td>
+                                <td>คุณรู้สึกลำบากที่จะเริ่มต้นอะไรใหม่ๆ<span data-bind="text: tgds20"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-20" id="tgds-20-1"
                                         class="with-gap" value="1" data-bind="checked: tgds20">
@@ -603,21 +609,21 @@
                             </tr>
                             <tr>
                                 <td>21</td>
-                                <td>คุณรู้สึกกระตือรือร้น</td>
+                                <td>คุณรู้สึกกระตือรือร้น<span data-bind="text: tgds21()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-21" id="tgds-21-1"
-                                        class="with-gap" value="1" data-bind="checked: tgds21">
+                                        class="with-gap" value="0" data-bind="checked: tgds21">
                                     <label for="tgds-21-1">ใช่</label>
                                 </td>
                                 <td>
                                     <input type="radio" name="tgds-21" id="tgds-21-0"
-                                        class="with-gap" value="0" data-bind="checked: tgds21">
+                                        class="with-gap" value="1" data-bind="checked: tgds21">
                                     <label for="tgds-21-0">ไม่ใช่</label>
                                 </td>
                             </tr>
                             <tr>
                                 <td>22</td>
-                                <td>คุณรู้สึกสิ้นหวัง</td>
+                                <td>คุณรู้สึกสิ้นหวัง<span data-bind="text: tgds22()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-22" id="tgds-22-1"
                                         class="with-gap" value="1" data-bind="checked: tgds22">
@@ -631,7 +637,7 @@
                             </tr>
                             <tr>
                                 <td>23</td>
-                                <td>คุณคิดว่าคนอื่นดีกว่าคุณ</td>
+                                <td>คุณคิดว่าคนอื่นดีกว่าคุณ<span data-bind="text: tgds23()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-23" id="tgds-23-1"
                                         class="with-gap" value="1" data-bind="checked: tgds23">
@@ -645,7 +651,7 @@
                             </tr>
                             <tr>
                                 <td>24</td>
-                                <td>คุณอารมณ์เสียง่ายกับเรื่องเล็กๆ น้อยๆ อยู่เสมอ</td>
+                                <td>คุณอารมณ์เสียง่ายกับเรื่องเล็กๆ น้อยๆ อยู่เสมอ<span data-bind="text: tgds24()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-24" id="tgds-24-1"
                                         class="with-gap" value="1" data-bind="checked: tgds24">
@@ -659,7 +665,7 @@
                             </tr>
                             <tr>
                                 <td>25</td>
-                                <td>คุณมีความรู้สึกอยากร้องไห้บ่อยๆ</td>
+                                <td>คุณมีความรู้สึกอยากร้องไห้บ่อยๆ<span data-bind="text: tgds25()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-25" id="tgds-25-1"
                                         class="with-gap" value="1" data-bind="checked: tgds25">
@@ -673,7 +679,7 @@
                             </tr>
                             <tr>
                                 <td>26</td>
-                                <td>คุณมีความตั้งใจในการทำสิ่งใดสิ่งหนึ่งได้ไม่นาน</td>
+                                <td>คุณมีความตั้งใจในการทำสิ่งใดสิ่งหนึ่งได้ไม่นาน<span data-bind="text: tgds26()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-26" id="tgds-26-1"
                                         class="with-gap" value="1" data-bind="checked: tgds26">
@@ -687,21 +693,21 @@
                             </tr>
                             <tr>
                                 <td>27</td>
-                                <td>คุณรู้สึกสดชื่นในเวลาตื่นนอนเช้า</td>
+                                <td>คุณรู้สึกสดชื่นในเวลาตื่นนอนเช้า<span data-bind="text: tgds27()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-27" id="tgds-27-1"
-                                        class="with-gap" value="1" data-bind="checked: tgds27">
+                                        class="with-gap" value="0" data-bind="checked: tgds27">
                                     <label for="tgds-27-1">ใช่</label>
                                 </td>
                                 <td>
                                     <input type="radio" name="tgds-27" id="tgds-27-0"
-                                        class="with-gap" value="0" data-bind="checked: tgds27">
+                                        class="with-gap" value="1" data-bind="checked: tgds27">
                                     <label for="tgds-27-0">ไม่ใช่</label>
                                 </td>
                             </tr>
                             <tr>
                                 <td>28</td>
-                                <td>คุณไม่อยากพบปะพูดคุยกับคนอื่น</td>
+                                <td>คุณไม่อยากพบปะพูดคุยกับคนอื่น<span data-bind="text: tgds28()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-28" id="tgds-28-1"
                                         class="with-gap" value="1" data-bind="checked: tgds28">
@@ -715,29 +721,29 @@
                             </tr>
                             <tr>
                                 <td>29</td>
-                                <td>คุณตัดสินใจอะไรได้เร็ว</td>
+                                <td>คุณตัดสินใจอะไรได้เร็ว<span data-bind="text: tgds29()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-29" id="tgds-29-1"
-                                        class="with-gap" value="1" data-bind="checked: tgds29">
+                                        class="with-gap" value="0" data-bind="checked: tgds29">
                                     <label for="tgds-29-1">ใช่</label>
                                 </td>
                                 <td>
                                     <input type="radio" name="tgds-29" id="tgds-29-0"
-                                        class="with-gap" value="0" data-bind="checked: tgds29">
+                                        class="with-gap" value="1" data-bind="checked: tgds29">
                                     <label for="tgds-29-0">ไม่ใช่</label>
                                 </td>
                             </tr>
                             <tr>
                                 <td>30</td>
-                                <td>คุณมีจิตใจสบาย แจ่มใสเหมือนก่อน</td>
+                                <td>คุณมีจิตใจสบาย แจ่มใสเหมือนก่อน<span data-bind="text: tgds30()"></span></td>
                                 <td>
                                     <input type="radio" name="tgds-30" id="tgds-30-1"
-                                        class="with-gap" value="1" data-bind="checked: tgds30">
+                                        class="with-gap" value="0" data-bind="checked: tgds30">
                                     <label for="tgds-30-1">ใช่</label>
                                 </td>
                                 <td>
                                     <input type="radio" name="tgds-30" id="tgds-30-0"
-                                        class="with-gap" value="0" data-bind="checked: tgds30">
+                                        class="with-gap" value="1" data-bind="checked: tgds30">
                                     <label for="tgds-30-0">ไม่ใช่</label>
                                 </td>
                             </tr>

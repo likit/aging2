@@ -144,16 +144,40 @@ var viewModel = function() {
     self.tgds13 = ko.observable("");
     self.tgds14 = ko.observable("");
     self.tgds15 = ko.observable("");
+    self.tgds16 = ko.observable("");
+    self.tgds17 = ko.observable("");
+    self.tgds18 = ko.observable("");
+    self.tgds19 = ko.observable("");
+    self.tgds20 = ko.observable("");
+    self.tgds21 = ko.observable("");
+    self.tgds22 = ko.observable("");
+    self.tgds23 = ko.observable("");
+    self.tgds24 = ko.observable("");
+    self.tgds25 = ko.observable("");
+    self.tgds26 = ko.observable("");
+    self.tgds27 = ko.observable("");
+    self.tgds28 = ko.observable("");
+    self.tgds29 = ko.observable("");
+    self.tgds30 = ko.observable("");
     self.tgdsScore = ko.computed(function() {
         if(self.tgds1() !== "" && self.tgds2() !== "" && self.tgds3() !== ""
             && self.tgds4() !== "" && self.tgds5() !== "" && self.tgds6() !== ""
             && self.tgds7() !== "" && self.tgds8() !== "" && self.tgds9() !== ""
             && self.tgds10() !== "" && self.tgds11() !== "" && self.tgds12() !== ""
-            && self.tgds13() !== "" && self.tgds14() !== "" && self.tgds15() !== "") {
+            && self.tgds13() !== "" && self.tgds14() !== "" && self.tgds15() !== ""
+            && self.tgds16() !== "" && self.tgds17() !== "" && self.tgds18() !== ""
+            && self.tgds19() !== "" && self.tgds20() !== "" && self.tgds21() !== ""
+            && self.tgds22() !== "" && self.tgds23() !== "" && self.tgds24() !== ""
+            && self.tgds25() !== "" && self.tgds26() !== "" && self.tgds27() !== ""
+            && self.tgds28() !== "" && self.tgds29() !== "" && self.tgds30() !== ""
+            ) {
                 var score = +(self.tgds1()) + +(self.tgds2()) + +(self.tgds3());
                 score = score + +(self.tgds4()) + +(self.tgds5()) + +(self.tgds6());
                 score = score + +(self.tgds7()) + +(self.tgds8()) + +(self.tgds9()) + +(self.tgds10());
                 score = score + +(self.tgds11()) + +(self.tgds12()) + +(self.tgds13()) + +(self.tgds14()) + +(self.tgds15());
+                score = score + +(self.tgds16()) + +(self.tgds17()) + +(self.tgds18()) + +(self.tgds19()) + +(self.tgds20());
+                score = score + +(self.tgds21()) + +(self.tgds22()) + +(self.tgds23()) + +(self.tgds24()) + +(self.tgds25());
+                score = score + +(self.tgds26()) + +(self.tgds27()) + +(self.tgds28()) + +(self.tgds29()) + +(self.tgds30());
                 return score;
         } else {
             return -1;
