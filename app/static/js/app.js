@@ -183,6 +183,18 @@ var viewModel = function() {
             return -1;
         }
     });
+    self.tgdsInterpret = ko.computed(function() {
+        var res = "";
+        if (self.tgdsScore() < 0) {
+            return "ยังสรุปผลไม่ได้ (Uninterpretable)";
+        } else if (self.tgdsScore() >= 0 && self.tgdsScore() <= 12) {
+            return "ปกติ (Normal)";
+        } else if (self.tgdsScore() >= 13 && self.tgdsScore() <= 18) {
+            return "มีความเศร้าเล็กน้อย (Mild depression)";
+        } else {
+            return "มีความเศร้ารุนแรง (Severe)";
+        }
+    })
     self.mmse1_1_chk = ko.observable("");
     self.mmse1_1_cmnt = ko.observable("");
     self.mmse1_2_chk = ko.observable("");

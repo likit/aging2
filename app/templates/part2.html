@@ -749,8 +749,9 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div data-bind="visible: tgdsScore() > -1">
-                        Total score is <span data-bind="text: tgdsScore()"></span>  
+                    <div>
+                        <p data-bind="visible: tgdsScore() > 0">คะแนนรวม = <span data-bind="text: tgdsScore()"></span></p>
+                        <p>แปลผลว่า: <span data-bind="text: tgdsInterpret()"></span></p>
                     </div>
                 </div> <!-- row -->
             </div> <!-- card-content -->
