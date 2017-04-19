@@ -309,13 +309,192 @@ var viewModel = function() {
             return "Not enough data.";
         }
     });
-    self.patientName = ko.observable("");
-    self.patientAge = ko.observable("");
-    self.patientHN = ko.observable("");
-    self.patientAN = ko.observable("");
+    self.pntFirstName = ko.observable("");
+    self.pntLastName = ko.observable("");
+    self.pntAge = ko.observable("");
+    self.pntHN = ko.observable("");
+    self.pntGender = ko.observable("");
+    self.pntNumKids = ko.observable("0");
+    self.pntNumGrndChilds = ko.observable("0");
+    self.checkedPntMother = ko.observable(false);
+    self.checkedPntFather = ko.observable(false);
+    self.checkedPntSpouse = ko.observable(false);
+    self.pntNumFamilyMember = ko.computed(function() {
+        var totalNum = 0;
+        if(self.checkedPntFather() === true) {
+            totalNum += 1;
+        }
+        if(self.checkedPntMother() === true) {
+            totalNum += 1;
+        }
+        if(self.checkedPntSpouse() === true) {
+            totalNum += 1;
+        }
+        totalNum += +(self.pntNumKids());
+        totalNum += +(self.pntNumGrndChilds());
+        return totalNum;
+    });
+    self.pntMaritalStatus = ko.observable("0");
+    self.pntHouse = ko.observable("0");
+    self.pntHouseStory = ko.observable("");
+    self.pntHouse.subscribe(function(newValue) {
+        if(newValue !== '2') {
+            self.pntHouseOtherDetl("");
+        }
+    });
+    self.pntHouseOtherDetl = ko.observable("");
+    self.pntThaiLit = ko.observable("0");
     self.patientDiag = ko.observable("");
-    self.patientAdmitDate = ko.observable("");
-    self.patientDischargedDate = ko.observable("");
+    self.pntAdmittedDate = ko.observable("");
+    self.pntDischargedDate = ko.observable("");
+    self.pntEduLvl = ko.observable("");
+    self.pntEduLvl.subscribe(function(newValue) {
+        if(newValue !== '5') {
+            self.pntEduLvl5Detl("");
+        }
+    });
+    self.pntEduLvl5Detl = ko.observable("");
+    self.pntJob = ko.observable("");
+    self.pntJob.subscribe(function(newValue) {
+        if(newValue !== '4') {
+            self.pntJobOther("");
+        }
+    });
+    self.pntJobOther = ko.observable("");
+    self.pntIncome = ko.observable("");
+    self.pntHealthProblemDiabetes = ko.observable("");
+    self.pntHealthProblemHypertension = ko.observable("");
+    self.pntHealthProblemHyperlipidemia = ko.observable("");
+    self.pntHealthProblemHeart = ko.observable("");
+    self.pntHealthProblemHeart.subscribe(function(newValue) {
+        if(newValue === "") {
+            self.pntHealthProblemHeartDetl("");
+        }
+    });
+    self.pntHealthProblemHeartDetl = ko.observable("");
+    self.pntHealthProblemArthritis = ko.observable("");
+    self.pntHealthProblemArthritisDetl = ko.observable("");
+    self.pntHealthProblemArthritis.subscribe(function(newValue) {
+        if(newValue === "") {
+            self.pntHealthProblemArthritisDetl("");
+        }
+    });
+    self.pntHealthProblemParalysis = ko.observable("");
+    self.pntHealthProblemHemo = ko.observable("");
+    self.pntHealthProblemRenal = ko.observable("");
+    self.pntHealthProblemAsthma = ko.observable("");
+    self.pntHealthProblemUrine = ko.observable("");
+    self.pntHealthProblemMemory = ko.observable("");
+    self.pntHealthProblemFatigue = ko.observable("");
+    self.pntHealthProblemInsomnia = ko.observable("");
+    self.pntHealthProblemSwollenFeet = ko.observable("");
+    self.pntHealthProblemCancer = ko.observable("");
+    self.pntHealthProblemCancer.subscribe(function(newValue) {
+        if(newValue === "") {
+            self.pntHealthProblemCancerDetl("");
+        }
+    });
+    self.pntHealthProblemCancerDetl = ko.observable("");
+    self.pntHealthProblemOperation = ko.observable("");
+    self.pntHealthProblemOperationDetl = ko.observable("");
+    self.pntHealthProblemOperation.subscribe(function(newValue) {
+        if(newValue === "") {
+            self.pntHealthProblemOperationDetl("");
+        }
+    });
+    self.pntHealthProblemOperation.subscribe(function(newValue) {
+        if(newValue === "") {
+            self.pntHealthProblemOperationDate("");
+        }
+    });
+    self.pntHealthProblemOperationDetlDate = ko.observable("");
+    self.pntDentalHealthProblem = ko.observable("");
+    self.pntDentalPain = ko.observable(false);
+    self.pntDentalBleeding = ko.observable(false);
+    self.pntDentalWound = ko.observable(false);
+    self.pntTeeth = ko.observable("");
+    self.pntChewing = ko.observable("");
+    self.pntLastAdmittedDis = ko.observable("");
+    self.pntLastAdmittedDis.subscribe(function(newValue) {
+        if(newValue === "") {
+            self.pntLastAdmittedDate("");
+        }
+    });
+    self.pntLastAdmittedDate = ko.observable("");
+    self.pntBoneFracture = ko.observable(false);
+    self.pntBoneFracture.subscribe(function(newValue) {
+        if(newValue === false) {
+            self.pntBoneFractureDate(""); // clear bone fracture date
+            self.pntBoneFractureCause("");
+            self.pntBoneFractureCauseDetl("");
+        }
+    });
+    self.pntBoneFractureDate = ko.observable("");
+    self.pntBoneFractureCause = ko.observable("");
+    self.pntBoneFractureCause.subscribe(function(newValue) {
+        if(newValue==="1") {
+            self.pntBoneFractureCauseDetl("");
+        }
+    });
+    self.pntBoneFractureCauseDetl = ko.observable("");
+    self.pntBoneFractureLoc = ko.observable("");
+    self.pntBoneFractureLocDetl = ko.observable("");
+    self.pntXRayFracture = ko.observable("");
+    self.pntHaveGlasses = ko.observable("");
+    self.pntHaveHearingAid = ko.observable("");
+    self.pntHaveCane = ko.observable("");
+    self.pntHaveDenture = ko.observable("");
+    self.pntHaveWalkingFr = ko.observable("");
+    self.pntHaveUrineCatheter = ko.observable("");
+    self.pntHaveWheelChair = ko.observable("");
+    self.pntEyeSightNear = ko.observable("");
+    self.pntEyeSightFar = ko.observable("");
+    self.pntHearing = ko.observable("");
+    self.pntRecvOtherMed = ko.observable("");
+    self.pntRecvCalcium = ko.observable("");
+    self.pntRecvVitamin = ko.observable("");
+    self.pntRecvHerbalDrug = ko.observable("");
+    self.pntRecvPsychoDrug = ko.observable("");
+    self.pntRecvAspirin = ko.observable("");
+    self.pntRecvNSAID = ko.observable("");
+    self.pntRecvHeartDrug = ko.observable("");
+    self.pntRecvAntihyperlipidemia = ko.observable("");
+    self.pntRecvAntihypertension = ko.observable("");
+    self.pntRecvAntidiabetes = ko.observable("");
+    self.pntRecvAnticholinergics = ko.observable("");
+    self.pntRecvAntibiotics = ko.observable("");
+
+    self.pntAdmittedWithPain = ko.observable(false);
+    self.pntAdmittedWithPainLoc = ko.observable("");
+    self.pntAdmittedWithPainDeg = ko.observable("");
+    self.pntAdmittedWithDelirium = ko.observable(false);
+    self.pntAdmittedWithChoking = ko.observable(false);
+    self.pntAdmittedWithDisuria = ko.observable(false);
+    self.pntAdmittedWithFatigue = ko.observable(false);
+    self.pntAdmittedWithInsomnia = ko.observable(false);
+    self.pntAdmittedWithSwollenFeet = ko.observable(false);
+    self.pntAdmittedWithConstipation = ko.observable(false);
+    self.pntAdmittedWithOtherCondition = ko.observable("");
+    
+    self.pntDischargedWithPain = ko.observable(false);
+    self.pntDischargedWithPainLoc = ko.observable("");
+    self.pntDischargedWithPainDeg = ko.observable("");
+    self.pntDischargedWithDelirium = ko.observable(false);
+    self.pntDischargedWithChoking = ko.observable(false);
+    self.pntDischargedWithDisuria = ko.observable(false);
+    self.pntDischargedWithFatigue = ko.observable(false);
+    self.pntDischargedWithInsomnia = ko.observable(false);
+    self.pntDischargedWithSwollenFeet = ko.observable(false);
+    self.pntDischargedWithConstipation = ko.observable(false);
+    self.pntDischargedWithOtherCondition = ko.observable("");
+    self.pntDischargedWithDeath = ko.observable(false);
+
+    self.pntAdmittedWithADLLevel = ko.observable("");
+    self.pntDischargedWithADLLevel = ko.observable("");
+
+    self.pntAdmittedBodyWeight = ko.observable("");
+    self.pntDischargedBodyWeight = ko.observable("");
+
     self.lab1_1 = ko.observable("");
     self.lab1_2 = ko.observable("");
     self.lab1_3 = ko.observable("");

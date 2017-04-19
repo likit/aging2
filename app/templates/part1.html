@@ -131,6 +131,1149 @@
                         <li class="collection-item">ส่วนที่ 2 แบบประเมินผลการรักษาผู้ป่วยสูงอายุภาวะสมองเสื่อม</li>
                     </ul>
                 </p>
+                <h6>ข้อมูลทั่วไปของผู้ป่วย</h6>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="pntHN">HN/AN</label>
+                        <input type="text" id="pntHN" data-bind="value: pntHN">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="pntFirstName">ชื่อ</label>
+                        <input type="text" id="pntFirstName" data-bind="value: pntFirstName">
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="pntLastName">นามสกุล</label>
+                        <input type="text" id="pntLastName" data-bind="value: pntLastName">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="pntAge">อายุ</label>
+                        <input type="text" id="pntAge" data-bind="value: pntAge">
+                    </div>
+                    <div class="input-field col">
+                        <input type="radio" id="pntGenderMale" class="with-gap" name="pntGender" value="1"
+                            data-bind="checked: pntGender"/>
+                        <label for="pntGenderMale">ชาย</label>
+                        <input type="radio" id="pntGenderFemale" class="with-gap" name="pntGender" value="0"
+                            data-bind="checked: pntGender"/>
+                        <label for="pntGenderFemale">หญิง</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="pntAdmittedDate">วันที่แรกรับ</label>
+                        <input type="date" id="pntAdmittedDate" class="datepicker" data-bind="value: pntAdmittedDate">
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="pntDischargedDate">วันที่จำหน่าย</label>
+                        <input type="date" id="pntDischargedDate" class="datepicker" data-bind="value: pntDischargedDate">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <span for="pntNumFamilyMember">จำนวนสมาชิกที่อยู่ด้วยกันจริงในบ้าน</span>
+                        <span data-bind="text: pntNumFamilyMember()"></span>
+                    </div>
+                    <div class="input-field col s12">
+                        <p>ประกอบด้วย</p>
+                        <input type="checkbox" id="pntFather" data-bind="checked: checkedPntFather"/>
+                        <label for="pntFather">บิดา</label>
+                        <input type="checkbox" id="pntMother" data-bind="checked: checkedPntMother"/>
+                        <label for="pntMother">มารดา</label>
+                        <input type="checkbox" id="pntSpouse" data-bind="checked: checkedPntSpouse"/>
+                        <label for="pntSpouse">สามี/ภรรยา</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="pntNumKids">จำนวนบุตร</label>
+                        <input type="text" id="pntNumKids" data-bind="value: pntNumKids">
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="pntNumGrndChilds">จำนวนหลาน</label>
+                        <input type="text" id="pntNumGrndChilds" data-bind="value: pntNumGrndChilds">
+                    </div>
+                </div>
+                <div class="row">
+                    <p>สถานภาพสมรส <span data-bind="text: pntMaritalStatus()"></span></p>
+                    <div class="input-field col">
+                        <input type="radio" id="pntMaritalSingle" class="with-gap" name="pntMarital" value="0"
+                            data-bind="checked: pntMaritalStatus"/>
+                        <label for="pntMaritalSingle">โสด</label>
+                        <input type="radio" id="pntMaritalMarried" class="with-gap" name="pntMarital" value="1"
+                            data-bind="checked: pntMaritalStatus"/>
+                        <label for="pntMaritalMarried">คู่</label>
+                        <input type="radio" id="pntMaritalWidow" class="with-gap" name="pntMarital" value="2"
+                            data-bind="checked: pntMaritalStatus"/>
+                        <label for="pntMaritalWidow">หม้าย</label>
+                        <input type="radio" id="pntMaritalDivorce" class="with-gap" name="pntMarital" value="2"
+                            data-bind="checked: pntMaritalStatus"/>
+                        <label for="pntMaritalDivorce">หย่าร้าง/แยก</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <p>ที่อยู่อาศัย <span data-bind="text: pntHouse()"></span></p>
+                    <div class="input-field col">
+                        <input type="radio" id="pntHouseOwn" class="with-gap" name="pntHouse" value="0"
+                            data-bind="checked: pntHouse"/>
+                        <label for="pntHouseKid">บ้านของตนเอง</label>
+                        <input type="radio" id="pntHouseKid" class="with-gap" name="pntHouse" value="1"
+                            data-bind="checked: pntHouse"/>
+                        <label for="pntHouseKid">บ้านของลูกหลาน</label>
+                        <input type="radio" id="pntHouseOther" class="with-gap" name="pntHouse" value="2"
+                            data-bind="checked: pntHouse"/>
+                        <label for="pntHouseOther">อื่นๆ</label>
+                    </div>
+                    <div class="input-field col s4" data-bind="visible: pntHouse() === '2'">
+                        <label for="pntHouseOtherDetl">โปรดระบุ</label>
+                        <input type="text" id="pntHouseOtherDetl" data-bind="value: pntHouseOtherDetl">
+                    </div>
+                    <div class="input-field col s1">
+                        <label for="pntHouseStory">ชั้นที่</label>
+                        <input type="text" id="pntHouseStory" data-bind="value: pntHouseStory">
+                    </div>
+                </div>
+                <div class="row">
+                    <p>ภาษาไทย <span data-bind="text: pntThaiLit()"></span></p>
+                    <div class="input-field col">
+                        <input type="radio" id="pntThaiLitYes" class="with-gap" name="pntThaiLit" value="0"
+                            data-bind="checked: pntThaiLit"/>
+                        <label for="pntThaiLitYes">อ่านออกเขียนได้</label>
+                        <input type="radio" id="pntThaiLitReadOnly" class="with-gap" name="pntThaiLit" value="1"
+                            data-bind="checked: pntThaiLit"/>
+                        <label for="pntThaiLitReadOnly">อ่านได้ เขียนไม่ได้</label>
+                        <input type="radio" id="pntThaiLitNo" class="with-gap" name="pntThaiLit" value="2"
+                            data-bind="checked: pntThaiLit"/>
+                        <label for="pntThaiLitNo">ทั้งอ่านและเขียนไม่ได้เลย</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <p>จบการศึกษาสูงสุด <span data-bind="text: pntEduLvl() + pntEduLvl5Detl()"></span></p>
+                    <div class="input-field col">
+                        <input type="radio" id="pntEduLvlNone" class="with-gap" name="pntEduLvl" value="0"
+                            data-bind="checked: pntEduLvl"/>
+                        <label for="pntEduLvlNone">ไม่ได้เรียนหนังสือเลย</label>
+                        <input type="radio" id="pntEduLvl1" class="with-gap" name="pntEduLvl" value="1"
+                            data-bind="checked: pntEduLvl"/>
+                        <label for="pntEduLvl1">ประถมศึกษาปีที่ 4 หรือต่ำกว่า</label>
+                        <input type="radio" id="pntEduLvl2" class="with-gap" name="pntEduLvl" value="2"
+                            data-bind="checked: pntEduLvl"/>
+                        <label for="pntEduLvl2">ประถมศึกษาตอนปลาย</label>
+                        <input type="radio" id="pntEduLvl3" class="with-gap" name="pntEduLvl" value="3"
+                            data-bind="checked: pntEduLvl"/>
+                        <label for="pntEduLvl3">มัธยมศึกษา อาชีวะ</label>
+                        <input type="radio" id="pntEduLvl4" class="with-gap" name="pntEduLvl" value="4"
+                            data-bind="checked: pntEduLvl"/>
+                        <label for="pntEduLvl4">ปริญญาตรี หรือสูงกว่า</label>
+                        <input type="radio" id="pntEduLvl5" class="with-gap" name="pntEduLvl" value="5"
+                            data-bind="checked: pntEduLvl"/>
+                        <label for="pntEduLvl5">บวชเรียนขณะเป็นพระภิกษุ</label>
+                    </div>
+                    <div class="input-field col s2" data-bind="visible: pntEduLvl()==='5'">
+                        <label for="pntEduLvl5Detl">ถึงขั้นที่</label>
+                        <input type="text" id="pntEduLvl5Detl" data-bind="value: pntEduLvl5Detl">
+                    </div>
+                </div>
+                <div class="row">
+                    <p>อาชีพหลักเดิม <span data-bind="text: pntJob()"></span></p>
+                    <div class="input-field col">
+                        <input type="radio" id="pntJob1" class="with-gap" name="pntJob" value="0"
+                            data-bind="checked: pntJob"/>
+                        <label for="pntJob1">ทำงานบ้าน</label>
+                        <input type="radio" id="pntJob2" class="with-gap" name="pntJob" value="1"
+                            data-bind="checked: pntJob"/>
+                        <label for="pntJob2">รับจ้างแรงงาน</label>
+                        <input type="radio" id="pntJob3" class="with-gap" name="pntJob" value="2"
+                            data-bind="checked: pntJob"/>
+                        <label for="pntJob3">รับจ้างในสำนักงาน</label>
+                        <input type="radio" id="pntJob4" class="with-gap" name="pntJob" value="3"
+                            data-bind="checked: pntJob"/>
+                        <label for="pntJob4">ค้าขาย</label>
+                        <input type="radio" id="pntJob5" class="with-gap" name="pntJob" value="4"
+                            data-bind="checked: pntJob"/>
+                        <label for="pntJob5">อื่นๆ</label>
+                        <div class="input-field col s3" data-bind="visible: pntJob()==='4'">
+                            <label for="pntJobOther">โปรดระบุ</label>
+                            <input type="text" id="pntJobOther" data-bind="value: pntJobOther">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <p>รายได้ครอบครัวเพียงพอต่อการใช้จ่ายประจำของท่านหรือไม่ <span data-bind="text: pntIncome()"></span></p>
+                    <div class="input-field col">
+                        <input type="radio" id="pntIncomeNo" class="with-gap" name="pntIncome" value="0"
+                            data-bind="checked: pntIncome"/>
+                        <label for="pntIncomeNo">ไม่เพียงพอ</label>
+                        <input type="radio" id="pntIncomeYes" class="with-gap" name="pntIncome" value="1"
+                            data-bind="checked: pntIncome"/>
+                        <label for="pntIncomeYes">พอกินพอใช้</label>
+                        <input type="radio" id="pntIncomePlenty" class="with-gap" name="pntIncome" value="2"
+                            data-bind="checked: pntIncome"/>
+                        <label for="pntIncomePlenty">มีเหลือเก็บพอควร</label>
+                        <input type="radio" id="pntIncomeSurplus" class="with-gap" name="pntIncome" value="3"
+                            data-bind="checked: pntIncome"/>
+                        <label for="pntIncomeSurplus">มีเหลือเก็บมากเป็นที่พอใจ</label>
+                    </div>
+                </div>
+                <div class="row">
+                    โรคประจำตัว (ถ้ามี) ใส่หมายเลข 1,2,3.. ข้อที่มีปัญหามากที่สุดและรองลงมา
+                    <div class="input-field col s6">
+                        <label for="pntHealthProblemDiabetes">เบาหวาน</label>
+                        <input type="text" id="pntHealthProblemDiabetes"
+                            data-bind="value: pntHealthProblemDiabetes">
+                        <span data-bind="visible: isNaN(pntHealthProblemDiabetes())">
+                            <font color="red">กรุณาใส่ตัวเลขเท่านั้น</font>
+                        </span>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="pntHealthProblemHypertension">ความดัน</label>
+                        <input type="text" id="pntHealthProblemHypertension"
+                            data-bind="value: pntHealthProblemHypertension">
+                        <span data-bind="visible: isNaN(pntHealthProblemHypertension())">
+                            <font color="red">กรุณาใส่ตัวเลขเท่านั้น</font>
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="pntHealthProblemHyperlipidemia">ไขมันในเลือดสูง</label>
+                        <input type="text" id="pntHealthProblemHyperlipidemia"
+                            data-bind="value: pntHealthProblemHyperlipidemia">
+                        <span data-bind="visible: isNaN(pntHealthProblemHyperlipidemia())">
+                            <font color="red">กรุณาใส่ตัวเลขเท่านั้น</font>
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="pntHealthProblemHeart">หัวใจ</label>
+                        <input type="text" id="pntHealthProblemHeart"
+                            data-bind="value: pntHealthProblemHeart">
+                        <span data-bind="visible: isNaN(pntHealthProblemHeart())">
+                            <font color="red">กรุณาใส่ตัวเลขเท่านั้น</font>
+                        </span>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="pntHealthProblemHeartDetl">โปรดระบุ</label>
+                        <input type="text" id="pntHealthProblemHeartDetl"
+                            data-bind="value: pntHealthProblemHeartDetl,
+                            enable: pntHealthProblemHeart() !== ''
+                            && isNaN(pntHealthProblemHeart()) === false">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="pntHealthProblemArthritis">ปวดข้อ</label>
+                        <input type="text" id="pntHealthProblemArthritis"
+                            data-bind="value: pntHealthProblemArthritis">
+                        <span data-bind="visible: isNaN(pntHealthProblemArthritis())">
+                            <font color="red">กรุณาใส่ตัวเลขเท่านั้น</font>
+                        </span>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="pntHealthProblemArthritisDetl">โปรดระบุตำแหน่ง</label>
+                        <input type="text" id="pntHealthProblemArthritisDetl"
+                            data-bind="value: pntHealthProblemArthritisDetl,
+                            enable: pntHealthProblemArthritis() !== ''
+                            && isNaN(pntHealthProblemArthritis()) === false">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="pntHealthProblemParalysis">อัมพาต</label>
+                        <input type="text" id="pntHealthProblemParalysis"
+                            data-bind="value: pntHealthProblemParalysis">
+                        <span data-bind="visible: isNaN(pntHealthProblemParalysis())">
+                            <font color="red">กรุณาใส่ตัวเลขเท่านั้น</font>
+                        </span>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="pntHealthProblemHemo">โรคเลือด</label>
+                        <input type="text" id="pntHealthProblemHemo"
+                            data-bind="value: pntHealthProblemHemo">
+                        <span data-bind="visible: isNaN(pntHealthProblemHemo())">
+                            <font color="red">กรุณาใส่ตัวเลขเท่านั้น</font>
+                        </span>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="pntHealthProblemRenal">โรคไต</label>
+                        <input type="text" id="pntHealthProblemRenal"
+                            data-bind="value: pntHealthProblemRenal">
+                        <span data-bind="visible: isNaN(pntHealthProblemRenal())">
+                            <font color="red">กรุณาใส่ตัวเลขเท่านั้น</font>
+                        </span>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="pntHealthProblemAsthma">โรคปอด/หอบหืด*</label>
+                        <input type="text" id="pntHealthProblemAsthma"
+                            data-bind="value: pntHealthProblemAsthma">
+                        <span data-bind="visible: isNaN(pntHealthProblemAsthma())">
+                            <font color="red">กรุณาใส่ตัวเลขเท่านั้น</font>
+                        </span>
+                        <p>*มีอาการไอแน่นหน้าอกหรือหอบเหนื่อยเมื่ออากาศเปลี่ยน, มีเสมหะตลอดวันมากกว่า 2 ช้อนโต๊ะ</p>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="pntHealthProblemUrine">ปัสสาวะลำบาก</label>
+                        <input type="text" id="pntHealthProblemUrine"
+                            data-bind="value: pntHealthProblemUrine">
+                        <span data-bind="visible: isNaN(pntHealthProblemUrine())">
+                            <font color="red">กรุณาใส่ตัวเลขเท่านั้น</font>
+                        </span>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="pntHealthProblemMemory">ความจำหลงลืม</label>
+                        <input type="text" id="pntHealthProblemMemory"
+                            data-bind="value: pntHealthProblemMemory">
+                        <span data-bind="visible: isNaN(pntHealthProblemMemory())">
+                            <font color="red">กรุณาใส่ตัวเลขเท่านั้น</font>
+                        </span>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="pntHealthProblemFatigue">เหนื่อยง่าย</label>
+                        <input type="text" id="pntHealthProblemFatigue"
+                            data-bind="value: pntHealthProblemFatigue">
+                        <span data-bind="visible: isNaN(pntHealthProblemFatigue())">
+                            <font color="red">กรุณาใส่ตัวเลขเท่านั้น</font>
+                        </span>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="pntHealthProblemInsomnia">นอนไม่หลับ</label>
+                        <input type="text" id="pntHealthProblemInsomnia"
+                            data-bind="value: pntHealthProblemInsomnia">
+                        <span data-bind="visible: isNaN(pntHealthProblemInsomnia())">
+                            <font color="red">กรุณาใส่ตัวเลขเท่านั้น</font>
+                        </span>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="pntHealthProblemSwollenFeet">เท้าบวม</label>
+                        <input type="text" id="pntHealthProblemSwollenFeet"
+                            data-bind="value: pntHealthProblemSwollenFeet">
+                        <span data-bind="visible: isNaN(pntHealthProblemSwollenFeet())">
+                            <font color="red">กรุณาใส่ตัวเลขเท่านั้น</font>
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="pntHealthProblemCancer">มะเร็ง</label>
+                        <input type="text" id="pntHealthProblemCancer"
+                            data-bind="value: pntHealthProblemCancer">
+                        <span data-bind="visible: isNaN(pntHealthProblemCancer())">
+                            <font color="red">กรุณาใส่ตัวเลขเท่านั้น</font>
+                        </span>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="pntHealthProblemCancerDetl">โปรดระบุตำแหน่ง</label>
+                        <input type="text" id="pntHealthProblemCancerDetl"
+                            data-bind="value: pntHealthProblemCancerDetl,
+                            enable: pntHealthProblemCancer() !== ''
+                            && isNaN(pntHealthProblemCancer()) === false">
+                        <span data-bind="visible: isNaN(pntHealthProblemCancerDetl())">
+                            <font color="red">กรุณาใส่ตัวเลขเท่านั้น</font>
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="pntHealthProblemOperation">ประวัติการผ่าตัด</label>
+                        <input type="text" id="pntHealthProblemOperation"
+                            data-bind="value: pntHealthProblemOperation">
+                        <span data-bind="visible: isNaN(pntHealthProblemOperation())">
+                            <font color="red">กรุณาใส่ตัวเลขเท่านั้น</font>
+                        </span>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="pntHealthProblemOperationDetl">โปรดระบุตำแหน่ง</label>
+                        <input type="text" id="pntHealthProblemOperationDetl"
+                            data-bind="value: pntHealthProblemOperationDetl,
+                            enable: pntHealthProblemOperation() !== ''
+                            && isNaN(pntHealthProblemOperation()) === false">
+                        <span data-bind="visible: isNaN(pntHealthProblemOperationDetl())">
+                            <font color="red">กรุณาใส่ตัวเลขเท่านั้น</font>
+                        </span>
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="pntHealthProblemOperationDetlDate">เมื่อ</label>
+                        <input type="date" id="pntHealthProblemOperationDetlDate"
+                            class="datepicker" data-bind="value: pntHealthProblemOperationDetlDate,
+                            enable: isNaN(pntHealthProblemOperation()) === false &&
+                            pntHealthProblemOperation() !== ''">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="pntDentalHealthProblem">โรคในช่องปากคือ</label>
+                        <input type="text" id="pntDentalHealthProblem"
+                            data-bind="value: pntDentalHealthProblem">
+                    </div>
+                </div>
+                <div class="row">
+                    <p>และมีอาการต่อไปนี้</p>
+                    <div class="input-field col s4">
+                        <input type="checkbox" id="dentalPain" data-bind="checked: pntDentalPain"/>
+                        <label for="dentalPain">ปวดฟัน</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input type="checkbox" id="dentalBleeding" data-bind="checked: pntDentalBleeding"/>
+                        <label for="dentalBleeding">แปรงฟันมีเลือดออก</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input type="checkbox" id="dentalWound" data-bind="checked: pntDentalWound"/>
+                        <label for="dentalWound">เจ็บแผลในปากเรื้อรัง</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <p>จำนวนฟันที่เหลือ <span data-bind="text: pntTeeth()"></span></p>
+                    <div class="input-field col s4">
+                        <input type="radio" id="teethNone" value="0"
+                            data-bind="checked: pntTeeth" class="with-gap"/>
+                        <label for="teethNone">ไม่มีเลย</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input type="radio" id="teethFew" value="1"
+                            data-bind="checked: pntTeeth" class="with-gap"/>
+                        <label for="teethFew">น้อยกว่า 3 คู่สบ</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input type="radio" id="teethMany" value="2"
+                            data-bind="checked: pntTeeth" class="with-gap"/>
+                        <label for="teethMany">เท่ากับหรือมากกว่า 3 คู่สบ</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <p>การเคี้ยวอาหาร<span data-bind="text: pntChewing()"></span></p>
+                    <div class="input-field col s4">
+                        <input type="radio" id="chewingOk" data-bind="checked: pntChewing"
+                            value="0" class="with-gap"/>
+                        <label for="chewingOk">ใช้เคี้ยวอาหารทั่วไปได้</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input type="radio" id="chewingSoft" data-bind="checked: pntChewing"
+                            value="1" class="with-gap"/>
+                        <label for="chewingSoft">กินได้แต่อาหารอ่อน</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input type="radio" id="chewingTube" data-bind="checked: pntChewing"
+                            value="2" class="with-gap"/>
+                        <label for="chewingTube">ให้อาหารทางสายยาง</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s8">
+                        <label for="pntLastAdmittedDis">เข้ารับการรักษาในโรงพยาบาลครั้งล่าสุดด้วยโรค</label>
+                        <input type="text" id="pntLastAdmittedDis"
+                            data-bind="value: pntLastAdmittedDis">
+                    </div>
+                    <div class="input-field col s4">
+                        <label for="pntLastAdmittedDate">เมื่อ</label>
+                        <input type="date" class="datepicker" id="pntLastAdmittedDate"
+                            data-bind="value: pntLastAdmittedDate,
+                            enable: pntLastAdmittedDis() !== ''">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s8">
+                        <input type="checkbox" id="pntBoneFracture"
+                            data-bind="checked: pntBoneFracture"/>
+                        <label for="pntBoneFracture">เคยกระดูกหัก</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <label for="pntBoneFractureDate">เมื่อ</label>
+                        <input type="date" class="datepicker" id="pntBoneFractureDate"
+                            data-bind="value: pntBoneFractureDate,
+                                enable: pntBoneFracture() === true">
+                    </div>
+                </div>
+                <div class="row" data-bind="visible: pntBoneFracture() === true">
+                    <p>สาเหตุที่หัก</p>
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <input type="radio" id="fractureAccident" data-bind="checked: pntBoneFractureCause"
+                                value="0" class="with-gap"/>
+                            <label for="fractureAccident">อุบัติเหตุ</label>
+                        </div>
+                        <div class="input-field col s8">
+                            <label for="pntBoneFractureCauseDetl">โปรดระบุ</label>
+                            <input type="text" id="pntBoneFractureCauseDetl"
+                                data-bind="value: pntBoneFractureCauseDetl,
+                                enable: pntBoneFractureCause() === '0'">
+                        </div>
+                        <div class="input-field col s4">
+                            <input type="radio" id="fractureFall" data-bind="checked: pntBoneFractureCause"
+                                value="1" class="with-gap"/>
+                            <label for="fractureFall">ล้ม</label>
+                        </div>
+                    </div>
+                    <p>โดยหักที่</p>
+                    <div class="row">
+                        <div class="input-field col">
+                            <input type="radio" id="fractureWrist" data-bind="checked: pntBoneFractureLoc"
+                                value="0" class="with-gap"/>
+                            <label for="fractureWrist">ข้อมือ</label>
+                        </div>
+                        <div class="input-field col">
+                            <input type="radio" id="fractureHip" data-bind="checked: pntBoneFractureLoc"
+                                value="1" class="with-gap"/>
+                            <label for="fractureHip">สะโพก</label>
+                        </div>
+                        <div class="input-field col">
+                            <input type="radio" id="fractureSpine" data-bind="checked: pntBoneFractureLoc"
+                                value="2" class="with-gap"/>
+                            <label for="fractureSpine">กระดูกสันหลัง</label>
+                        </div>
+                        <div class="input-field col">
+                            <input type="radio" id="fractureOther" data-bind="checked: pntBoneFractureLoc"
+                                value="3" class="with-gap"/>
+                            <label for="fractureOther">อื่นๆ</label>
+                        </div>
+                        <div class="input-field col">
+                            <label for="pntBoneFractureLocDetl">โปรดระบุ</label>
+                            <input type="text" id="pntBoneFractureLoc"
+                                data-bind="value: pntBoneFractureLocDetl,
+                                enable: pntBoneFractureLoc() === '3'">
+                        </div>
+                    </div>
+                    <p>เอ็กซ์เรย์ที่รพ.</p>
+                    <div class="row">
+                        <div class="input-field col">
+                            <input type="radio" id="xrayFractureYes" data-bind="checked: pntXRayFracture"
+                                value="0" class="with-gap"/>
+                            <label for="xrayFractureYes">ทำ</label>
+                        </div>
+                        <div class="input-field col">
+                            <input type="radio" id="xrayFractureNo" data-bind="checked: pntXRayFracture"
+                                value="1" class="with-gap"/>
+                            <label for="xrayFractureNo">ไม่ทำ</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <p>อุปกรณ์ส่วนตัว</p>
+                    <div class="input-field col s12">
+                        <table class="striped">
+                            <thead>
+                                <tr>
+                                    <th width="55%">อุปกรณ์</th>
+                                    <th width="15%">ไม่มี</th>
+                                    <th width="15%">มีและใช้อยู่</th>
+                                    <th width="15%">มีแต่ไม่ค่อยได้ใช้ใน ward</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>แว่นตา</td>
+                                    <td>
+                                        <div class="input-field col">
+                                            <input type="radio" id="haveGlassesNo" data-bind="checked: pntHaveGlasses"
+                                                value="0" class="with-gap"/>
+                                            <label for="haveGlassesNo">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-field col">
+                                            <input type="radio" id="haveGlassesYes" data-bind="checked: pntHaveGlasses"
+                                                value="1" class="with-gap"/>
+                                            <label for="haveGlassesYes">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-field col">
+                                            <input type="radio" id="haveGlassesYesButNotUsed" data-bind="checked: pntHaveGlasses"
+                                                value="2" class="with-gap"/>
+                                            <label for="haveGlassesYesButNotUsed">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>เครื่องช่วยฟัง</td>
+                                    <td>
+                                        <div class="input-field col">
+                                            <input type="radio" id="haveHearingAidNo" data-bind="checked: pntHaveHearingAid"
+                                                value="0" class="with-gap"/>
+                                            <label for="haveHearingAidNo">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-field col">
+                                            <input type="radio" id="haveHearingAidYes" data-bind="checked: pntHaveHearingAid"
+                                                value="1" class="with-gap"/>
+                                            <label for="haveHearingAidYes">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-field col">
+                                            <input type="radio" id="haveHearingAidYesButNotUsed" data-bind="checked: pntHaveHearingAid"
+                                                value="2" class="with-gap"/>
+                                            <label for="haveHearingAidYesButNotUsed">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>ฟันเทียม</td>
+                                    <td>
+                                        <div class="input-field col">
+                                            <input type="radio" id="haveDentureNo" data-bind="checked: pntHaveDenture"
+                                                value="0" class="with-gap"/>
+                                            <label for="haveDentureNo">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-field col">
+                                            <input type="radio" id="haveDentureYes" data-bind="checked: pntHaveDenture"
+                                                value="1" class="with-gap"/>
+                                            <label for="haveDentureYes">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-field col">
+                                            <input type="radio" id="haveDentureYesButNotUsed" data-bind="checked: pntHaveDenture"
+                                                value="2" class="with-gap"/>
+                                            <label for="haveDentureYesButNotUsed">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>ไม้เท้า</td>
+                                    <td>
+                                        <div class="input-field col">
+                                            <input type="radio" id="haveCaneNo" data-bind="checked: pntHaveCane"
+                                                value="0" class="with-gap"/>
+                                            <label for="haveCaneNo">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-field col">
+                                            <input type="radio" id="haveCaneYes" data-bind="checked: pntHaveCane"
+                                                value="1" class="with-gap"/>
+                                            <label for="haveCaneYes">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-field col">
+                                            <input type="radio" id="haveCaneYesButNotUsed" data-bind="checked: pntHaveCane"
+                                                value="2" class="with-gap"/>
+                                            <label for="haveCaneYesButNotUsed">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Walking frame</td>
+                                    <td>
+                                        <div class="input-field col">
+                                            <input type="radio" id="haveWalkingFrNo" data-bind="checked: pntHaveWalkingFr"
+                                                value="0" class="with-gap"/>
+                                            <label for="haveWalkingFrNo">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-field col">
+                                            <input type="radio" id="haveWalkingFrYes" data-bind="checked: pntHaveWalkingFr"
+                                                value="1" class="with-gap"/>
+                                            <label for="haveWalkingFrYes">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-field col">
+                                            <input type="radio" id="haveWalkingFrYesButNotUsed" data-bind="checked: pntHaveWalkingFr"
+                                                value="2" class="with-gap"/>
+                                            <label for="haveWalkingFrYesButNotUsed">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>รถเข็น</td>
+                                    <td>
+                                        <div class="input-field col">
+                                            <input type="radio" id="haveWheelChairNo" data-bind="checked: pntHaveWheelChair"
+                                                value="0" class="with-gap"/>
+                                            <label for="haveWheelChairNo">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-field col">
+                                            <input type="radio" id="haveWheelChairYes" data-bind="checked: pntHaveWheelChair"
+                                                value="1" class="with-gap"/>
+                                            <label for="haveWheelChairYes">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-field col">
+                                            <input type="radio" id="haveWheelChairYesButNotUsed" data-bind="checked: pntHaveWheelChair"
+                                                value="2" class="with-gap"/>
+                                            <label for="haveWheelChairYesButNotUsed">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>สายปัสสาวะ</td>
+                                    <td>
+                                        <div class="input-field col">
+                                            <input type="radio" id="haveUrineCatheterNo" data-bind="checked: pntHaveUrineCatheter"
+                                                value="0" class="with-gap"/>
+                                            <label for="haveUrineCatheterNo">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-field col">
+                                            <input type="radio" id="haveUrineCatheterYes" data-bind="checked: pntHaveUrineCatheter"
+                                                value="1" class="with-gap"/>
+                                            <label for="haveUrineCatheterYes">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-field col">
+                                            <input type="radio" id="haveUrineCatheterYesButNotUsed" data-bind="checked: pntHaveUrineCatheter"
+                                                value="2" class="with-gap" disabled/>
+                                            <label for="haveUrineCatheterYesButNotUsed">&nbsp;</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <p>การมองเห็นระยะใกล้ (ดูหนังสือ)</p>
+                    <div class="input-field col">
+                        <input type="radio" id="GlassesNotRequired" data-bind="checked: pntEyeSightNear"
+                            value="0" class="with-gap"/>
+                        <label for="GlassesNotRequired">เห็นได้ดีไม่ต้องใช้แว่นตา</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="radio" id="GlassesRequired" data-bind="checked: pntEyeSightNear"
+                            value="1" class="with-gap"/>
+                        <label for="GlassesRequired">เห็นได้ดีต่อเมื่อใส่แว่นตา</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="radio" id="difficultWithGlasses" data-bind="checked: pntEyeSightNear"
+                            value="2" class="with-gap"/>
+                        <label for="difficultWithGlasses">ดูลำบาก แม้สวมแว่นตา</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <p>การมองเห็นระยะไกล (การข้ามถนน)</p>
+                    <div class="input-field col">
+                        <input type="radio" id="GlassesNotRequiredFar" data-bind="checked: pntEyeSightFar"
+                            value="0" class="with-gap"/>
+                        <label for="GlassesNotRequiredFar">มองเห็นหน้าคนที่อยู่คนละฝั่งถนนได้ ไม่ต้องใช้แว่นตา</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="radio" id="GlassesRequiredFar" data-bind="checked: pntEyeSightFar"
+                            value="1" class="with-gap"/>
+                        <label for="GlassesRequiredFar">มองเห็นหน้าคนที่อยู่คนละฝั่งถนนได้ ต้องสวมแว่นตา</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="radio" id="difficultWithGlassesFar" data-bind="checked: pntEyeSightFar"
+                            value="2" class="with-gap"/>
+                        <label for="difficultWithGlassesFar">มองไกลไม่ชัด แม้สวมแว่นตา</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <p>การได้ยิน</p>
+                    <div class="input-field col">
+                        <input type="radio" id="hearingGood" data-bind="checked: pntHearing"
+                            value="0" class="with-gap"/>
+                        <label for="hearingGood">ได้ยินเสียงพูดชัดขณะพูดคุยกัน</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="radio" id="hearingFairyWell" data-bind="checked: pntHearing"
+                            value="1" class="with-gap"/>
+                        <label for="hearingFairyWell">ได้ยินเสียงเมื่อตะโกน</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="radio" id="hearingAidNeeded" data-bind="checked: pntHearing"
+                            value="2" class="with-gap"/>
+                        <label for="hearingAidNeeded">ได้ยินเสียงโดยใช้เครื่องช่วยฟัง</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="radio" id="deaf" data-bind="checked: pntHearing"
+                            value="3" class="with-gap"/>
+                        <label for="deaf">ไม่ได้ยินเลย</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <p>ยาที่ได้รับใน ward</p>
+                    <table class="striped">
+                        <thead>
+                            <tr>
+                                <th>ประเภท</th>
+                                <th>ไม่มี</th>
+                                <th>มี</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ยา antibiotics</td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="antibioticsNo" data-bind="checked: pntRecvAntibiotics"
+                                            value="0" class="with-gap"/>
+                                        <label for="antibioticsNo">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="antibioticsYes" data-bind="checked: pntRecvAntibiotics"
+                                            value="1" class="with-gap"/>
+                                        <label for="antibioticsYes">&nbsp;</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ยากลุ่ม anticholinergics (เช่น antihistamine, ยาคลายกล้ามเนื้อ, amitriptyline, nortriptyline, buscopan, urispas เป็นต้น)
+                                </td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="anticholinergicsNo" data-bind="checked: pntRecvAnticholinergics"
+                                            value="0" class="with-gap"/>
+                                        <label for="anticholinergicsNo">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="anticholinergicsYes" data-bind="checked: pntRecvAnticholinergics"
+                                            value="1" class="with-gap"/>
+                                        <label for="anticholinergicsYes">&nbsp;</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ยาลดความดันโลหิต</td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="antihypertensionNo" data-bind="checked: pntRecvAntihypertension"
+                                            value="0" class="with-gap"/>
+                                        <label for="antihypertensionNo">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="antihypertensionYes" data-bind="checked: pntRecvAntihypertension"
+                                            value="1" class="with-gap"/>
+                                        <label for="antihypertensionYes">&nbsp;</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ยาเบาหวาน</td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="antidiabetesNo" data-bind="checked: pntRecvAntidiabetes"
+                                            value="0" class="with-gap"/>
+                                        <label for="antidiabetesNo">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="antidiabetesYes" data-bind="checked: pntRecvAntidiabetes"
+                                            value="1" class="with-gap"/>
+                                        <label for="antidiabetesYes">&nbsp;</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ยาลดไขมันในเลือด</td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="antihyperlipidemiaNo" data-bind="checked: pntRecvAntihyperlipidemia"
+                                            value="0" class="with-gap"/>
+                                        <label for="antihyperlipidemiaNo">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="antihyperlipidemiaYes" data-bind="checked: pntRecvAntihyperlipidemia"
+                                            value="1" class="with-gap"/>
+                                        <label for="antihyperlipidemiaYes">&nbsp;</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ยารักษาโรคหัวใจ</td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="heartDrugNo" data-bind="checked: pntRecvHeartDrug"
+                                            value="0" class="with-gap"/>
+                                        <label for="heartDrugNo">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="heartDrugYes" data-bind="checked: pntRecvHeartDrug"
+                                            value="1" class="with-gap"/>
+                                        <label for="heartDrugYes">&nbsp;</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ยารักษาอาการปวดข้อ (NSAID)</td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="nsaidNo" data-bind="checked: pntRecvNSAID"
+                                            value="0" class="with-gap"/>
+                                        <label for="nsaidNo">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="nsaidYes" data-bind="checked: pntRecvNSAID"
+                                            value="1" class="with-gap"/>
+                                        <label for="nsaidYes">&nbsp;</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ยา Aspirin หรือ PLAVIX</td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="aspirinNo" data-bind="checked: pntRecvAspirin"
+                                            value="0" class="with-gap"/>
+                                        <label for="aspirinNo">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="aspirinYes" data-bind="checked: pntRecvAspirin"
+                                            value="1" class="with-gap"/>
+                                        <label for="aspirinYes">&nbsp;</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ยาระบบจิตประสาท</td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="psychoDrugNo" data-bind="checked: pntRecvPsychoDrug"
+                                            value="0" class="with-gap"/>
+                                        <label for="psychoDrugNo">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="psychoDrugYes" data-bind="checked: pntRecvPsychoDrug"
+                                            value="1" class="with-gap"/>
+                                        <label for="psychoDrugYes">&nbsp;</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ยาลูกกลอน</td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="herbalDrugNo" data-bind="checked: pntRecvHerbalDrug"
+                                            value="0" class="with-gap"/>
+                                        <label for="herbalDrugNo">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="herbalDrugYes" data-bind="checked: pntRecvHerbalDrug"
+                                            value="1" class="with-gap"/>
+                                        <label for="herbalDrugYes">&nbsp;</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ยาวิตามิน</td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="vitaminNo" data-bind="checked: pntRecvVitamin"
+                                            value="0" class="with-gap"/>
+                                        <label for="vitaminNo">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="vitaminYes" data-bind="checked: pntRecvVitamin"
+                                            value="1" class="with-gap"/>
+                                        <label for="vitaminYes">&nbsp;</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ยาประเภทแคลเซี่ยม</td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="calciumNo" data-bind="checked: pntRecvCalcium"
+                                            value="0" class="with-gap"/>
+                                        <label for="calciumNo">&nbsp;</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-field col">
+                                        <input type="radio" id="calciumYes" data-bind="checked: pntRecvCalcium"
+                                            value="1" class="with-gap"/>
+                                        <label for="calciumYes">&nbsp;</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <div class="input-field col">
+                                        <input type="text" id="otherMed" data-bind="value: pntRecvOtherMed"/>
+                                        <label for="otherMed">ยาอื่นๆ โปรดระบุ</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <p>อาการแรกรับ</p>
+                    <div class="input-field col">
+                        <input type="checkbox" id="admittedWithPain"
+                            data-bind="checked: pntAdmittedWithPain"/>
+                        <label for="admittedWithPain">ปวด</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="text" id="admittedWithPainLoc"
+                            data-bind="value: pntAdmittedWithPainLoc, enable: pntAdmittedWithPain() === true"/>
+                        <label for="admittedWithPainLoc">ตำแหน่ง</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="text" id="admittedWithPainDeg" placeholder="visual analog scale"
+                            data-bind="value: pntAdmittedWithPainDeg, enable: pntAdmittedWithPain() === true"/>
+                        <label for="admittedWithPainDeg">ระดับความรุนแรง</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="checkbox" id="admittedWithDelirium"
+                            data-bind="checked: pntAdmittedWithDelirium"/>
+                        <label for="admittedWithDelirium">อาการของ delirium</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="checkbox" id="admittedWithChoking"
+                            data-bind="checked: pntAdmittedWithChoking"/>
+                        <label for="admittedWithChoking">อาการสำลักอาหาร</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="checkbox" id="admittedWithDisuria"
+                            data-bind="checked: pntAdmittedWithDisuria"/>
+                        <label for="admittedWithDisuria">อาการปัสสาวะลำบาก</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="checkbox" id="admittedWithFatigue"
+                            data-bind="checked: pntAdmittedWithFatigue"/>
+                        <label for="admittedWithFatigue">อาการเหนื่อยง่าย</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="checkbox" id="admittedWithInsomnia"
+                            data-bind="checked: pntAdmittedWithInsomnia"/>
+                        <label for="admittedWithInsomnia">นอนไม่หลับ</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="checkbox" id="admittedWithSwollenFeet"
+                            data-bind="checked: pntAdmittedWithSwollenFeet"/>
+                        <label for="admittedWithSwollenFeet">เท้าบวม</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="checkbox" id="admittedWithConstipation"
+                            data-bind="checked: pntAdmittedWithConstipation"/>
+                        <label for="admittedWithConstipation">ท้องผูก</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="text" id="admittedWithOtherCondition"
+                            data-bind="value: pntAdmittedWithOtherCondition"/>
+                        <label for="admittedWithOtherCondition">อื่นๆ</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <p>อาการเมื่อตอนกลับบ้าน</p>
+                    <div class="input-field col">
+                        <input type="checkbox" id="dischargedWithPain"
+                            data-bind="checked: pntDischargedWithPain"/>
+                        <label for="dischargedWithPain">ปวด</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="text" id="dischargedWithPainLoc"
+                            data-bind="value: pntDischargedWithPainLoc, enable: pntDischargedWithPain() === true"/>
+                        <label for="dischargedWithPainLoc">ตำแหน่ง</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="text" id="dischargedWithPainDeg" placeholder="visual analog scale"
+                            data-bind="value: pntDischargedWithPainDeg, enable: pntDischargedWithPain() === true"/>
+                        <label for="dischargedWithPainDeg">ระดับความรุนแรง</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="checkbox" id="dischargedWithDelirium"
+                            data-bind="checked: pntDischargedWithDelirium"/>
+                        <label for="dischargedWithDelirium">อาการของ delirium</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="checkbox" id="dischargedWithChoking"
+                            data-bind="checked: pntDischargedWithChoking"/>
+                        <label for="dischargedWithChoking">อาการสำลักอาหาร</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="checkbox" id="dischargedWithDisuria"
+                            data-bind="checked: pntDischargedWithDisuria"/>
+                        <label for="dischargedWithDisuria">อาการปัสสาวะลำบาก</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="checkbox" id="dischargedWithFatigue"
+                            data-bind="checked: pntDischargedWithFatigue"/>
+                        <label for="dischargedWithFatigue">อาการเหนื่อยง่าย</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="checkbox" id="dischargedWithInsomnia"
+                            data-bind="checked: pntDischargedWithInsomnia"/>
+                        <label for="dischargedWithInsomnia">นอนไม่หลับ</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="checkbox" id="dischargedWithSwollenFeet"
+                            data-bind="checked: pntDischargedWithSwollenFeet"/>
+                        <label for="dischargedWithSwollenFeet">เท้าบวม</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="checkbox" id="dischargedWithConstipation"
+                            data-bind="checked: pntDischargedWithConstipation"/>
+                        <label for="dischargedWithConstipation">ท้องผูก</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="text" id="dischargedWithOtherCondition"
+                            data-bind="value: pntDischargedWithOtherCondition"/>
+                        <label for="dischargedWithOtherCondition">อื่นๆ</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="checkbox" id="dischargedWithDeath"
+                            data-bind="checked: pntDischargedWithDeath"/>
+                        <label for="dischargedWithDeath">เสียชีวิต</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <p>ADL</p>
+                    <div class="input-field col">
+                        <input type="text" id="admittedWithADLLevel" placeholder="ระดับคะแนน"
+                            data-bind="value: pntAdmittedWithADLLevel"/>
+                        <label for="admittedWithADLLevel">ก่อนการเจ็บป่วยครั้งนี้</label>
+                    </div>
+                    <div class="input-field col">
+                        <input type="text" id="dischargedWithADLLevel" placeholder="ระดับคะแนน"
+                            data-bind="value: pntDischargedWithADLLevel"/>
+                        <label for="dischargedWithADLLevel">ก่อนกลับบ้านครั้งนี้</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <p>น้ำหนักตัว</p>
+                    <div class="input-field col">
+                        <input type="text" id="admittedBodyWeight"
+                            data-bind="value: pntAdmittedBodyWeight"/>
+                        <label for="admittedBodyWeight">แรกรับ</label>
+                        <span data-bind="visible: isNaN(pntAdmittedBodyWeight()) === true">
+                            <font color="red">กรุณาใส่ตัวเลขเท่านั้น</font>
+                        </span>
+                    </div>
+                    <div class="input-field col">
+                        <input type="text" id="dischargedBodyWeight"
+                            data-bind="value: pntDischargedBodyWeight"/>
+                        <label for="dischargedBodyWeight">ขณะกลับบ้าน</label>
+                        <span data-bind="visible: isNaN(pntDischargedBodyWeight()) === true">
+                            <font color="red">กรุณาใส่ตัวเลขเท่านั้น</font>
+                        </span>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <table class="striped">
