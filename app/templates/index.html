@@ -11,12 +11,11 @@
             <div class="card-content">
                 <p>ชุดที่ 1 แบบประเมินผลการรักษา ประกอบด้วย
                 <ul class="browser-default">
-                    <li>การดูแลด้านเวชศาสตร์ฟื้นฟูและการเคลื่อนไหวระยะแรกที่สามารถทำได้ (rehabilitation and early ambulation)</li>
-                    <li>การให้อาหารทางสายยาง (tube feeding)</li>
-                    <li>การดูแลช่องปาก</li>
-                    <li>การให้สุขศึกษา (health promotion)</li>
                     <li>การดูแลด้านการพยาบาล (nursing care model)</li>
+                    <li>การดูแลด้านเวชศาสตร์ฟื้นฟูและการเคลื่อนไหวระยะแรกที่สามารถทำได้ (rehabilitation and early ambulation)</li>
                     <li>การวางแผนจำหน่ายผู้ป่วยภาวะสมองเสื่อม (discharge planning)</li>
+                    <li>การให้สุขศึกษา (health promotion)</li>
+                    <li>การดูแลด้านสังคม (social)</li>
                 </ul>
                 </p>
                 <p>ชุดที่ 2 แบบประเมินภาวะสุขภาพ 4 ด้าน ประกอบด้วย
@@ -28,13 +27,20 @@
                     <li>แบบประเมินสิ่งแวดล้อมในโรงพยาบาล</li>
                 </ul>
                 </p>
-                <p>ชุดที่ 3 แบบบันทึการตรวจทางห้องปฏิบัติการ</p>
+                <p>ชุดที่ 3 แบบบันทึการตรวจทางห้องปฏิบัติการ
+                    <ul class="browser-default">
+                        <li>ข้อมูลทั่วไปของสถานบริการสุขภาพ</li>
+                        <li>แบบประเมินผลการรักษาผู้ป่วยสูงอายุภาวะสมองเสื่อม</li>
+                    </ul>
+                </p>
             </div>
         </div>
     </div>
     <div class="col m8 offset-m2">
         <div class="card">
             <div class="card-content">
+                <h5>ขณะนี้โปรแกรมยังอยู่ในระหว่างการทดสอบการใช้งาน จึงไม่สามารถบันทึกข้อมูลได้</h5>
+                <!--
                 <div class="center-align">Enter code:
                     <div class="input-field inline">
                         <input id="code" type="text" data-bind="textInput: surveyCode">
@@ -43,6 +49,11 @@
                 </div>
                 <br/>
                 <div data-bind="if: surveyCode() !=='' " class="center-align">
+                    <a href="{{ url_for('partone') }}"
+                        class="waves-effect waves-light btn">เริ่มทำแบบสอบถาม</a>
+                </div>
+                -->
+                <div class="center-align">
                     <a href="{{ url_for('partone') }}"
                         class="waves-effect waves-light btn">เริ่มทำแบบสอบถาม</a>
                 </div>
