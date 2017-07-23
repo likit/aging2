@@ -14,8 +14,7 @@
         <nav>
             <div class="nav-wrapper">
                 <ul id="nav-mobile" class="left">
-                    <li><a href="/">Start</a></li>
-                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="/">Home</a></li>
                 </ul>
             </div>
         </nav>
@@ -34,6 +33,7 @@
                 $('.datepicker').pickadate({
                     selectMonths: true,
                 });
+                $('.modal').modal();
             });
         </script>
     </body>

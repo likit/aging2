@@ -32,8 +32,10 @@ def get_hsu(hsuid=None):
     if not hsuid:
         hsu_list = []
         for hsu in mongo.db.health_care_unit.find():
-            hsu_list.append(dumps(hsu))
+            hsu['_id'] = str(hsu['_id'])  # convert mongo object to string
+            hsu_list.append(hsu)
         return jsonify({'data': hsu_list})
     else:
         hsu = mongo.db.health_care_unit.find_one({'unit_id_short': hsuid})
-        return jsonify({'data', [dumps(hsu)]})
+        hsu['_id'] = str(hsu['_id'])  # convert object to string
+        return jsonify({'data', [hsu]})

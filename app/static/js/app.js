@@ -1,15 +1,35 @@
 var viewModel = function() {
     var self = this;
+    self.hsuQuery = ko.observable("");
+    self.hsuList = ko.observableArray([]);
+    self.filteredHsuList = ko.observableArray([]);
+    self.hsuSelected = ko.observable(false);
+    self.searchHsu = function (query) {
+        if(query === '') {
+            self.filteredHsuList([]);  // if query is empty, reset the list
+            // self.currpage(0);
+        } else {
+            self.filteredHsuList([]);
+            $.each(self.hsuList(), function(idx, h) {
+                if(h.unit_fullname.toLowerCase().indexOf(query.toLowerCase()) > -1 ) {
+                    self.filteredHsuList.push(h);
+                }
+            });
+            // self.currpage(0);
+        }
+    };
     self.surveyCode = ko.observable("");
+    self.hospitalId = ko.observable();
     self.hospitalName = ko.observable("");
     self.hospitalStreetAddr = ko.observable("");
     self.hospitalRoad = ko.observable("");
     self.hospitalDistrict = ko.observable("");
+    self.hospitalSubDistrict = ko.observable("");
     self.hospitalProvince = ko.observable("");
     self.hospitalZipcode = ko.observable("");
     self.hospitalTel = ko.observable("");
     self.hospitalEmail = ko.observable("");
-    self.hospitalSize = ko.observable("");
+    self.hospitalServicePlan = ko.observable("");
     self.hospitalNumBed = ko.observable("");
     self.hospitalSurveyDate = ko.observable("");
     self.hospitalAssessor = ko.observable("");
@@ -17,6 +37,27 @@ var viewModel = function() {
     self.hospitalAssessorTel = ko.observable("");
     self.hospitalAssessorEmail = ko.observable("");
     self.hospitalAccredits = ko.observableArray([]);
+    self.hospitalAreaId = ko.observable();
+    self.hospitalRegion = ko.observable();
+    self.healthServiceAreaId = ko.observable();
+    self.selectHsu = function(hsu) {
+        self.hsuSelected(true);
+        self.hospitalId(hsu['unit_id_short']);
+        self.hospitalName(hsu['unit_fullname']);
+        self.hospitalDistrict(hsu['district_name']);
+        self.hospitalSubDistrict(hsu['subdistrict_name']);
+        self.hospitalProvince(hsu['province_name']);
+        self.hospitalAreaId(hsu['area_id']);
+        self.healthServiceAreaId(hsu['hs_area_id']);
+        self.hospitalNumBed(hsu['num_bed']);
+        self.hospitalRegion(hsu['region']);
+        self.hospitalServicePlan(hsu['unit_service_plan']);
+        self.filteredHsuList([hsu]);
+    }
+    self.clearHsuSearch = function() {
+        self.hsuQuery("");
+        self.hsuSelected(false);
+    };
     self.checkedHA = ko.observable(false);
     self.checkedHAHP = ko.observable(false);
     self.checkedISO = ko.observable(false);
@@ -39,37 +80,135 @@ var viewModel = function() {
         }
         console.log(self.hospitalAccredits());
     });
-    self.hcare1_1 = ko.observable("");
-    self.hcare1_1_cmnt = ko.observable("");
-    self.hcare1_2 = ko.observable("");
-    self.hcare1_2_cmnt = ko.observable("");
+    self.hcare1_1_1 = ko.observable("");
+    self.hcare1_1_1_cmnt = ko.observable("");
+    self.hcare1_1_2 = ko.observable("");
+    self.hcare1_1_2_cmnt = ko.observable("");
+    self.hcare1_1_3 = ko.observable("");
+    self.hcare1_1_3_cmnt = ko.observable("");
+
+    self.hcare1_2_1 = ko.observable("");
+    self.hcare1_2_1_cmnt = ko.observable("");
+    self.hcare1_2_2 = ko.observable("");
+    self.hcare1_2_2_cmnt = ko.observable("");
+    self.hcare1_2_3 = ko.observable("");
+    self.hcare1_2_3_cmnt = ko.observable("");
     self.hcare1_3 = ko.observable("");
     self.hcare1_3_cmnt = ko.observable("");
-    self.hcare1_4 = ko.observable("");
-    self.hcare1_4_cmnt = ko.observable("");
-    self.hcare1_5 = ko.observable("");
-    self.hcare1_5_cmnt = ko.observable("");
+    self.hcare1_4_1 = ko.observable("");
+    self.hcare1_4_1_cmnt = ko.observable("");
+    self.hcare1_4_2 = ko.observable("");
+    self.hcare1_4_2_cmnt = ko.observable("");
+    self.hcare1_4_3 = ko.observable("");
+    self.hcare1_4_3_cmnt = ko.observable("");
+    self.hcare1_5_1 = ko.observable("");
+    self.hcare1_5_1_cmnt = ko.observable("");
+    self.hcare1_5_2 = ko.observable("");
+    self.hcare1_5_2_cmnt = ko.observable("");
+    self.hcare1_5_3 = ko.observable("");
+    self.hcare1_5_3_cmnt = ko.observable("");
     self.hcare1_6 = ko.observable("");
     self.hcare1_6_cmnt = ko.observable("");
-    self.hcare1_7 = ko.observable("");
-    self.hcare1_7_cmnt = ko.observable("");
-    self.hcare1_8 = ko.observable("");
-    self.hcare1_8_cmnt = ko.observable("");
+    self.hcare1_7_1 = ko.observable("");
+    self.hcare1_7_1_cmnt = ko.observable("");
+    self.hcare1_7_2 = ko.observable("");
+    self.hcare1_7_2_cmnt = ko.observable("");
+    self.hcare1_7_3 = ko.observable("");
+    self.hcare1_7_3_cmnt = ko.observable("");
+    self.hcare1_7_4 = ko.observable("");
+    self.hcare1_7_4_cmnt = ko.observable("");
+    self.hcare1_8_1 = ko.observable("");
+    self.hcare1_8_1_cmnt = ko.observable("");
+    self.hcare1_8_2 = ko.observable("");
+    self.hcare1_8_2_cmnt = ko.observable("");
+    self.hcare1_8_3 = ko.observable("");
+    self.hcare1_8_3_cmnt = ko.observable("");
     self.hcare1_9 = ko.observable("");
     self.hcare1_9_cmnt = ko.observable("");
-    self.hcare1_10 = ko.observable("");
-    self.hcare1_10_cmnt = ko.observable("");
-    self.hcare1_11 = ko.observable("");
-    self.hcare1_11_cmnt = ko.observable("");
+    self.hcare1_10_1 = ko.observable("");
+    self.hcare1_10_1_cmnt = ko.observable("");
+    self.hcare1_10_2 = ko.observable("");
+    self.hcare1_10_2_cmnt = ko.observable("");
+    self.hcare1_10_3 = ko.observable("");
+    self.hcare1_10_3_cmnt = ko.observable("");
+    self.hcare1_11_1 = ko.observable("");
+    self.hcare1_11_1_cmnt = ko.observable("");
+    self.hcare1_11_2 = ko.observable("");
+    self.hcare1_11_2_cmnt = ko.observable("");
+    self.hcare1_12 = ko.observable("");
+    self.hcare1_12_cmnt = ko.observable("");
+    self.hcare1_13 = ko.observable("");
+    self.hcare1_13_cmnt = ko.observable("");
+    self.hcare1_14_1 = ko.observable("");
+    self.hcare1_14_1_cmnt = ko.observable("");
+    self.hcare1_14_2 = ko.observable("");
+    self.hcare1_14_2_cmnt = ko.observable("");
+    self.hcare1_14_3 = ko.observable("");
+    self.hcare1_14_3_cmnt = ko.observable("");
+    self.hcare1_14_4 = ko.observable("");
+    self.hcare1_14_4_cmnt = ko.observable("");
+    self.hcare1_14_5 = ko.observable("");
+    self.hcare1_14_5_cmnt = ko.observable("");
+    self.hcare1_14_6 = ko.observable("");
+    self.hcare1_14_6_cmnt = ko.observable("");
+    self.hcare1_14_7 = ko.observable("");
+    self.hcare1_14_7_cmnt = ko.observable("");
+    self.hcare1_14_8 = ko.observable("");
+    self.hcare1_14_8_cmnt = ko.observable("");
+    self.hcare1_14_9 = ko.observable("");
+    self.hcare1_14_9_cmnt = ko.observable("");
+    self.hcare1_15_1 = ko.observable("");
+    self.hcare1_15_1_cmnt = ko.observable("");
+    self.hcare1_15_2 = ko.observable("");
+    self.hcare1_15_2_cmnt = ko.observable("");
+    self.hcare1_15_3 = ko.observable("");
+    self.hcare1_15_3_cmnt = ko.observable("");
+    self.hcare1_15_4_1 = ko.observable("");
+    self.hcare1_15_4_2 = ko.observable("");
+    self.hcare1_15_4_3 = ko.observable("");
+    self.hcare1_15_4_4 = ko.observable("");
+    self.hcare1_15_4_5 = ko.observable("");
+    self.hcare1_15_4_6 = ko.observable("");
+    self.hcare1_15_4_7 = ko.observable("");
+    self.hcare1_15_4_cmnt = ko.observable("");
+    self.hcare1_15_5_1 = ko.observable("");
+    self.hcare1_15_5_2 = ko.observable("");
+    self.hcare1_15_5_3 = ko.observable("");
+    self.hcare1_15_5_4 = ko.observable("");
+    self.hcare1_15_5_cmnt = ko.observable("");
+    self.hcare1_15_6 = ko.observable("");
+    self.hcare1_15_6_cmnt = ko.observable("");
+    self.hcare1_15_7 = ko.observable("");
+    self.hcare1_15_7_cmnt = ko.observable("");
 
-    self.hcare2_1 = ko.observable("");
-    self.hcare2_1_cmnt = ko.observable("");
-    self.hcare2_2 = ko.observable("");
-    self.hcare2_2_cmnt = ko.observable("");
-    self.hcare2_3 = ko.observable("");
-    self.hcare2_3_cmnt = ko.observable("");
-    self.hcare2_4 = ko.observable("");
-    self.hcare2_4_cmnt = ko.observable("");
+    self.hcare2_1_1 = ko.observable("");
+    self.hcare2_1_1_cmnt = ko.observable("");
+    self.hcare2_1_2 = ko.observable("");
+    self.hcare2_1_2_cmnt = ko.observable("");
+    self.hcare2_1_3 = ko.observable("");
+    self.hcare2_1_3_cmnt = ko.observable("");
+    self.hcare2_1_4 = ko.observable("");
+    self.hcare2_1_4_cmnt = ko.observable("");
+    self.hcare2_2_1 = ko.observable("");
+    self.hcare2_2_1_cmnt = ko.observable("");
+    self.hcare2_2_2 = ko.observable("");
+    self.hcare2_2_2_cmnt = ko.observable("");
+    self.hcare2_3_1 = ko.observable("");
+    self.hcare2_3_1_cmnt = ko.observable("");
+    self.hcare2_3_2 = ko.observable("");
+    self.hcare2_3_2_cmnt = ko.observable("");
+    self.hcare2_4_1 = ko.observable("");
+    self.hcare2_4_1_cmnt = ko.observable("");
+    self.hcare2_4_2 = ko.observable("");
+    self.hcare2_4_2_cmnt = ko.observable("");
+    self.hcare2_4_3 = ko.observable("");
+    self.hcare2_4_3_cmnt = ko.observable("");
+    self.hcare2_4_4 = ko.observable("");
+    self.hcare2_4_4_cmnt = ko.observable("");
+    self.hcare2_4_5 = ko.observable("");
+    self.hcare2_4_5_cmnt = ko.observable("");
+    self.hcare2_4_6 = ko.observable("");
+    self.hcare2_4_6_cmnt = ko.observable("");
 
     self.hcare3_1_1 = ko.observable("");
     self.hcare3_1_1_cmnt = ko.observable("");
@@ -89,6 +228,14 @@ var viewModel = function() {
     self.hcare3_3_2_cmnt = ko.observable("");
     self.hcare3_3_3 = ko.observable("");
     self.hcare3_3_3_cmnt = ko.observable("");
+    self.hcare3_3_4 = ko.observable("");
+    self.hcare3_3_4_cmnt = ko.observable("");
+    self.hcare3_3_5 = ko.observable("");
+    self.hcare3_3_5_other = ko.observable("");
+    self.hcare3_3_5_cmnt = ko.observable("");
+    self.hcare3_3_6 = ko.observable("");
+    self.hcare3_3_6_other = ko.observable("");
+    self.hcare3_3_6_cmnt = ko.observable("");
 
     self.hcare4_1_1 = ko.observable("");
     self.hcare4_1_1_cmnt = ko.observable("");
@@ -105,6 +252,11 @@ var viewModel = function() {
     self.hcare4_3_cmnt = ko.observable("");
     self.hcare4_4 = ko.observable("");
     self.hcare4_4_cmnt = ko.observable("");
+
+    self.hcare5_1 = ko.observable("");
+    self.hcare5_1_cmnt = ko.observable("");
+    self.hcare5_2 = ko.observable("");
+    self.hcare5_2_cmnt = ko.observable("");
 
     self.bal1 = ko.observable("");
     self.bal2 = ko.observable("");
@@ -278,7 +430,7 @@ var viewModel = function() {
                 return +(self.mna_1()) + +(self.mna_2()) + +(self.mna_3())
                     + +(self.mna_4()) + +(self.mna_5());
         } else {
-            return "Not enough data.";
+            return "ยังไม่สามารถคิดคะแนนได้";
         }
     });
     self.env_1 = ko.observable("");
@@ -293,20 +445,33 @@ var viewModel = function() {
     self.env_10 = ko.observable("");
     self.env_11 = ko.observable("");
     self.env_12 = ko.observable("");
+    self.env_13 = ko.observable("");
+    self.env_14 = ko.observable("");
+    self.env_15 = ko.observable("");
+    self.env_16 = ko.observable("");
+    self.env_17 = ko.observable("");
+    self.env_18 = ko.observable("");
+    self.env_19 = ko.observable("");
+    self.env_20 = ko.observable("");
 
     self.envScore = ko.computed(function() {
         if(self.env_1() !== "" && self.env_2() !== "" && self.env_3() !== ""
             && self.env_4() !== "" && self.env_5() !== "" && self.env_6() !== ""
             && self.env_7() !== "" && self.env_8() !== "" && self.env_9() !== ""
-            && self.env_10() !== "" && self.env_11() !== "" && self.env_12() !== "")
+            && self.env_10() !== "" && self.env_11() !== "" && self.env_12() !== ""
+            && self.env_13() !== "" && self.env_14() !== "" && self.env_15() !== ""
+            && self.env_16() !== "" && self.env_17() !== "" && self.env_18() !== ""
+            && self.env_19() !== "" && self.env_20() !== "")
         {
                 var score = +(self.env_1()) + +(self.env_2()) + +(self.env_3());
                 score = score + +(self.env_4()) + +(self.env_5()) + +(self.env_6());
                 score = score + +(self.env_7()) + +(self.env_8()) + +(self.env_9()) + +(self.env_10());
-                score = score + +(self.env_11()) + +(self.env_12());
+                score = score + +(self.env_11()) + +(self.env_12()) + +(self.env_13());
+                score = score + +(self.env_14()) + +(self.env_15()) + +(self.env_16());
+                score = score + +(self.env_17()) + +(self.env_18()) + +(self.env_19()) + +(self.env_20());
                 return score;
         } else {
-            return "Not enough data.";
+            return "ยังไม่สามารถคิดคะแนนได้";
         }
     });
     self.pntFirstName = ko.observable("");
@@ -334,6 +499,20 @@ var viewModel = function() {
         totalNum += +(self.pntNumGrndChilds());
         return totalNum;
     });
+    self.toggleAnalogScale1 = function() {
+        $("#analogScale1").modal("open");
+    };
+    self.toggleAnalogScale2 = function() {
+        $("#analogScale2").modal("open");
+    };
+    self.admitPainScale = function(level) {
+        self.pntAdmittedWithPainDeg(level);
+        $("#analogScale1").modal("close");
+    };
+    self.dischargePainScale = function(level) {
+        self.pntDischargedWithPainDeg(level);
+        $("#analogScale2").modal("close");
+    };
     self.pntMaritalStatus = ko.observable("0");
     self.pntHouse = ko.observable("0");
     self.pntHouseStory = ko.observable("");
@@ -344,7 +523,7 @@ var viewModel = function() {
     });
     self.pntHouseOtherDetl = ko.observable("");
     self.pntThaiLit = ko.observable("0");
-    self.patientDiag = ko.observable("");
+    self.pntDiagnosis = ko.observable("");
     self.pntAdmittedDate = ko.observable("");
     self.pntDischargedDate = ko.observable("");
     self.pntEduLvl = ko.observable("");
@@ -495,6 +674,12 @@ var viewModel = function() {
     self.pntAdmittedBodyWeight = ko.observable("");
     self.pntDischargedBodyWeight = ko.observable("");
 
+    self.pntPainScore = ko.observable();
+
+    self.painAssessor = function(level) {
+        self.pntPainScore(level);
+    }
+
     self.lab1_1 = ko.observable("");
     self.lab1_2 = ko.observable("");
     self.lab1_3 = ko.observable("");
@@ -531,7 +716,42 @@ var viewModel = function() {
     self.lab12_1 = ko.observable("");
     self.lab12_2 = ko.observable("");
     self.lab12_3 = ko.observable("");
+    self.lab13_1 = ko.observable("");
+    self.lab13_2 = ko.observable("");
+    self.lab13_3 = ko.observable("");
+    self.lab14_1 = ko.observable("");
+    self.lab14_2 = ko.observable("");
+    self.lab14_3 = ko.observable("");
+    self.lab15_1 = ko.observable("");
+    self.lab15_2 = ko.observable("");
+    self.lab15_3 = ko.observable("");
+    self.lab16_1 = ko.observable("");
+    self.lab16_2 = ko.observable("");
+    self.lab16_3 = ko.observable("");
+    self.lab17_1 = ko.observable("");
+    self.lab17_2 = ko.observable("");
+    self.lab17_3 = ko.observable("");
+    self.lab18_1 = ko.observable("");
+    self.lab18_2 = ko.observable("");
+    self.lab18_3 = ko.observable("");
+    self.lab19_1 = ko.observable("");
+    self.lab19_2 = ko.observable("");
+    self.lab19_3 = ko.observable("");
+    self.lab20_1 = ko.observable("");
+    self.lab20_2 = ko.observable("");
+    self.lab20_3 = ko.observable("");
+    self.lab21_1 = ko.observable("");
+    self.lab21_2 = ko.observable("");
+    self.lab21_3 = ko.observable("");
 }
 
 var vm = new viewModel();
+var getHsuList = $.getJSON('/api/v1/hsu/')
+$.when(getHsuList).done(function(results) {
+    $.each(results["data"], function(ix, hsu){
+        vm.hsuList.push(hsu);
+    });
+});
+
 ko.applyBindings(vm);
+vm.hsuQuery.subscribe(vm.searchHsu);
