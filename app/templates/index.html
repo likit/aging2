@@ -60,13 +60,13 @@
                     </ul>
                 </p>
                 <div class="row">
-                    <h5 data-bind="ifnot: hsuSelected">กรุณาใส่ข้อมูลสถานพยาบาลที่ทำการเก็บข้อมูล</h5>
+                    <h5 data-bind="ifnot: hsuSelected">สถานพยาบาลที่ทำการเก็บข้อมูล</h5>
                     <div class="input-field">
                         <i class="material-icons prefix">search</i>
-                        <input id="healthServieUnit" placeholder="ค้นหาชื่อโรงพยาบาลที่นี่"
+                        <input id="healthServiceUnit" placeholder="ค้นหาชื่อโรงพยาบาลที่นี่"
                             data-bind="textInput: hsuQuery" type="text">
                     </div>
-                    <div class="collection" data-bind="foreach: filteredHsuList">
+                    <div class="collection" id="hsuSearchResults" data-bind="foreach: filteredHsuList">
                         <a href="#!" class="collection-item" data-bind="click: vm.selectHsu.bind($data)">
                             <span data-bind="text: unit_fullname"></span>,
                             อำเภอ <span data-bind="text: district_name"></span>,
@@ -74,9 +74,9 @@
                         </a>
                     </div>
                     <div data-bind="if: hsuSelected" class="collection">
-                        <div class="collection-item">รหัส <span data-bind="text: hospitalId"></span></div>
-                        <div class="collection-item">รหัสพื้นที่ <span data-bind="text: hospitalAreaId"></span></div>
-                        <div class="collection-item">เขตสุขภาพที่ <span data-bind="text: healthServiceAreaId"></span></div>
+                        <div class="collection-item" id="hospital-id">รหัส <span data-bind="text: hospitalId"></span></div>
+                        <div class="collection-item" id="hospital-area-id">รหัสพื้นที่ <span data-bind="text: hospitalAreaId"></span></div>
+                        <div class="collection-item" id="health-service-area-id">เขตสุขภาพที่ <span data-bind="text: healthServiceAreaId"></span></div>
                     </div>
                     <div data-bind="if: hsuSelected" class="center-align">
                         <a href="#!" data-bind="click: vm.clearHsuSearch"
@@ -84,7 +84,6 @@
                     </div>
                 </div>
                 <div class="row">
-                    <span data-bind="text: hospitalName"></span>
                     <div class="col s12 input-field">
                         <input id="hospitalName" disabled placeholder="" data-bind="textInput: hospitalName" type="text">
                         <label for="hospitalName">ชื่อโรงพยาบาล</label>
@@ -245,8 +244,9 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <span for="pntNumFamilyMember">จำนวนสมาชิกที่อยู่ด้วยกันจริงในบ้าน ไม่รวมผู้สูงอายุคนนี้</span>
-                        รวม <span data-bind="text: pntNumFamilyMember()"></span> คน ประกอบด้วย
+                        <span>จำนวนสมาชิกที่อยู่ด้วยกันจริงในบ้าน ไม่รวมผู้สูงอายุคนนี้</span>
+                        รวม <span id="pntNumFamilyMember"
+                                data-bind="text: pntNumFamilyMember()"></span> คน ประกอบด้วย
                     </div>
                     <div class="input-field col s12">
                         <p>ประกอบด้วย</p>
