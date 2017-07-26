@@ -761,7 +761,6 @@ var submitResults = function() {
     delete data['tgdsInterpret'];
     delete data['mnaScore'];
     delete data['envScore'];
-    data = JSON.stringify(data);
     $.ajax({
         url: '/api/v1/results/',
         type: 'POST',
