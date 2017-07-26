@@ -18,7 +18,6 @@ var viewModel = function() {
             // self.currpage(0);
         }
     };
-    self.surveyCode = ko.observable("");
     self.hospitalId = ko.observable();
     self.hospitalName = ko.observable("");
     self.hospitalStreetAddr = ko.observable("");
@@ -752,6 +751,27 @@ $.when(getHsuList).done(function(results) {
         vm.hsuList.push(hsu);
     });
 });
+var submitResults = function() {
+    var data = ko.toJS(vm);
+    // remove some unused data
+    delete data['hsuList'];
+    delete data['hsuQuery'];
+    delete data['filteredHsuList'];
+    delete data['hsuSelected'];
+    delete data['tgdsInterpret'];
+    delete data['mnaScore'];
+    delete data['envScore'];
+    data = JSON.stringify(data);
+    $.ajax({
+        url: '/api/v1/results/',
+        type: 'POST',
+        data: JSON.stringify(data),
+        contentType: 'application/json',
+        dataType: 'json'
+    }).done(function() {
+        console.log(data)
+    });
+}
 
 ko.applyBindings(vm);
 vm.hsuQuery.subscribe(vm.searchHsu);

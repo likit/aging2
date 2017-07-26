@@ -1,5 +1,6 @@
+import pprint
 from bson.json_util import dumps
-from flask import render_template, jsonify
+from flask import render_template, jsonify, request
 from app import app, mongo
 
 @app.route('/')
@@ -39,3 +40,10 @@ def get_hsu(hsuid=None):
         hsu = mongo.db.health_care_unit.find_one({'unit_id_short': hsuid})
         hsu['_id'] = str(hsu['_id'])  # convert object to string
         return jsonify({'data', [hsu]})
+
+@app.route('/api/v1/results/', methods=['POST'])
+def get_results():
+    print(request.is_json)
+    data = request.get_json()
+    pprint.pprint(data)
+    return jsonify({'response': data})
