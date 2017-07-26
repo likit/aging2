@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="row">
+    <table class="table">
+        <thead>
+            <th>ลำดับ</th>
+            <th>ชื่อโรงพยาบาล</th>
+            <th>รหัสโรงพยาบาล</th>
+            <th>รหัสแบบสอบถาม</th>
+            <th>เพิ่มเมื่อ</th>
+            <th>โดย</th>
+        </thead>
+        <tbody>
+            <!-- ko foreach: resultList -->
+            <tr>
+                <td data-bind="text: $index()+1"></td>
+                <td data-bind="text: $data.hospitalName"></td>
+                <td data-bind="text: $data.hospitalId"></td>
+                <td data-bind="text: $data.surveyId"></td>
+                <td data-bind="text: $data.addedAt"></td>
+                <td data-bind="text: $data.addedBy"></td>
+                <td><a data-bind="attr: {href: '/results/view/'+$data.hospitalId+'/'+$data.surveyId}">View</a></td>
+            </tr>
+            <!-- /ko -->
+        </tbody>
+    </table>
+</div>
+<script>
+    var hospital_id = {{hospital_id|tojson|safe}};
+    var viewModel = function() {
+        var self = this;
+        self.resultList = ko.observableArray([]);
+    }
+    var vm = new viewModel();
+    ko.applyBindings(vm);
+    $.getJSON('/api/v1/results/'+hospital_id).done(function(data) {
+        vm.resultList(data['response'][0]['data']);
+    })
+</script>
+{% endblock page_content %}
