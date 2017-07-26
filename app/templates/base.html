@@ -19,22 +19,12 @@
             </div>
         </nav>
         {% endblock %}
+        <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='materialize/js/materialize.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/knockout.js')}}"></script>
         <div class="container">
             {% block page_content %}
             {% endblock %}
         </div>
-        <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
-        <script src="{{ url_for('static', filename='materialize/js/materialize.min.js')}}"></script>
-        <script src="{{ url_for('static', filename='js/knockout.js')}}"></script>
-        <script src="{{ url_for('static', filename='js/app.js')}}"></script>
-        <script>
-            $(document).ready(function() {
-                $('select').material_select();
-                $('.datepicker').pickadate({
-                    selectMonths: true,
-                });
-                $('.modal').modal();
-            });
-        </script>
     </body>
 </html>
