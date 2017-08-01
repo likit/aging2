@@ -66,6 +66,23 @@ def get_hsu_result(hospital_id):
         })
     return jsonify({'response': [{'count': len(data), 'data': data}]})
 
+
+@app.route('/api/v1/results/<int:hospital_id>/<int:survey_id>')
+def get_a_hsu_result(hospital_id, survey_id):
+    result = mongo2.db.results.find_one({'hospitalId': hospital_id, 'surveyId': survey_id})
+    if not result:
+        return jsonify({'response': []})
+    else:
+        del result['_id']
+        return jsonify({'response': [{'data': result}]})
+
+
 @app.route('/results/<int:hospital_id>')
-def get_hsu_result_list(hospital_id):
+def view_hsu_result_list(hospital_id):
     return render_template('results.html', hospital_id=hospital_id)
+
+
+@app.route('/results/view/<int:hospital_id>/<int:survey_id>')
+def view_a_hsu_result(hospital_id, survey_id):
+    return render_template('result_view.html',
+        hospital_id=hospital_id, survey_id=survey_id)

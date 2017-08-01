@@ -208,6 +208,10 @@ var viewModel = function() {
     self.hcare2_4_5_cmnt = ko.observable("");
     self.hcare2_4_6 = ko.observable("");
     self.hcare2_4_6_cmnt = ko.observable("");
+    self.hcare2_5_1 = ko.observable("");
+    self.hcare2_5_1_cmnt = ko.observable("");
+    self.hcare2_5_2 = ko.observable("");
+    self.hcare2_5_2_cmnt = ko.observable("");
 
     self.hcare3_1_1 = ko.observable("");
     self.hcare3_1_1_cmnt = ko.observable("");
@@ -672,6 +676,8 @@ var viewModel = function() {
 
     self.pntAdmittedBodyWeight = ko.observable("");
     self.pntDischargedBodyWeight = ko.observable("");
+
+    self.pntTreatmentEvaluation = ko.observable("");
 
     self.pntPainScore = ko.observable();
 
