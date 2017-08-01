@@ -18,7 +18,7 @@ var viewModel = function() {
             // self.currpage(0);
         }
     };
-    self.hospitalId = ko.observable();
+    self.hospitalId = ko.observable("");
     self.hospitalName = ko.observable("");
     self.hospitalStreetAddr = ko.observable("");
     self.hospitalRoad = ko.observable("");
@@ -767,6 +767,17 @@ var submitResults = function() {
     delete data['tgdsInterpret'];
     delete data['mnaScore'];
     delete data['envScore'];
+    console.log(data['hospitalId']);
+    console.log(data['pntLastName']);
+    console.log(data['pntFirstName']);
+    if (data['hospitalId'] === "") {
+        Materialize.toast("กรุณาเลือกสถานพยาบาล", 4000);
+        return;
+    }
+    if (data['pntFirstName'] === "") {
+        Materialize.toast("กรุณากรอกชื่อผู้ป่วย", 4000);
+        return;
+    }
     $.ajax({
         url: '/api/v1/results/',
         type: 'POST',
@@ -774,7 +785,7 @@ var submitResults = function() {
         contentType: 'application/json',
         dataType: 'json'
     }).done(function() {
-        console.log(data)
+        window.location.replace("/results/" + data['hospitalId']);
     });
 }
 
