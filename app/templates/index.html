@@ -246,11 +246,8 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <span>จำนวนสมาชิกที่อยู่ด้วยกันจริงในบ้าน ไม่รวมผู้สูงอายุคนนี้</span>
-                        รวม <span id="pntNumFamilyMember"
-                                data-bind="text: pntNumFamilyMember()"></span> คน ประกอบด้วย
-                        <span data-bind="text: checkedPntFather"></span>
-                        <span data-bind="text: checkedPntMother"></span>
-                        <span data-bind="text: checkedPntSpouse"></span>
+                        รวม <span id="pntNumFamilyMember" data-bind="text: pntNumFamilyMember()"></span>
+                        คน ประกอบด้วย
                     </div>
                     <div class="input-field col s12">
                         <p>ประกอบด้วย</p>
@@ -273,7 +270,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <p>สถานภาพสมรส <span data-bind="text: pntMaritalStatus()"></span></p>
+                    <p>สถานภาพสมรส></span></p>
                     <div class="input-field col">
                         <input type="radio" id="pntMaritalSingle" class="with-gap" name="pntMarital" value="0"
                             data-bind="checked: pntMaritalStatus"/>
@@ -290,7 +287,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <p>ที่อยู่อาศัย <span data-bind="text: pntHouse()"></span></p>
+                    <p>ที่อยู่อาศัย</p>
                     <div class="input-field col">
                         <input type="radio" id="pntHouseOwn" class="with-gap" name="pntHouse" value="0"
                             data-bind="checked: pntHouse"/>
@@ -309,13 +306,12 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        ชั้นที่ <span data-bind="text: pntHouseStory"></span>
                         <label for="pntHouseStory">ชั้นที่</label>
                         <input type="text" id="pntHouseStory" data-bind="value: pntHouseStory">
                     </div>
                 </div>
                 <div class="row">
-                    <p>ภาษาไทย <span data-bind="text: pntThaiLit()"></span></p>
+                    <p>ภาษาไทย</p>
                     <div class="input-field col">
                         <input type="radio" id="pntThaiLitYes" class="with-gap" name="pntThaiLit" value="0"
                             data-bind="checked: pntThaiLit"/>
@@ -329,7 +325,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <p>จบการศึกษาสูงสุด <span data-bind="text: pntEduLvl() + ', ' + pntEduLvl5Detl()"></span></p>
+                    <p>จบการศึกษาสูงสุด</p>
                     <div class="input-field col">
                         <input type="radio" id="pntEduLvlNone" class="with-gap" name="pntEduLvl" value="0"
                             data-bind="checked: pntEduLvl"/>
@@ -356,7 +352,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <p>อาชีพหลักเดิม <span data-bind="text: pntJob()"></span></p>
+                    <p>อาชีพหลักเดิม</p>
                     <div class="input-field col">
                         <input type="radio" id="pntJob1" class="with-gap" name="pntJob" value="0"
                             data-bind="checked: pntJob"/>
@@ -380,7 +376,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <p>รายได้ครอบครัวเพียงพอต่อการใช้จ่ายประจำของท่านหรือไม่ <span data-bind="text: pntIncome()"></span></p>
+                    <p>รายได้ครอบครัวเพียงพอต่อการใช้จ่ายประจำของท่านหรือไม่</p>
                     <div class="input-field col">
                         <input type="radio" id="pntIncomeNo" class="with-gap" name="pntIncome" value="0"
                             data-bind="checked: pntIncome"/>
@@ -399,7 +395,6 @@
                 <div class="row">
                     โรคประจำตัว (ถ้ามี) ใส่หมายเลข 1,2,3.. ข้อที่มีปัญหามากที่สุดและรองลงมา
                     <div class="input-field col s6">
-                        <span data-bind="text: pntHealthProblemDiabetes"></span>
                         <label for="pntHealthProblemDiabetes">เบาหวาน</label>
                         <input type="text" id="pntHealthProblemDiabetes"
                             data-bind="value: pntHealthProblemDiabetes">
@@ -408,7 +403,6 @@
                         </span>
                     </div>
                     <div class="input-field col s6">
-                        <span data-bind="text: pntHealthProblemHypertension"></span>
                         <label for="pntHealthProblemHypertension">ความดัน</label>
                         <input type="text" id="pntHealthProblemHypertension"
                             data-bind="value: pntHealthProblemHypertension">
@@ -419,7 +413,6 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <span data-bind="text: pntHealthProblemHyperlipidemia"></span>
                         <label for="pntHealthProblemHyperlipidemia">ไขมันในเลือดสูง</label>
                         <input type="text" id="pntHealthProblemHyperlipidemia"
                             data-bind="value: pntHealthProblemHyperlipidemia">
@@ -430,7 +423,6 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <span data-bind="text: pntHealthProblemHeart"></span>
                         <label for="pntHealthProblemHeart">หัวใจ</label>
                         <input type="text" id="pntHealthProblemHeart"
                             data-bind="value: pntHealthProblemHeart">
@@ -439,7 +431,6 @@
                         </span>
                     </div>
                     <div class="input-field col s6">
-                        <span data-bind="text: pntHealthProblemHeartDetl"></span>
                         <label for="pntHealthProblemHeartDetl">โปรดระบุ</label>
                         <input type="text" id="pntHealthProblemHeartDetl"
                             data-bind="value: pntHealthProblemHeartDetl,
@@ -449,7 +440,6 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <span data-bind="text: pntHealthProblemArthritis"></span>
                         <label for="pntHealthProblemArthritis">ปวดข้อ</label>
                         <input type="text" id="pntHealthProblemArthritis"
                             data-bind="value: pntHealthProblemArthritis">
@@ -458,7 +448,6 @@
                         </span>
                     </div>
                     <div class="input-field col s6">
-                        <span data-bind="text: pntHealthProblemArthritisDetl"></span>
                         <label for="pntHealthProblemArthritisDetl">โปรดระบุตำแหน่ง</label>
                         <input type="text" id="pntHealthProblemArthritisDetl"
                             data-bind="value: pntHealthProblemArthritisDetl,
@@ -468,7 +457,6 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <span data-bind="text: pntHealthProblemParalysis"></span>
                         <label for="pntHealthProblemParalysis">อัมพาต</label>
                         <input type="text" id="pntHealthProblemParalysis"
                             data-bind="value: pntHealthProblemParalysis">
@@ -477,7 +465,6 @@
                         </span>
                     </div>
                     <div class="input-field col s6">
-                        <span data-bind="text: pntHealthProblemHemo"></span>
                         <label for="pntHealthProblemHemo">โรคเลือด</label>
                         <input type="text" id="pntHealthProblemHemo"
                             data-bind="value: pntHealthProblemHemo">
@@ -486,7 +473,6 @@
                         </span>
                     </div>
                     <div class="input-field col s6">
-                        <span data-bind="text: pntHealthProblemRenal"></span>
                         <label for="pntHealthProblemRenal">โรคไต</label>
                         <input type="text" id="pntHealthProblemRenal"
                             data-bind="value: pntHealthProblemRenal">
@@ -495,7 +481,6 @@
                         </span>
                     </div>
                     <div class="input-field col s6">
-                        <span data-bind="text: pntHealthProblemAsthma"></span>
                         <label for="pntHealthProblemAsthma">โรคปอด/หอบหืด*</label>
                         <input type="text" id="pntHealthProblemAsthma"
                             data-bind="value: pntHealthProblemAsthma">
@@ -505,7 +490,6 @@
                         <p>*มีอาการไอแน่นหน้าอกหรือหอบเหนื่อยเมื่ออากาศเปลี่ยน, มีเสมหะตลอดวันมากกว่า 2 ช้อนโต๊ะ</p>
                     </div>
                     <div class="input-field col s6">
-                        <span data-bind="text: pntHealthProblemUrine"></span>
                         <label for="pntHealthProblemUrine">ปัสสาวะลำบาก</label>
                         <input type="text" id="pntHealthProblemUrine"
                             data-bind="value: pntHealthProblemUrine">
@@ -514,7 +498,6 @@
                         </span>
                     </div>
                     <div class="input-field col s6">
-                        <span data-bind="text: pntHealthProblemMemory"></span>
                         <label for="pntHealthProblemMemory">ความจำหลงลืม</label>
                         <input type="text" id="pntHealthProblemMemory"
                             data-bind="value: pntHealthProblemMemory">
@@ -523,7 +506,6 @@
                         </span>
                     </div>
                     <div class="input-field col s6">
-                        <span data-bind="text: pntHealthProblemFatigue"></span>
                         <label for="pntHealthProblemFatigue">เหนื่อยง่าย</label>
                         <input type="text" id="pntHealthProblemFatigue"
                             data-bind="value: pntHealthProblemFatigue">
@@ -532,7 +514,6 @@
                         </span>
                     </div>
                     <div class="input-field col s6">
-                        <span data-bind="text: pntHealthProblemInsomnia"></span>
                         <label for="pntHealthProblemInsomnia">นอนไม่หลับ</label>
                         <input type="text" id="pntHealthProblemInsomnia"
                             data-bind="value: pntHealthProblemInsomnia">
@@ -541,7 +522,6 @@
                         </span>
                     </div>
                     <div class="input-field col s6">
-                        <span data-bind="text: pntHealthProblemSwollenFeet"></span>
                         <label for="pntHealthProblemSwollenFeet">เท้าบวม</label>
                         <input type="text" id="pntHealthProblemSwollenFeet"
                             data-bind="value: pntHealthProblemSwollenFeet">
@@ -552,7 +532,6 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <span data-bind="text: pntHealthProblemCancer"></span>
                         <label for="pntHealthProblemCancer">มะเร็ง</label>
                         <input type="text" id="pntHealthProblemCancer"
                             data-bind="value: pntHealthProblemCancer">
@@ -561,7 +540,6 @@
                         </span>
                     </div>
                     <div class="input-field col s6">
-                        <span data-bind="text: pntHealthProblemCancerDetl"></span>
                         <label for="pntHealthProblemCancerDetl">โปรดระบุตำแหน่ง</label>
                         <input type="text" id="pntHealthProblemCancerDetl"
                             data-bind="value: pntHealthProblemCancerDetl,
@@ -572,7 +550,6 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <span data-bind="text: pntHealthProblemOperation"></span>
                         <label for="pntHealthProblemOperation">ประวัติการผ่าตัด</label>
                         <input type="text" id="pntHealthProblemOperation"
                             data-bind="value: pntHealthProblemOperation">
@@ -581,7 +558,6 @@
                         </span>
                     </div>
                     <div class="input-field col s6">
-                        <span data-bind="text: pntHealthProblemOperationDetl"></span>
                         <label for="pntHealthProblemOperationDetl">โปรดระบุตำแหน่ง</label>
                         <input type="text" id="pntHealthProblemOperationDetl"
                             data-bind="value: pntHealthProblemOperationDetl,
@@ -590,7 +566,6 @@
                         </span>
                     </div>
                     <div class="input-field col s6">
-                        <span data-bind="text: pntHealthProblemOperationDetlDate"></span>
                         <label for="pntHealthProblemOperationDetlDate">เมื่อ</label>
                         <input type="date" id="pntHealthProblemOperationDetlDate"
                             class="datepicker" data-bind="value: pntHealthProblemOperationDetlDate,
@@ -600,7 +575,6 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <span data-bind="text: pntDentalHealthProblem"></span>
                         <label for="pntDentalHealthProblem">โรคในช่องปากคือ</label>
                         <input type="text" id="pntDentalHealthProblem"
                             data-bind="value: pntDentalHealthProblem">
@@ -609,23 +583,20 @@
                 <div class="row">
                     <p>และมีอาการต่อไปนี้</p>
                     <div class="input-field col s4">
-                        <span data-bind="text: pntDentalPain"></span>
                         <input type="checkbox" id="dentalPain" data-bind="checked: pntDentalPain"/>
                         <label for="dentalPain">ปวดฟัน</label>
                     </div>
                     <div class="input-field col s4">
-                        <span data-bind="text: pntDentalBleeding"></span>
                         <input type="checkbox" id="dentalBleeding" data-bind="checked: pntDentalBleeding"/>
                         <label for="dentalBleeding">แปรงฟันมีเลือดออก</label>
                     </div>
                     <div class="input-field col s4">
-                        <span data-bind="text: pntDentalWound"></span>
                         <input type="checkbox" id="dentalWound" data-bind="checked: pntDentalWound"/>
                         <label for="dentalWound">เจ็บแผลในปากเรื้อรัง</label>
                     </div>
                 </div>
                 <div class="row">
-                    <p>จำนวนฟันที่เหลือ <span data-bind="text: pntTeeth()"></span></p>
+                    <p>จำนวนฟันที่เหลือ</p>
                     <div class="input-field col s4">
                         <input type="radio" id="teethNone" value="0"
                             data-bind="checked: pntTeeth" class="with-gap"/>
@@ -643,7 +614,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <p>การเคี้ยวอาหาร<span data-bind="text: pntChewing()"></span></p>
+                    <p>การเคี้ยวอาหาร</p>
                     <div class="input-field col s4">
                         <input type="radio" id="chewingOk" data-bind="checked: pntChewing"
                             value="0" class="with-gap"/>
@@ -662,13 +633,11 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s8">
-                        <span data-bind="text: pntLastAdmittedDis"></span>
                         <label for="pntLastAdmittedDis">เข้ารับการรักษาในโรงพยาบาลครั้งล่าสุดด้วยโรค</label>
                         <input type="text" id="pntLastAdmittedDis"
                             data-bind="value: pntLastAdmittedDis">
                     </div>
                     <div class="input-field col s4">
-                        <span data-bind="text: pntLastAdmittedDate"></span>
                         <label for="pntLastAdmittedDate">เมื่อ</label>
                         <input type="date" class="datepicker" id="pntLastAdmittedDate"
                             data-bind="value: pntLastAdmittedDate,
@@ -677,13 +646,11 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s8">
-                        <span data-bind="text: pntBoneFracture"></span>
                         <input type="checkbox" id="pntBoneFracture"
                             data-bind="checked: pntBoneFracture"/>
                         <label for="pntBoneFracture">เคยกระดูกหัก</label>
                     </div>
                     <div class="input-field col s4">
-                        <span data-bind="text: pntBoneFractureDate"></span>
                         <label for="pntBoneFractureDate">เมื่อ</label>
                         <input type="date" class="datepicker" id="pntBoneFractureDate"
                             data-bind="value: pntBoneFractureDate,
@@ -694,13 +661,11 @@
                     <p>สาเหตุที่หัก</p>
                     <div class="row">
                         <div class="input-field col s4">
-                        <span data-bind="text: pntBoneFractureCause"></span>
                             <input type="radio" id="fractureAccident" name="pntBoneFractureCause"
                                 data-bind="checked: pntBoneFractureCause" value="0" class="with-gap"/>
                             <label for="fractureAccident">อุบัติเหตุ</label>
                         </div>
                         <div class="input-field col s2">
-                        <span data-bind="text: pntBoneFractureCauseDetl"></span>
                             <label for="pntBoneFractureCauseDetl">โปรดระบุ</label>
                             <input type="text" id="pntBoneFractureCauseDetl"
                                 data-bind="value: pntBoneFractureCauseDetl,
@@ -715,7 +680,6 @@
                     <p>โดยหักที่</p>
                     <div class="row">
                         <div class="input-field col">
-                        <span data-bind="text: pntBoneFractureLoc"></span>
                             <input type="radio" id="fractureWrist" data-bind="checked: pntBoneFractureLoc"
                                 value="0" class="with-gap" name="pntBoneFractureLoc" />
                             <label for="fractureWrist">ข้อมือ</label>
@@ -744,7 +708,6 @@
                     </div>
                     <p>เอ็กซ์เรย์ที่รพ.</p>
                     <div class="row">
-                        <span data-bind="text: pntXRayFracture"></span>
                         <div class="input-field col">
                             <input type="radio" id="xrayFractureYes" data-bind="checked: pntXRayFracture"
                                 value="0" class="with-gap"/>
@@ -774,7 +737,6 @@
                                     <td>แว่นตา</td>
                                     <td>
                                         <div class="input-field col">
-                                            <span data-bind="text: pntHaveGlasses"></span>
                                             <input type="radio" id="haveGlassesNo" data-bind="checked: pntHaveGlasses"
                                                 value="0" class="with-gap" name="pntHaveGlasses"/>
                                             <label for="haveGlassesNo">&nbsp;</label>
@@ -799,7 +761,6 @@
                                     <td>เครื่องช่วยฟัง</td>
                                     <td>
                                         <div class="input-field col">
-                                            <span data-bind="text: pntHaveHearingAid"></span>
                                             <input type="radio" id="haveHearingAidNo" data-bind="checked: pntHaveHearingAid"
                                                 value="0" class="with-gap" name="pntHaveHearingAid"/>
                                             <label for="haveHearingAidNo">&nbsp;</label>
@@ -824,7 +785,6 @@
                                     <td>ฟันเทียม</td>
                                     <td>
                                         <div class="input-field col">
-                                            <span data-bind="text: pntHaveDenture"></span>
                                             <input type="radio" id="haveDentureNo" data-bind="checked: pntHaveDenture"
                                                 value="0" class="with-gap"/>
                                             <label for="haveDentureNo">&nbsp;</label>
@@ -849,7 +809,6 @@
                                     <td>ไม้เท้า</td>
                                     <td>
                                         <div class="input-field col">
-                                            <span data-bind="text: pntHaveCane"></span>
                                             <input type="radio" id="haveCaneNo" data-bind="checked: pntHaveCane"
                                                 value="0" class="with-gap"/>
                                             <label for="haveCaneNo">&nbsp;</label>
@@ -874,7 +833,6 @@
                                     <td>Walking frame</td>
                                     <td>
                                         <div class="input-field col">
-                                            <span data-bind="text: pntHaveWalkingFr"></span>
                                             <input type="radio" id="haveWalkingFrNo" data-bind="checked: pntHaveWalkingFr"
                                                 value="0" class="with-gap"/>
                                             <label for="haveWalkingFrNo">&nbsp;</label>
@@ -899,7 +857,6 @@
                                     <td>รถเข็น</td>
                                     <td>
                                         <div class="input-field col">
-                                            <span data-bind="text: pntHaveWheelChair"></span>
                                             <input type="radio" id="haveWheelChairNo" data-bind="checked: pntHaveWheelChair"
                                                 value="0" class="with-gap"/>
                                             <label for="haveWheelChairNo">&nbsp;</label>
@@ -924,7 +881,6 @@
                                     <td>สายปัสสาวะ</td>
                                     <td>
                                         <div class="input-field col">
-                                            <span data-bind="text: pntHaveUrineCatheter"></span>
                                             <input type="radio" id="haveUrineCatheterNo" data-bind="checked: pntHaveUrineCatheter"
                                                 value="0" class="with-gap"/>
                                             <label for="haveUrineCatheterNo">&nbsp;</label>
@@ -951,7 +907,6 @@
                 </div>
                 <div class="row">
                     <p>การมองเห็นระยะใกล้ (ดูหนังสือ)</p>
-                    <span data-bind="text: pntEyeSightNear"></span>
                     <div class="input-field col">
                         <input type="radio" id="GlassesNotRequired" data-bind="checked: pntEyeSightNear"
                             value="0" class="with-gap"/>
@@ -970,7 +925,6 @@
                 </div>
                 <div class="row">
                     <p>การมองเห็นระยะไกล (การข้ามถนน)</p>
-                    <span data-bind="text: pntEyeSightFar"></span>
                     <div class="input-field col">
                         <input type="radio" id="GlassesNotRequiredFar" data-bind="checked: pntEyeSightFar"
                             value="0" class="with-gap"/>
@@ -989,7 +943,6 @@
                 </div>
                 <div class="row">
                     <p>การได้ยิน</p>
-                    <span data-bind="text: pntHearing"></span>
                     <div class="input-field col">
                         <input type="radio" id="hearingGood" data-bind="checked: pntHearing"
                             value="0" class="with-gap"/>
@@ -1423,7 +1376,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ผู้ป่วยสามารถรับประทานอาหารได้เอง <span data-bind="text: hcare1_1_1"></span></td>
+                                    <td>ผู้ป่วยสามารถรับประทานอาหารได้เอง</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_1_1"
                                             id="hcare1.1.1.yes" data-bind="checked: hcare1_1_1">
@@ -1438,7 +1391,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ผู้ป่วยต้องมีคนช่วยในการรับประทานอาหาร <span data-bind="text: hcare1_1_2"></span></td>
+                                    <td>ผู้ป่วยต้องมีคนช่วยในการรับประทานอาหาร</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_1_2"
                                             id="hcare1.1.2.1" data-bind="checked: hcare1_1_2">
@@ -1453,7 +1406,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ดูแลผู้ป่วยที่รับประทานอาหารทางสายยาง <span data-bind="text: hcare1_1_3"></span></td>
+                                    <td>ดูแลผู้ป่วยที่รับประทานอาหารทางสายยาง</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_1_3"
                                             id="hcare1.1.3.1" data-bind="checked: hcare1_1_3">
@@ -1474,7 +1427,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ดูแลผู้ป่วยที่เคลื่อนไหวได้เอง <span data-bind="text: hcare1_2_1"></span></td>
+                                    <td>ดูแลผู้ป่วยที่เคลื่อนไหวได้เอง</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_2_1"
                                             id="hcare1.2.1.yes" data-bind="checked: hcare1_2_1">
@@ -1489,7 +1442,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ดูแลผู้ป่วยที่ต้องมีคนช่วยเหลือบางส่วน <span data-bind="text: hcare1_2_2"></span></td>
+                                    <td>ดูแลผู้ป่วยที่ต้องมีคนช่วยเหลือบางส่วน</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_2_2"
                                             id="hcare1.2.2.yes" data-bind="checked: hcare1_2_2">
@@ -1504,7 +1457,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ดูแลผู้ป่วยที่นอนติดเตียง <span data-bind="text: hcare1_2_3"></span></td>
+                                    <td>ดูแลผู้ป่วยที่นอนติดเตียง</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_2_3"
                                             id="hcare1.2.3.yes" data-bind="checked: hcare1_2_3">
@@ -1519,7 +1472,7 @@
                                 </tr>
                                 <tr>
                                     <td>1.3</td>
-                                    <td>การป้องกันแผลกดทับโดยการพลิกตะแคงตัวทุกสองชม. <span data-bind="text: hcare1_3"></span></td>
+                                    <td>การป้องกันแผลกดทับโดยการพลิกตะแคงตัวทุกสองชม.</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_3"
                                             id="hcare1.3.yes" data-bind="checked: hcare1_3">
@@ -1540,7 +1493,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ใช้ผ้าอ้อมสำเร็จรูป<span data-bind="text: hcare1_4_1"></span></td>
+                                    <td>ใช้ผ้าอ้อมสำเร็จรูป</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_4_1"
                                             id="hcare1.4.1.yes" data-bind="checked: hcare1_4_1">
@@ -1555,7 +1508,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ใช้แผ่นรองเปื้อน<span data-bind="text: hcare1_4_2"></span></td>
+                                    <td>ใช้แผ่นรองเปื้อน</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare_1_4_2"
                                             id="hcare1.4.2.yes" data-bind="checked: hcare1_4_2">
@@ -1570,7 +1523,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>คาสายสวนปัสสาวะ<span data-bind="text: hcare1_4_3"></span></td>
+                                    <td>คาสายสวนปัสสาวะ</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare_1_4_3"
                                             id="hcare1.4.3.yes" data-bind="checked: hcare1_4_3">
@@ -1591,7 +1544,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>แรกรับ<span data-bind="text: hcare1_5_1"></span></td>
+                                    <td>แรกรับ</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare_1_5_1"
                                             id="hcare1.5.1.yes" data-bind="checked: hcare1_5_1">
@@ -1606,7 +1559,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ระหว่างรักษาในหอผู้ป่วย<span data-bind="text: hcare1_5_2"></span></td>
+                                    <td>ระหว่างรักษาในหอผู้ป่วย</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare_1_5_2"
                                             id="hcare1.5.2.yes" data-bind="checked: hcare1_5_2">
@@ -1621,7 +1574,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ก่อนกลับบ้าน<span data-bind="text: hcare1_5_3"></span></td>
+                                    <td>ก่อนกลับบ้าน</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_5_3"
                                             id="hcare1.5.3.yes" data-bind="checked: hcare1_5_3">
@@ -1636,7 +1589,7 @@
                                 </tr>
                                 <tr>
                                     <td>1.6</td>
-                                    <td>การนอนหลับ<span data-bind="text: hcare1_6"></span></td>
+                                    <td>การนอนหลับ</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_6"
                                             id="hcare1.6.1" data-bind="checked: hcare1_6">
@@ -1657,7 +1610,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>อยู่ใกล้แผนกพยาบาล<span data-bind="text: hcare1_7_1"></span></td>
+                                    <td>อยู่ใกล้แผนกพยาบาล</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_7_1"
                                             id="hcare1.7.1.yes" data-bind="checked: hcare1_7_1">
@@ -1672,7 +1625,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ไม่แน่นอนขึ้นกับเตียงว่าง<span data-bind="text: hcare1_7_2"></span></td>
+                                    <td>ไม่แน่นอนขึ้นกับเตียงว่าง</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_7_2"
                                             id="hcare1.7.2.yes" data-bind="checked: hcare1_7_2">
@@ -1687,7 +1640,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>มีการแยกส่วนผู้ป่วยสมองเสื่อม<span data-bind="text: hcare1_7_3"></span></td>
+                                    <td>มีการแยกส่วนผู้ป่วยสมองเสื่อม</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_7_3"
                                             id="hcare1.7.3.yes" data-bind="checked: hcare1_7_3">
@@ -1702,7 +1655,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>บริเวณที่ผู้ป่วยอยู่มองเห็นหน้าต่างชัดเจน<span data-bind="text: hcare1_7_4"></span></td>
+                                    <td>บริเวณที่ผู้ป่วยอยู่มองเห็นหน้าต่างชัดเจน</td>
                                     <td><input type="radio" class="with-gap" value="1" name="hcare1_7_4"
                                             id="hcare1.7.4.yes" data-bind="checked: hcare1_7_4">
                                         <label for="hcare1.7.4.yes">มี</label>
@@ -1722,7 +1675,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>กิจกรรมการฟื้นฟูด้านกายภาพบำบัด<span data-bind="text: hcare1_8_1"></span></td>
+                                    <td>กิจกรรมการฟื้นฟูด้านกายภาพบำบัด</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare_1_8_1"
                                             id="hcare1.8.1.yes" data-bind="checked: hcare1_8_1">
@@ -1737,7 +1690,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>กิจกรรมกระตุ้นความจำ<span data-bind="text: hcare1_8_2"></span></td>
+                                    <td>กิจกรรมกระตุ้นความจำ</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare_1_8_2"
                                             id="hcare1.8.2.yes" data-bind="checked: hcare1_8_2">
@@ -1752,7 +1705,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>กิจกรรมสันทนาการ<span data-bind="text: hcare1_8_3"></span></td>
+                                    <td>กิจกรรมสันทนาการ</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare_1_8_3"
                                             id="hcare1.8.3.yes" data-bind="checked: hcare1_8_3">
@@ -1767,7 +1720,7 @@
                                 </tr>
                                 <tr>
                                     <td>1.9</td>
-                                    <td>มีญาติมาดูแลขณะพักรักษาตัวที่โรงพยาบาล<span data-bind="text: hcare1_9"></span></td>
+                                    <td>มีญาติมาดูแลขณะพักรักษาตัวที่โรงพยาบาล</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="2" name="hcare1_9"
                                             id="hcare1.9.1" data-bind="checked: hcare1_9">
@@ -1791,7 +1744,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>แรกรับ<span data-bind="text: hcare1_10_1"></span></td>
+                                    <td>แรกรับ</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_10_1"
                                             id="hcare1.10.1.yes" data-bind="checked: hcare1_10_1">
@@ -1806,7 +1759,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ระหว่างรักษาในหอผู้ป่วย<span data-bind="text: hcare1_10_2"></span></td>
+                                    <td>ระหว่างรักษาในหอผู้ป่วย</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_10_2"
                                             id="hcare1.10.2.yes" data-bind="checked: hcare1_10_2">
@@ -1821,7 +1774,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ก่อนกลับบ้าน<span data-bind="text: hcare1_10_3"></span></td>
+                                    <td>ก่อนกลับบ้าน</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_10_3"
                                             id="hcare1.10.3.yes" data-bind="checked: hcare1_10_3">
@@ -1842,7 +1795,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ปัญหาในการสื่อสารกับผู้ป่วยสมองเสื่อม<span data-bind="text: hcare1_11_1"></span></td>
+                                    <td>ปัญหาในการสื่อสารกับผู้ป่วยสมองเสื่อม</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_11_1"
                                             id="hcare1.11.1.yes" data-bind="checked: hcare1_11_1">
@@ -1857,7 +1810,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>การใช้เวลาในการสื่อสารกับผู้ป่วยสมองเสื่อมมากกว่าผู้ป่วยทั่วไป<span data-bind="text: hcare1_11_2"></span></td>
+                                    <td>การใช้เวลาในการสื่อสารกับผู้ป่วยสมองเสื่อมมากกว่าผู้ป่วยทั่วไป</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_11_2"
                                             id="hcare1.11.2.yes" data-bind="checked: hcare1_11_2">
@@ -1872,7 +1825,7 @@
                                 </tr>
                                 <tr>
                                     <td>1.12</td>
-                                    <td>การจัดตารางการให้พยาบาลที่แยกจากผู้ป่วยทั่วไป<span data-bind="text: hcare1_12"></span></td>
+                                    <td>การจัดตารางการให้พยาบาลที่แยกจากผู้ป่วยทั่วไป</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_12"
                                             id="hcare1.12.yes" data-bind="checked: hcare1_12">
@@ -1887,7 +1840,7 @@
                                 </tr>
                                 <tr>
                                     <td>1.13</td>
-                                    <td>การเฝ้าระวังความปลอดภัยจากการพลัดหลงออกนอกหอผู้ป่วย<span data-bind="text: hcare1_13"></span></td>
+                                    <td>การเฝ้าระวังความปลอดภัยจากการพลัดหลงออกนอกหอผู้ป่วย</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_13"
                                             id="hcare1.13.yes" data-bind="checked: hcare1_13">
@@ -1908,7 +1861,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ประเมินความเสี่ยงการเกิด fall ด้วยแบบบฟอร์ม Fall assessment tools<span data-bind="text: hcare1_14_1"></span></td>
+                                    <td>ประเมินความเสี่ยงการเกิด fall ด้วยแบบบฟอร์ม Fall assessment tools</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_14_1"
                                             id="hcare1.14.1.yes" data-bind="checked: hcare1_14_1">
@@ -1923,7 +1876,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>บันทึกคะแนนลงในแบบฟอร์มปรอท<span data-bind="text: hcare1_14_2"></span></td>
+                                    <td>บันทึกคะแนนลงในแบบฟอร์มปรอท</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_14_2"
                                             id="hcare1.14.2.y" data-bind="checked: hcare1_14_2">
@@ -1938,7 +1891,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ประเมินความเสี่ยงต่อการเกิด fall<span data-bind="text: hcare1_14_3"></span></td>
+                                    <td>ประเมินความเสี่ยงต่อการเกิด fall</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="2" name="hcare1_14_3"
                                             id="hcare1.14.3.1" data-bind="checked: hcare1_14_3">
@@ -1956,7 +1909,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>การเฝ้าระวังผู้ป่วยที่มีข้อจำกัดในการเคลื่อนไหว<span data-bind="text: hcare1_14_4"></span></td>
+                                    <td>การเฝ้าระวังผู้ป่วยที่มีข้อจำกัดในการเคลื่อนไหว</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_14_4"
                                             id="hcare1.14.4.1" data-bind="checked: hcare1_14_4">
@@ -1971,7 +1924,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>การเคลื่อนย้ายผู้ป่วยที่มีความเสี่ยงต่อการลื่น ทรุด พลัดตก หกล้ม ตามแนวทางที่หน่วยงานกำหนด<span data-bind="text: hcare1_14_5"></span></td>
+                                    <td>การเคลื่อนย้ายผู้ป่วยที่มีความเสี่ยงต่อการลื่น ทรุด พลัดตก หกล้ม ตามแนวทางที่หน่วยงานกำหนด</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_14_5"
                                             id="hcare1.14.5.1" data-bind="checked: hcare1_14_5">
@@ -1986,7 +1939,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>พื้นต่างระดับมีสัญญาณเตือนพื้นต่างระดับ<span data-bind="text: hcare1_14_6"></span></td>
+                                    <td>พื้นต่างระดับมีสัญญาณเตือนพื้นต่างระดับ</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_14_6"
                                             id="hcare1.14.6.1" data-bind="checked: hcare1_14_6">
@@ -2001,7 +1954,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>เปิดไฟให้แสงสว่างเพียงพอโดยเฉพาะช่วงเวลาเย็น-กลางคืน บริเวณเตียง ทางเดิน ห้องสุขา<span data-bind="text: hcare1_14_7"></span></td>
+                                    <td>เปิดไฟให้แสงสว่างเพียงพอโดยเฉพาะช่วงเวลาเย็น-กลางคืน บริเวณเตียง ทางเดิน ห้องสุขา</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_14_7"
                                             id="hcare1.14.7.1" data-bind="checked: hcare1_14_7">
@@ -2016,7 +1969,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>รายงาน incidence report พร้อม investigation form<span data-bind="text: hcare1_14_8"></span></td>
+                                    <td>รายงาน incidence report พร้อม investigation form</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_14_8"
                                             id="hcare1.14.8.1" data-bind="checked: hcare1_14_8">
@@ -2031,7 +1984,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>รายงาน incidence report พร้อม investigation form<span data-bind="text: hcare1_14_9"></span></td>
+                                    <td>รายงาน incidence report พร้อม investigation form</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_14_9"
                                             id="hcare1.14.9.1" data-bind="checked: hcare1_14_9">
@@ -2046,7 +1999,7 @@
                                 </tr>
                                 <tr>
                                     <td>1.15</td>
-                                    <td>การวางแผนจำหน่ายและการดูแลต่อเนื่อง<span data-bind="text: hcare1_15_1"></span></td>
+                                    <td>การวางแผนจำหน่ายและการดูแลต่อเนื่อง</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_15_1"
                                             id="hcare1.15.1.1" data-bind="checked: hcare1_15_1">
@@ -2061,7 +2014,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ตรวจเยี่ยมผู้ป่วยสม่ำเสมออย่างน้อยทุก 1-2 ชม. ตามความจำเป็น<span data-bind="text: hcare1_15_2"></span></td>
+                                    <td>ตรวจเยี่ยมผู้ป่วยสม่ำเสมออย่างน้อยทุก 1-2 ชม. ตามความจำเป็น</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_15_2"
                                             id="hcare1.15.2.1" data-bind="checked: hcare1_15_2">
@@ -2076,7 +2029,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ให้ข้อมูลซ้ำเกี่ยวกับวัน เวลาและสถานที่ บุคคล สำหรับผู้ป่วยที่มีอาการสับสน อย่างน้อยเวรละครั้ง<span data-bind="text: hcare1_15_3"></span></td>
+                                    <td>ให้ข้อมูลซ้ำเกี่ยวกับวัน เวลาและสถานที่ บุคคล สำหรับผู้ป่วยที่มีอาการสับสน อย่างน้อยเวรละครั้ง</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_15_3"
                                             id="hcare1.15.3.1" data-bind="checked: hcare1_15_3">
@@ -2146,7 +2099,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>บันทึกและสรุปผลการปฏิบัติการพยาบาลผู้ป่วยจำหน่ายทุกราย<span data-bind="text: hcare1_15_6"></span></td>
+                                    <td>บันทึกและสรุปผลการปฏิบัติการพยาบาลผู้ป่วยจำหน่ายทุกราย</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare1_15_6"
                                             id="hcare1.15.6.1" data-bind="checked: hcare1_15_6">
@@ -2161,7 +2114,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>การนัดผู้ป่วยเพื่อดูแลต่อเนื่องที่โรงพยาบาล ถ้ามี ระบุแผนก/คลินิก<span data-bind="text: hcare1_15_7"></span></td>
+                                    <td>การนัดผู้ป่วยเพื่อดูแลต่อเนื่องที่โรงพยาบาล ถ้ามี ระบุแผนก/คลินิก</td>
                                     <td>
                                         <div class="input-field">
                                             <input type="text" class="with-gap"
@@ -2187,7 +2140,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>การส่งปรึกษาทางกายภาพบำบัดภายใน 1 วันแรกรับ<span data-bind="text: hcare2_1_1"></span></td>
+                                    <td>การส่งปรึกษาทางกายภาพบำบัดภายใน 1 วันแรกรับ</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare2_1_1"
                                             id="hcare2.1.1.1" data-bind="checked: hcare2_1_1">
@@ -2202,7 +2155,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>มีการประเมินความสามารถในการทำกิจวัตรประจำวัน ก่อนและหลังการได้รับโปรแกรมการฟึ้นฟู<span data-bind="text: hcare2_1_2"></span></td>
+                                    <td>มีการประเมินความสามารถในการทำกิจวัตรประจำวัน ก่อนและหลังการได้รับโปรแกรมการฟึ้นฟู</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare2_1_2"
                                             id="hcare2.1.2.1" data-bind="checked: hcare2_1_2">
@@ -2217,7 +2170,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ประเมินความสามารถการกลืนก่อนและหลังการได้รับโปรแกรมการฟึ้นฟู<span data-bind="text: hcare2_1_3"></span></td>
+                                    <td>ประเมินความสามารถการกลืนก่อนและหลังการได้รับโปรแกรมการฟึ้นฟู</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare2_1_3"
                                             id="hcare2.1.3.1" data-bind="checked: hcare2_1_3">
@@ -2232,7 +2185,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>การประเมินระดับความปวด<span data-bind="text: hcare2_1_4"></span></td>
+                                    <td>การประเมินระดับความปวด</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare2_1_4"
                                             id="hcare2.1.4.1" data-bind="checked: hcare2_1_4">
@@ -2253,7 +2206,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ผู้ป่วยและครอบครัวมีส่วนร่วมในการวางแผนและตั้งเป้าหมายการฟื้นฟูสภาพจากทีมเวชศาสตร์ฟื้นฟูทุกราย<span data-bind="text: hcare2_2_1"></span></td>
+                                    <td>ผู้ป่วยและครอบครัวมีส่วนร่วมในการวางแผนและตั้งเป้าหมายการฟื้นฟูสภาพจากทีมเวชศาสตร์ฟื้นฟูทุกราย</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare2_2_1"
                                             id="hcare2.2.1.1" data-bind="checked: hcare2_2_1">
@@ -2268,7 +2221,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ผู้ป่วยได้รับการวางแผนจำหน่ายจากทีมสหสาขาเวชศาสตร์ฟื้นฟู<span data-bind="text: hcare2_2_2"></span></td>
+                                    <td>ผู้ป่วยได้รับการวางแผนจำหน่ายจากทีมสหสาขาเวชศาสตร์ฟื้นฟู</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare2_2_2"
                                             id="hcare2.2.2.1" data-bind="checked: hcare2_2_2">
@@ -2289,7 +2242,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>จัดโปรแกรมฟื้นฟูเฉพาะโรคตามแนวทางเวชปฏิบัติ<span data-bind="text: hcare2_3_1"></span></td>
+                                    <td>จัดโปรแกรมฟื้นฟูเฉพาะโรคตามแนวทางเวชปฏิบัติ</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare2_3_1"
                                             id="hcare2.3.1.1" data-bind="checked: hcare2_3_1">
@@ -2304,7 +2257,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ผู้ป่วยได้รับการติดตามเพื่อเฝ้าระวังภาวะแทรกซ้อนขณะที่ได้รับโปรแกรมฟื้นฟู<span data-bind="text: hcare2_3_2"></span></td>
+                                    <td>ผู้ป่วยได้รับการติดตามเพื่อเฝ้าระวังภาวะแทรกซ้อนขณะที่ได้รับโปรแกรมฟื้นฟู</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare2_3_2"
                                             id="hcare2.3.2.1" data-bind="checked: hcare2_3_2">
@@ -2325,7 +2278,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ผู้ป่วยและครอบครัวได้รับคำอธิบายเกี่ยวกับโรคและการปฏิบัติตัวก่อนออกจากโรงพยาบาล<span data-bind="text: hcare2_4_1"></span></td>
+                                    <td>ผู้ป่วยและครอบครัวได้รับคำอธิบายเกี่ยวกับโรคและการปฏิบัติตัวก่อนออกจากโรงพยาบาล</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare2_4_1"
                                             id="hcare2.4.1.1" data-bind="checked: hcare2_4_1">
@@ -2340,7 +2293,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>การเตรียมความพร้อมให้กับผู้ป่วยและญาติเพื่อฝึกการดูแลทักษะที่จำเป็นก่อนกลับบ้าน<span data-bind="text: hcare2_4_2"></span></td>
+                                    <td>การเตรียมความพร้อมให้กับผู้ป่วยและญาติเพื่อฝึกการดูแลทักษะที่จำเป็นก่อนกลับบ้าน</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare2_4_2"
                                             id="hcare2.4.2.1" data-bind="checked: hcare2_4_2">
@@ -2355,7 +2308,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>การจัดเตรียมอุปกรณ์ เครื่องช่วยในการเคลื่อนตัว<span data-bind="text: hcare2_4_3"></span></td>
+                                    <td>การจัดเตรียมอุปกรณ์ เครื่องช่วยในการเคลื่อนตัว</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare2_4_3"
                                             id="hcare2.4.3.1" data-bind="checked: hcare2_4_3">
@@ -2370,7 +2323,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>การสอนและสาธิตการดูแลกิจวัตรประจำวัน<span data-bind="text: hcare2_4_4"></span></td>
+                                    <td>การสอนและสาธิตการดูแลกิจวัตรประจำวัน</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare2_4_4"
                                             id="hcare2.4.4.1" data-bind="checked: hcare2_4_4">
@@ -2385,7 +2338,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>การสอนและสาธิตการเคลื่อนที่และการเคลื่อนไหว<span data-bind="text: hcare2_4_5"></span></td>
+                                    <td>การสอนและสาธิตการเคลื่อนที่และการเคลื่อนไหว</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare2_4_5"
                                             id="hcare2.4.5.1" data-bind="checked: hcare2_4_5">
@@ -2406,7 +2359,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ผู้ป่วยได้รับการส่งต่อการดูแลต่อเนื่องไปยังสถานพยาบาลใกล้บ้าน<span data-bind="text: hcare2_5_1"></span></td>
+                                    <td>ผู้ป่วยได้รับการส่งต่อการดูแลต่อเนื่องไปยังสถานพยาบาลใกล้บ้าน</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare2_5_1"
                                             id="hcare2.5.1.1" data-bind="checked: hcare2_5_1">
@@ -2421,7 +2374,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>มีระบบการติดตามการรักษาหลังจากการได้รับโปรแกรมฟื้นฟูสำหรับผู้ป่วยสูงอายุสมองเสื่อม<span data-bind="text: hcare2_5_2"></span></td>
+                                    <td>มีระบบการติดตามการรักษาหลังจากการได้รับโปรแกรมฟื้นฟูสำหรับผู้ป่วยสูงอายุสมองเสื่อม</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" name="hcare2_5_2"
                                             id="hcare2.5.2.1" data-bind="checked: hcare2_5_2">
@@ -2442,7 +2395,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ประเมินสภาพร่างกาย จิตใจและความต้องการด้านสังคมของผู้ป่วย<span data-bind="text: hcare3_1_1"></span></td>
+                                    <td>ประเมินสภาพร่างกาย จิตใจและความต้องการด้านสังคมของผู้ป่วย</td>
                                     <td><input type="radio" id="hcare3-1-1-yes" class="with-gap" name="hcare3-1-1"
                                             value="1" data-bind="checked: hcare3_1_1"/>
                                         <label for="hcare3-1-1-yes">มี</label>
@@ -2456,7 +2409,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ประเมินความพร้อมทางร่างกาย จิตใจ และการปฏิบัติกิจวัตรประจำวัน รวมทั้งผู้ดูแลและแหล่งบริการสุขภาพใกล้บ้าน<span data-bind="text: hcare3_1_2"></span></td>
+                                    <td>ประเมินความพร้อมทางร่างกาย จิตใจ และการปฏิบัติกิจวัตรประจำวัน รวมทั้งผู้ดูแลและแหล่งบริการสุขภาพใกล้บ้าน</td>
                                     <td><input type="radio" id="hcare3-1-2-yes" class="with-gap" name="hcare3-1-2"
                                              value="1" data-bind="checked: hcare3_1_2"/>
                                         <label for="hcare3-1-2-yes">มี</label>
@@ -2470,7 +2423,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ประเมินปัญหาและความต้องการดูแลหลังจำหน่าย<span data-bind="text: hcare3_1_3"></span></td>
+                                    <td>ประเมินปัญหาและความต้องการดูแลหลังจำหน่าย</td>
                                     <td><input type="radio" id="hcare3-1-3-yes" class="with-gap" name="hcare3-1-3"
                                              value="1" data-bind="checked: hcare3_1_3"/>
                                         <label for="hcare3-1-3-yes">มี</label>
@@ -2490,7 +2443,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>วางแผนการจำหน่ายผู้ป่วยร่วมกันของทีมสหสาขาวิชาชีพ<span data-bind="text: hcare3_2_1"></span></td>
+                                    <td>วางแผนการจำหน่ายผู้ป่วยร่วมกันของทีมสหสาขาวิชาชีพ</td>
                                     <td><input type="radio" id="hcare3-2-1-yes" class="with-gap" name="hcare3-2-1"
                                              value="1" data-bind="checked: hcare3_2_1"/>
                                         <label for="hcare3-2-1-yes">มี</label>
@@ -2504,7 +2457,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>วางแผนจำหน่ายผู้ป่วยร่วมกับผู้ป่วยและผู้ดูแล<span data-bind="text: hcare3_2_2"></span></td>
+                                    <td>วางแผนจำหน่ายผู้ป่วยร่วมกับผู้ป่วยและผู้ดูแล</td>
                                     <td><input type="radio" id="hcare3-2-2-yes" class="with-gap" name="hcare3-2-2"
                                              value="1" data-bind="checked: hcare3_2_2"/>
                                         <label for="hcare3-2-2-yes">มี</label>
@@ -2518,7 +2471,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>กำหนดกิจกรรมการวางแผนจำหน่ายผู้ป่วยตามรูปแบบ M-E-T-H-O-D<span data-bind="text: hcare3_2_3"></span></td>
+                                    <td>กำหนดกิจกรรมการวางแผนจำหน่ายผู้ป่วยตามรูปแบบ M-E-T-H-O-D</td>
                                     <td><input type="radio" id="hcare3-2-3-yes" class="with-gap" name="hcare3-2-3"
                                              value="1" data-bind="checked: hcare3_2_3"/>
                                         <label for="hcare3-2-3-yes">มี</label>
@@ -2538,7 +2491,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>มอบหมายแผนการจำหน่ายผู้ป่วยเฉพาะรายกับทีมสหสาขาวิชาชีพ<span data-bind="text: hcare3_3_1"></span></td>
+                                    <td>มอบหมายแผนการจำหน่ายผู้ป่วยเฉพาะรายกับทีมสหสาขาวิชาชีพ</td>
                                     <td><input type="radio" id="hcare3-3-1-yes" class="with-gap" name="hcare3-3-1"
                                              value="1" data-bind="checked: hcare3_3_1"/>
                                         <label for="hcare3-3-1-yes">มี</label>
@@ -2552,7 +2505,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ปฏิบัติตามแผนการจำหน่ายผู้ป่วยร่วมกับผู้ดูแล<span data-bind="text: hcare3_3_2"></span></td>
+                                    <td>ปฏิบัติตามแผนการจำหน่ายผู้ป่วยร่วมกับผู้ดูแล</td>
                                     <td><input type="radio" id="hcare3-3-2-yes" class="with-gap" name="hcare3-3-2"
                                              value="1" data-bind="checked: hcare3_3_2"/>
                                         <label for="hcare3-3-2-yes">มี</label>
@@ -2566,7 +2519,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>การประเมินผล<span data-bind="text: hcare3_3_3"></span></td>
+                                    <td>การประเมินผล</td>
                                     <td><input type="radio" id="hcare3-3-3-yes" class="with-gap" name="hcare3-3-3"
                                             value="1" data-bind="checked: hcare3_3_3"/>
                                         <label for="hcare3-3-3-yes">มี</label>
@@ -2580,7 +2533,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>การส่งต่อผู้ป่วยที่ต้องการการดูแลต่อเนื่องไปยังหน่วยงานที่เกี่ยวข้อง ตามแนวทางที่โรงพยาบาลกำหนด<span data-bind="text: hcare3_3_4"></span></td>
+                                    <td>การส่งต่อผู้ป่วยที่ต้องการการดูแลต่อเนื่องไปยังหน่วยงานที่เกี่ยวข้อง ตามแนวทางที่โรงพยาบาลกำหนด</td>
                                     <td>
                                         <input type="radio" class="with-gap" value="1" id="hcare3.3.4.1"
                                             data-bind="checked: hcare3_3_4" name="hcare3_3_4"/>
@@ -2595,7 +2548,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>การนัดเข้าติดตามผลเพื่อการรักษาต่อเนื่องหลังการจำหน่าย<span data-bind="text: hcare3_3_5"></span></td>
+                                    <td>การนัดเข้าติดตามผลเพื่อการรักษาต่อเนื่องหลังการจำหน่าย</td>
                                     <td>
                                         โรงพยาบาลที่เข้าพักรักษา
                                         <input type="radio" class="with-gap" value="1" id="hcare3.3.5.1"
@@ -2620,7 +2573,7 @@
                                     <td></td>
                                     <td></td>
                                     <td>
-                                        โรงพยาบาลเครือข่ายอื่น<span data-bind="text: hcare3_3_6"></span>
+                                        โรงพยาบาลเครือข่ายอื่น
                                         <input type="radio" class="with-gap" value="1" id="hcare3.3.6.1"
                                             data-bind="checked: hcare3_3_6" name="hcare3_3_6"/>
                                         <label for="hcare3.3.6.1">รพศ./รพท.</label>
@@ -2653,7 +2606,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>อธิบายเกี่ยวกับเรื่องโรค<span data-bind="text: hcare4_1_1"></span></td>
+                                    <td>อธิบายเกี่ยวกับเรื่องโรค</td>
                                     <td><input type="radio" id="hcare4-1-1-yes" class="with-gap" name="hcare4-1-1"
                                             value="1" data-bind="checked: hcare4_1_1"/>
                                         <label for="hcare4-1-1-yes">มี</label>
@@ -2667,7 +2620,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>การดูแลสุขวิทยาส่วนบุคคล<span data-bind="text: hcare4_1_2"></span></td>
+                                    <td>การดูแลสุขวิทยาส่วนบุคคล</td>
                                     <td><input type="radio" id="hcare4-1-2-yes" class="with-gap" name="hcare4-1-2"
                                             value="1" data-bind="checked: hcare4_1_2"/>
                                         <label for="hcare4-1-2-yes">มี</label>
@@ -2681,7 +2634,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>การสังเกตอาการหรือภาวะแทรกซ้อนในแต่ละโรค<span data-bind="text: hcare4_1_3"></span></td>
+                                    <td>การสังเกตอาการหรือภาวะแทรกซ้อนในแต่ละโรค</td>
                                     <td><input type="radio" id="hcare4-1-3-yes" class="with-gap" name="hcare4-1-3"
                                             value="1" data-bind="checked: hcare4_1_3"/>
                                         <label for="hcare4-1-3-yes">มี</label>
@@ -2701,7 +2654,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>สอนและอธิบายวิธีการรับประทานยา ขนาดของยาด้วยตนเอง<span data-bind="text: hcare4_2_1"></span></td>
+                                    <td>สอนและอธิบายวิธีการรับประทานยา ขนาดของยาด้วยตนเอง</td>
                                     <td><input type="radio" id="hcare4-2-1-yes" class="with-gap" name="hcare4-2-1"
                                             value="1" data-bind="checked: hcare4_2_1"/>
                                         <label for="hcare4-2-1-yes">มี</label>
@@ -2715,7 +2668,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>ประเมินวิธีการปฏิบัติ การรับประทานยาตามขนาดและเวลาของผู้ป่วยและญาติหรือผู้ดูแล<span data-bind="text: hcare4_2_2"></span></td>
+                                    <td>ประเมินวิธีการปฏิบัติ การรับประทานยาตามขนาดและเวลาของผู้ป่วยและญาติหรือผู้ดูแล</td>
                                     <td><input type="radio" id="hcare4-2-2-yes" class="with-gap" name="hcare4-2-2"
                                             value="1" data-bind="checked: hcare4_2_2"/>
                                         <label for="hcare4-2-2-yes">มี</label>
@@ -2729,7 +2682,7 @@
                                 </tr>
                                 <tr>
                                     <td>4.3</td>
-                                    <td>ให้คำแนะนำเกี่ยวกับอาหารที่สอดคล้องตามสภาพของโรค<span data-bind="text: hcare4_3"></span></td>
+                                    <td>ให้คำแนะนำเกี่ยวกับอาหารที่สอดคล้องตามสภาพของโรค</td>
                                     <td><input type="radio" id="hcare4-3-yes" class="with-gap" name="hcare4-3"
                                             value="1" data-bind="checked: hcare4_3"/>
                                         <label for="hcare4-3-yes">มี</label>
@@ -2743,7 +2696,7 @@
                                 </tr>
                                 <tr>
                                     <td>4.4</td>
-                                    <td>สอนและสาธิตเกี่ยวกับทักษะการฟื้นฟูสมรรถภาพที่จำเป็นแก่ผู้ป่วย<span data-bind="text: hcare4_4"></span></td>
+                                    <td>สอนและสาธิตเกี่ยวกับทักษะการฟื้นฟูสมรรถภาพที่จำเป็นแก่ผู้ป่วย</td>
                                     <td><input type="radio" id="hcare4-4-yes" class="with-gap" name="hcare4-4"
                                             value="1" data-bind="checked: hcare4_4"/>
                                         <label for="hcare4-4-yes">มี</label>
@@ -2763,7 +2716,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>การประเมินโดยนักสังคมสงเคราะห์<span data-bind="text: hcare5_1"></span></td>
+                                    <td>การประเมินโดยนักสังคมสงเคราะห์</td>
                                     <td>
                                         <input id="hcare5.1.1" type="radio" class="with-gap" value="1"
                                             data-bind="checked: hcare5_1" name="hcare5_1"/>
@@ -2778,7 +2731,7 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>การประเมินผู้ดูแลและข้อมูลผู้ป่วย<span data-bind="text: hcare5_2"></span></td>
+                                    <td>การประเมินผู้ดูแลและข้อมูลผู้ป่วย</td>
                                     <td>
                                         <input id="hcare5.2.1" type="radio" class="with-gap" value="1"
                                             data-bind="checked: hcare5_2" name="hcare5_2"/>
@@ -3129,7 +3082,6 @@
                             <tr>
                                 <td>1</td>
                                 <td>โดยทั่วไปแล้วคุณพึงพอใจกับชีวิตตัวเองหรือไม่
-                                    <span data-bind="text: tgds1()"></span>
                                 </td>
                                 <td>
                                     <input type="radio" name="tgds-1"
@@ -3145,7 +3097,6 @@
                             <tr>
                                 <td>2</td>
                                 <td>คุณไม่อยากทำในสิ่งที่เคยสนใจหรือเคยทำประจำ
-                                    <span data-bind="text: tgds2()"></span>
                                 </td>
                                 <td>
                                     <input type="radio" name="tgds-2" id="tgds-2-1"
@@ -3161,7 +3112,6 @@
                             <tr>
                                 <td>3</td>
                                 <td>คุณรู้สึกว่าชีวิตคุณว่างเปล่าไม่รู้จะทำอะไร
-                                    <span data-bind="text: tgds3()"></span>
                                 </td>
                                 <td>
                                     <input type="radio" name="tgds-3" id="tgds-3-1"
@@ -3176,7 +3126,7 @@
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td>คุณรู้สึกเบื่อๆ อยู่บ่อยครั้งหรือไม่ <span data-bind="text: tgds4()"></span></td>
+                                <td>คุณรู้สึกเบื่อๆ อยู่บ่อยครั้งหรือไม่</td>
                                 <td>
                                     <input type="radio" name="tgds-4" id="tgds-4-1"
                                         class="with-gap" value="1" data-bind="checked: tgds4">
@@ -3190,7 +3140,7 @@
                             </tr>
                             <tr>
                                 <td>5</td>
-                                <td>คุณหวังว่าจะมีสิ่งที่ดีเกิดขึ้นในวันข้างหน้า<span data-bind="text: tgds5()"></span></td>
+                                <td>คุณหวังว่าจะมีสิ่งที่ดีเกิดขึ้นในวันข้างหน้า</td>
                                 <td>
                                     <input type="radio" name="tgds-5" id="tgds-5-1"
                                         class="with-gap" value="0" data-bind="checked: tgds5">
@@ -3204,7 +3154,7 @@
                             </tr>
                             <tr>
                                 <td>6</td>
-                                <td>คุณมีเรื่องกังวลตลอดเวลาและเลิกคิดไม่ได้<span data-bind="text: tgds6()"></span></td>
+                                <td>คุณมีเรื่องกังวลตลอดเวลาและเลิกคิดไม่ได้</td>
                                 <td>
                                     <input type="radio" name="tgds-6" id="tgds-6-1"
                                         class="with-gap" value="1" data-bind="checked: tgds6">
@@ -3218,7 +3168,7 @@
                             </tr>
                             <tr>
                                 <td>7</td>
-                                <td>ส่วนใหญ่แล้วคุณรู้สึกอารมณ์ดี<span data-bind="text: tgds7()"></span></td>
+                                <td>ส่วนใหญ่แล้วคุณรู้สึกอารมณ์ดี</td>
                                 <td>
                                     <input type="radio" name="tgds-7" id="tgds-7-1"
                                         class="with-gap" value="0" data-bind="checked: tgds7">
@@ -3232,7 +3182,7 @@
                             </tr>
                             <tr>
                                 <td>8</td>
-                                <td>คุณรู้สึกกลัวว่าจะมีสิ่งไม่ดีเกิดขึ้นกับคุณ<span data-bind="text: tgds8()"></span></td>
+                                <td>คุณรู้สึกกลัวว่าจะมีสิ่งไม่ดีเกิดขึ้นกับคุณ</td>
                                 <td>
                                     <input type="radio" name="tgds-8" id="tgds-8-1"
                                         class="with-gap" value="1" data-bind="checked: tgds8">
@@ -3246,7 +3196,7 @@
                             </tr>
                             <tr>
                                 <td>9</td>
-                                <td>ส่วนใหญ่คุณรู้สึกมีความสุข<span data-bind="text: tgds9()"></span></td>
+                                <td>ส่วนใหญ่คุณรู้สึกมีความสุข</td>
                                 <td>
                                     <input type="radio" name="tgds-9" id="tgds-9-1"
                                         class="with-gap" value="0" data-bind="checked: tgds9">
@@ -3260,7 +3210,7 @@
                             </tr>
                             <tr>
                                 <td>10</td>
-                                <td>บ่อยครั้งที่คุณรู้สึกไม่มีที่พึ่ง<span data-bind="text: tgds10()"></span></td>
+                                <td>บ่อยครั้งที่คุณรู้สึกไม่มีที่พึ่ง</td>
                                 <td>
                                     <input type="radio" name="tgds-10" id="tgds-10-1"
                                         class="with-gap" value="1" data-bind="checked: tgds10">
@@ -3274,7 +3224,7 @@
                             </tr>
                             <tr>
                                 <td>11</td>
-                                <td>คุณรู้สึกกระวนกระวาย กระสับกระส่ายบ่อยๆ<span data-bind="text: tgds11()"></span></td>
+                                <td>คุณรู้สึกกระวนกระวาย กระสับกระส่ายบ่อยๆ</td>
                                 <td>
                                     <input type="radio" name="tgds-11" id="tgds-11-1"
                                         class="with-gap" value="1" data-bind="checked: tgds11">
@@ -3288,7 +3238,7 @@
                             </tr>
                             <tr>
                                 <td>12</td>
-                                <td>คุณชอบอยู่กับบ้านมากกว่าที่ออกนอกบ้าน<span data-bind="text: tgds12()"></span></td>
+                                <td>คุณชอบอยู่กับบ้านมากกว่าที่ออกนอกบ้าน</td>
                                 <td>
                                     <input type="radio" name="tgds-12" id="tgds-12-1"
                                         class="with-gap" value="1" data-bind="checked: tgds12">
@@ -3302,7 +3252,7 @@
                             </tr>
                             <tr>
                                 <td>13</td>
-                                <td>บ่อยครั้งที่คุณรู้สึกวิตกกังวลเกี่ยวกับชีวิตข้างหน้า<span data-bind="text: tgds13()"></span></td>
+                                <td>บ่อยครั้งที่คุณรู้สึกวิตกกังวลเกี่ยวกับชีวิตข้างหน้า</td>
                                 <td>
                                     <input type="radio" name="tgds-13" id="tgds-13-1"
                                         class="with-gap" value="1" data-bind="checked: tgds13">
@@ -3316,7 +3266,7 @@
                             </tr>
                             <tr>
                                 <td>14</td>
-                                <td>คุณคิดว่าความจำของคุณไม่ดีเท่าคนอื่น<span data-bind="text: tgds14()"></span></td>
+                                <td>คุณคิดว่าความจำของคุณไม่ดีเท่าคนอื่น</td>
                                 <td>
                                     <input type="radio" name="tgds-14" id="tgds-14-1"
                                         class="with-gap" value="1" data-bind="checked: tgds14">
@@ -3330,7 +3280,7 @@
                             </tr>
                             <tr>
                                 <td>15</td>
-                                <td>การที่มีชีวิตอยู่ถึงปัจจุบันเป็นเรื่องน่ายินดีหรือไม่<span data-bind="text: tgds15()"></span></td>
+                                <td>การที่มีชีวิตอยู่ถึงปัจจุบันเป็นเรื่องน่ายินดีหรือไม่</td>
                                 <td>
                                     <input type="radio" name="tgds-15" id="tgds-15-1"
                                         class="with-gap" value="0" data-bind="checked: tgds15">
@@ -3344,7 +3294,7 @@
                             </tr>
                             <tr>
                                 <td>16</td>
-                                <td>คุณรู้สึกหมดกำลังใจหรือเศร้าใจบ่อยๆ<span data-bind="text: tgds16()"></span></td>
+                                <td>คุณรู้สึกหมดกำลังใจหรือเศร้าใจบ่อยๆ</td>
                                 <td>
                                     <input type="radio" name="tgds-16" id="tgds-16-1"
                                         class="with-gap" value="1" data-bind="checked: tgds16">
@@ -3358,7 +3308,7 @@
                             </tr>
                             <tr>
                                 <td>17</td>
-                                <td>คุณรู้สึกว่าชีวิตคุณไม่ค่อยมีคุณค่า<span data-bind="text: tgds17()"></span></td>
+                                <td>คุณรู้สึกว่าชีวิตคุณไม่ค่อยมีคุณค่า</td>
                                 <td>
                                     <input type="radio" name="tgds-17" id="tgds-17-1"
                                         class="with-gap" value="1" data-bind="checked: tgds17">
@@ -3372,7 +3322,7 @@
                             </tr>
                             <tr>
                                 <td>18</td>
-                                <td>คุณรู้สึกกังวลมากกับชีวิตที่ผ่านมา<span data-bind="text: tgds18()"></span></td>
+                                <td>คุณรู้สึกกังวลมากกับชีวิตที่ผ่านมา</td>
                                 <td>
                                     <input type="radio" name="tgds-18" id="tgds-18-1"
                                         class="with-gap" value="1" data-bind="checked: tgds18">
@@ -3386,7 +3336,7 @@
                             </tr>
                             <tr>
                                 <td>19</td>
-                                <td>คุณรู้สึกว่าชีวิตนี้ยังมีเรื่องสนุกอีกมาก<span data-bind="text: tgds19()"></span></td>
+                                <td>คุณรู้สึกว่าชีวิตนี้ยังมีเรื่องสนุกอีกมาก</td>
                                 <td>
                                     <input type="radio" name="tgds-19" id="tgds-19-1"
                                         class="with-gap" value="0" data-bind="checked: tgds19">
@@ -3400,7 +3350,7 @@
                             </tr>
                             <tr>
                                 <td>20</td>
-                                <td>คุณรู้สึกลำบากที่จะเริ่มต้นอะไรใหม่ๆ<span data-bind="text: tgds20"></span></td>
+                                <td>คุณรู้สึกลำบากที่จะเริ่มต้นอะไรใหม่ๆ</td>
                                 <td>
                                     <input type="radio" name="tgds-20" id="tgds-20-1"
                                         class="with-gap" value="1" data-bind="checked: tgds20">
@@ -3414,7 +3364,7 @@
                             </tr>
                             <tr>
                                 <td>21</td>
-                                <td>คุณรู้สึกกระตือรือร้น<span data-bind="text: tgds21()"></span></td>
+                                <td>คุณรู้สึกกระตือรือร้น</td>
                                 <td>
                                     <input type="radio" name="tgds-21" id="tgds-21-1"
                                         class="with-gap" value="0" data-bind="checked: tgds21">
@@ -3428,7 +3378,7 @@
                             </tr>
                             <tr>
                                 <td>22</td>
-                                <td>คุณรู้สึกสิ้นหวัง<span data-bind="text: tgds22()"></span></td>
+                                <td>คุณรู้สึกสิ้นหวัง</td>
                                 <td>
                                     <input type="radio" name="tgds-22" id="tgds-22-1"
                                         class="with-gap" value="1" data-bind="checked: tgds22">
@@ -3442,7 +3392,7 @@
                             </tr>
                             <tr>
                                 <td>23</td>
-                                <td>คุณคิดว่าคนอื่นดีกว่าคุณ<span data-bind="text: tgds23()"></span></td>
+                                <td>คุณคิดว่าคนอื่นดีกว่าคุณ</td>
                                 <td>
                                     <input type="radio" name="tgds-23" id="tgds-23-1"
                                         class="with-gap" value="1" data-bind="checked: tgds23">
@@ -3456,7 +3406,7 @@
                             </tr>
                             <tr>
                                 <td>24</td>
-                                <td>คุณอารมณ์เสียง่ายกับเรื่องเล็กๆ น้อยๆ อยู่เสมอ<span data-bind="text: tgds24()"></span></td>
+                                <td>คุณอารมณ์เสียง่ายกับเรื่องเล็กๆ น้อยๆ อยู่เสมอ</td>
                                 <td>
                                     <input type="radio" name="tgds-24" id="tgds-24-1"
                                         class="with-gap" value="1" data-bind="checked: tgds24">
@@ -3470,7 +3420,7 @@
                             </tr>
                             <tr>
                                 <td>25</td>
-                                <td>คุณมีความรู้สึกอยากร้องไห้บ่อยๆ<span data-bind="text: tgds25()"></span></td>
+                                <td>คุณมีความรู้สึกอยากร้องไห้บ่อยๆ</td>
                                 <td>
                                     <input type="radio" name="tgds-25" id="tgds-25-1"
                                         class="with-gap" value="1" data-bind="checked: tgds25">
@@ -3484,7 +3434,7 @@
                             </tr>
                             <tr>
                                 <td>26</td>
-                                <td>คุณมีความตั้งใจในการทำสิ่งใดสิ่งหนึ่งได้ไม่นาน<span data-bind="text: tgds26()"></span></td>
+                                <td>คุณมีความตั้งใจในการทำสิ่งใดสิ่งหนึ่งได้ไม่นาน</td>
                                 <td>
                                     <input type="radio" name="tgds-26" id="tgds-26-1"
                                         class="with-gap" value="1" data-bind="checked: tgds26">
@@ -3498,7 +3448,7 @@
                             </tr>
                             <tr>
                                 <td>27</td>
-                                <td>คุณรู้สึกสดชื่นในเวลาตื่นนอนเช้า<span data-bind="text: tgds27()"></span></td>
+                                <td>คุณรู้สึกสดชื่นในเวลาตื่นนอนเช้า</td>
                                 <td>
                                     <input type="radio" name="tgds-27" id="tgds-27-1"
                                         class="with-gap" value="0" data-bind="checked: tgds27">
@@ -3512,7 +3462,7 @@
                             </tr>
                             <tr>
                                 <td>28</td>
-                                <td>คุณไม่อยากพบปะพูดคุยกับคนอื่น<span data-bind="text: tgds28()"></span></td>
+                                <td>คุณไม่อยากพบปะพูดคุยกับคนอื่น</td>
                                 <td>
                                     <input type="radio" name="tgds-28" id="tgds-28-1"
                                         class="with-gap" value="1" data-bind="checked: tgds28">
@@ -3526,7 +3476,7 @@
                             </tr>
                             <tr>
                                 <td>29</td>
-                                <td>คุณตัดสินใจอะไรได้เร็ว<span data-bind="text: tgds29()"></span></td>
+                                <td>คุณตัดสินใจอะไรได้เร็ว</td>
                                 <td>
                                     <input type="radio" name="tgds-29" id="tgds-29-1"
                                         class="with-gap" value="0" data-bind="checked: tgds29">
@@ -3540,7 +3490,7 @@
                             </tr>
                             <tr>
                                 <td>30</td>
-                                <td>คุณมีจิตใจสบาย แจ่มใสเหมือนก่อน<span data-bind="text: tgds30()"></span></td>
+                                <td>คุณมีจิตใจสบาย แจ่มใสเหมือนก่อน</td>
                                 <td>
                                     <input type="radio" name="tgds-30" id="tgds-30-1"
                                         class="with-gap" value="0" data-bind="checked: tgds30">
@@ -3942,7 +3892,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <h5>ระดับความปวดคือ <span data-bind="text: pntPainScore"></span></h5>
+                    <h5>ระดับความปวดคือ</h5>
                 </div>
             </div>
         </div>
@@ -3982,7 +3932,6 @@
                             <tr>
                                 <td width="10%">A</td>
                                 <td colspan="2">ในช่วง 3 เดือนที่ผ่านมารับประทานอาหารได้น้อยลง เนื่องจากความอยากอาหารน้อยลง มีปัญหาการเคี้ยว หรือการกลืนหรือไม่
-                                    <span data-bind="text: 'value= ' + mna_1()"></span>
                                 </td>
                             </tr>
                             <tr>
@@ -4012,7 +3961,6 @@
                             <tr>
                                 <td width="10%">B</td>
                                 <td colspan="2">ในช่วง 3 เดือนที่ผ่านมาน้ำหนักลดลงหรือไม่
-                                    <span data-bind="text: 'value= ' + mna_2()"></span>
                                 </td>
                             </tr>
                             <tr>
@@ -4050,7 +3998,6 @@
                             <tr>
                                 <td width="10%">C</td>
                                 <td colspan="2">สามารถเคลื่อนไหวได้เองหรือไม่
-                                    <span data-bind="text: 'value= ' + mna_3()"></span>
                                 </td>
                             </tr>
                             <tr>
@@ -4080,7 +4027,6 @@
                             <tr>
                                 <td width="10%">D</td>
                                 <td colspan="2">ใน 3 เดือนที่ผ่านมามีความเครียดรุนแรงหรือเจ็บป่วยเฉียบพลันหรือไม่
-                                    <span data-bind="text: 'value= ' + mna_4()"></span>   
                                 </td>
                             </tr>
                             <tr>
@@ -4102,7 +4048,6 @@
                             <tr>
                                 <td width="10%">E</td>
                                 <td colspan="2">มีปัญหาทางจิตประสาท (Neuropsychological problems) หรือไม่
-                                    <span data-bind="text: 'value= ' + mna_5()"></span>
                                 </td>
                             </tr>
                             <tr>
@@ -4162,7 +4107,6 @@
                             <tr>
                                 <td>1</td>
                                 <td>ลดสิ่งกระตุ้นที่ทำให้อาการเลวลง
-                                    <span data-bind="text: 'value = ' + env_1()"></span>
                                 </td>  
                                 <td>
                                     <input type="radio" id="env-1-1-rad"
@@ -4181,7 +4125,6 @@
                             <tr>
                                 <td>2</td>
                                 <td>ติดสัญลักษณ์หรือตัวหนังสือบอกตำแหน่งห้องน้ำเลือกใช้นาฬิกาตัวเลขขนาดใหญ่
-                                    <span data-bind="text: 'value = ' + env_2()"></span>
                                 </td>  
                                 <td>
                                     <input type="radio" id="env-2-1-rad" name="env-2"
@@ -4200,7 +4143,7 @@
                             <tr>
                                 <td>3</td>
                                 <td>เลือกใช้นาฬิกาตัวเลขขนาดใหญ่
-                                    <span data-bind="text: 'value = ' + env_3()"></span></td>  
+                                </td>  
                                 <td>
                                     <input type="radio" id="env-3-1-rad" name="env-3"
                                         value="1" data-bind="checked: env_3">
@@ -4218,7 +4161,7 @@
                             <tr>
                                 <td>4</td>
                                 <td>แสงสว่างเพียงพอ ติดตั้งหลอดไฟที่สว่างขึ้นเองโดยอัตโนมัติในบริเวณมุมมืดที่เดินผ่านบ่อยๆ
-                                    <span data-bind="text: 'value = ' + env_4()"></span></td>  
+                                </td>  
                                 <td>
                                     <input type="radio" id="env-4-1-rad" name="env-4"
                                         value="1" data-bind="checked: env_4">
@@ -4236,7 +4179,7 @@
                             <tr>
                                 <td>5</td>
                                 <td>เตียงนอน เก้าอี้ โถส้วมมีความสูงพอเหมาะ ไม่เตี้ยเกินไป
-                                    <span data-bind="text: 'value = ' + env_5()"></span></td>  
+                                    </td>  
                                 <td>
                                     <input type="radio" id="env-5-1-rad" name="env-5"
                                         value="1" data-bind="checked: env_5">
@@ -4254,7 +4197,7 @@
                             <tr>
                                 <td>6</td>
                                 <td>ทางเดิน ควรมีราวจับตลอด
-                                    <span data-bind="text: 'value = ' + env_6()"></span></td>  
+                                </td>  
                                 <td>
                                     <input type="radio" id="env-6-1-rad" name="env-6"
                                         value="1" data-bind="checked: env_6">
@@ -4272,7 +4215,7 @@
                             <tr>
                                 <td>7</td>
                                 <td>พื้นห้องสม่ำเสมอและไม่ลื่น จุดเชื่อมต่อระหว่างห้องควรอยู่ระดับเดียวกัน
-                                    <span data-bind="text: 'value = ' + env_7()"></span></td>  
+                                </td>  
                                 <td>
                                     <input type="radio" id="env-7-1-rad" name="env-7"
                                         value="1" data-bind="checked: env_7">
@@ -4290,7 +4233,7 @@
                             <tr>
                                 <td>8</td>
                                 <td>จุดเชื่อมต่อระหว่างห้องอยู่ระดับเดียวกัน
-                                    <span data-bind="text: 'value = ' + env_8()"></span></td>  
+                                </td>  
                                 <td>
                                     <input type="radio" id="env-8-1-rad" name="env-8"
                                         value="1" data-bind="checked: env_8">
@@ -4308,7 +4251,7 @@
                             <tr>
                                 <td>9</td>
                                 <td>ควรระวังอุบัติเหตุ โดยเฉพาะอย่างยิ่งการหกล้มจากการทำกิจกรรมต่างๆ ภายในหอผู้ป่วย
-                                    <span data-bind="text: 'value = ' + env_9()"></span></td>
+                                    </td>
                                 <td>
                                     <input type="radio" id="env-9-1-rad" name="env-9"
                                         value="1" data-bind="checked: env_9">
@@ -4326,7 +4269,6 @@
                             <tr>
                                 <td>10</td>
                                 <td>ห้องน้ำกว้างพอสำหรับการมีผู้ดูแลช่วยเหลือ ควรแยกส่วนแห้ง ส่วนเปียก พื้นควรใช้วัสดุที่ป้องกันการลื่น อุปกรณ์อาบน้ำควรอยู่ในระดับสายตาเพื่อให้สะดวกในการใช้ มีราวสำหรับจับยึด เกาะ ไม่มีขั้นหรือธรณีประตู ห้องน้ำควรเป็นทางลาด มีประตูใหญ่พอที่รถเข็นเข้าได้ ประตูห้องน้ำสามารถเปิดจากด้านนอกได้ เข้าถึงได้ง่าย สามารถทราบว่ามีคนอยู่ข้างในได้แม้ตอนกลางคืน
-                                    <span data-bind="text: 'value = ' + env_10()"></span>
                                 </td>
                                 <td>
                                     <input type="radio" id="env-10-1-rad" name="env-10"
@@ -4345,7 +4287,6 @@
                             <tr>
                                 <td>11</td>
                                 <td>พื้นใช้วัสดุที่ป้องกันการลื่น และแยกส่วนแห้ง ส่วนเปียก
-                                    <span data-bind="text: 'value = ' + env_11()"></span>
                                 </td>
                                 <td>
                                     <input type="radio" id="env-11-1-rad" name="env-11"
@@ -4364,7 +4305,6 @@
                             <tr>
                                 <td>12</td>
                                 <td>อุปกรณ์อาบน้ำอยู่ระดับสายตาเพื่อให้สะดวกในการใช้งาน
-                                    <span data-bind="text: 'value = ' + env_12()"></span>
                                 </td>
                                 <td>
                                     <input type="radio" id="env-12-1-rad" name="env-12"
@@ -4383,7 +4323,6 @@
                             <tr>
                                 <td>13</td>
                                 <td>มีราวสำหรับจับยึด ไม่มีขั้นหรือธรณีประตู
-                                    <span data-bind="text: 'value = ' + env_13()"></span>
                                 </td>
                                 <td>
                                     <input type="radio" id="env-13-1-rad" name="env-13"
@@ -4402,7 +4341,6 @@
                             <tr>
                                 <td>14</td>
                                 <td>ห้องน้ำมีทางลาดพอที่รถเข็นจะเข้าได้
-                                    <span data-bind="text: 'value = ' + env_14()"></span>
                                 </td>
                                 <td>
                                     <input type="radio" id="env-14-1-rad" name="env-14"
@@ -4421,7 +4359,6 @@
                             <tr>
                                 <td>15</td>
                                 <td>ประตูห้องน้ำสามารถเปิดจากด้านนอก เข้าถึงได้ง่ายแม้ในตอนกลางคืน
-                                    <span data-bind="text: 'value = ' + env_15()"></span> 
                                 </td>
                                 <td>
                                     <input type="radio" id="env-15-1-rad" name="env-15"
@@ -4440,7 +4377,6 @@
                             <tr>
                                 <td>16</td>
                                 <td>ควรใช้วัสดุกั้นห้อง โดยหลีกเลี่ยงกระจก หรือกระจกเงา
-                                    <span data-bind="text: 'value = ' + env_16()"></span> 
                                 </td>
                                 <td>
                                     <input type="radio" id="env-16-1-rad" name="env-16"
@@ -4459,7 +4395,6 @@
                             <tr>
                                 <td>17</td>
                                 <td>เฟอร์นิเจอร์มีเท่าที่จำเป็น สูงจากพื้น มองเห็นง่าย ไม่ลื่น เลี่ยงสิ่งของมีล้อ
-                                    <span data-bind="text: 'value = ' + env_17()"></span>
                                 </td>
                                 <td>
                                     <input type="radio" id="env-17-1-rad" name="env-17"
@@ -4478,7 +4413,6 @@
                             <tr>
                                 <td>18</td>
                                 <td>เก็บสิ่งของชิ้นเล็กๆ ที่อาจเอาเข้าปากและจมูก ซึ่งอาจทำให้เกิดอันตรายได้
-                                    <span data-bind="text: 'value = ' + env_18()"></span>
                                 </td>
                                 <td>
                                     <input type="radio" id="env-18-1-rad" name="env-18"
@@ -4497,7 +4431,6 @@
                             <tr>
                                 <td>19</td>
                                 <td>ให้อยู่ในสิ่งแวดล้อมที่คุ้นเคย สีห้องและสีม่านควรเป็นสีโทนเดียว สบายตา ไม่มีลวดลาย 
-                                    <span data-bind="text: 'value = ' + env_19()"></span>    
                                 </td>
                                 <td>
                                     <input type="radio" id="env-19-1-rad" name="env-19"
@@ -4516,7 +4449,6 @@
                             <tr>
                                 <td>20</td>
                                 <td>มีเฟอร์นิเจอร์และของใช้ที่บ่งบอกตัวผู้ป่วยหรือความหลังหากเป็นไปได้ เช่น รูปที่ผู้ป่วยคุ้นเคย ภาพบุคคลที่เป็นที่รัก คนในครอบครัว ภาพกิจกรรมที่มีความสุข
-                                    <span data-bind="text: 'value = ' + env_20()"></span>    
                                 </td>
                                 <td>
                                     <input type="radio" id="env-20-1-rad" name="env-20"
