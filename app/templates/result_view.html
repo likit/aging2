@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="row">
+    <h2>Result Preview</h2>
+    <div class="divider"></div>
+    <div class="section">
+        <table>
+            <tr>
+                <td>รหัสแบบสอบถาม</td>
+                <td><span data-bind="text: surveyId() + '/' + hospitalId()"></span></td>
+            </tr>
+            <tr>
+                <td>วันที่เก็บข้อมูล</td>
+                <td><span data-bind="text: hospitalSurveyDate"></span></td>
+            </tr>
+            <tr>
+                <td>ผู้ทำแบบประเมิน</td>
+                <td><span data-bind="text: hospitalAssessor"></span></td>
+            </tr>
+            <tr>
+                <td>ตำแหน่งผู้ทำแบบประเมิน</td>
+                <td><span data-bind="text: hospitalAssessorPosition"></span></td>
+            </tr>
+            <tr>
+                <td>โทรศัพท์</td>
+                <td><span data-bind="text: hospitalAssessorTel"></span></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><span data-bind="text: hospitalAssessorTel"></span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="divider"></div>
+    <div class="section">
+        <table>
+            <tr>
+                <td>แหล่งข้อมูล</td>
+                <td><span data-bind="text: hospitalName"></span></td>
+            </tr>
+            <tr>
+                <td>รหัสโรงพยาบาล</td>
+                <td><span data-bind="text: hospitalId"></span></td>
+            </tr>
+            <tr>
+                <td>ที่ตั้ง</td>
+                <td><span data-bind="text: hospitalStreetAddr"></span></td>
+            </tr>
+            <tr>
+                <td>ถนน</td>
+                <td><span data-bind="text: hospitalRoad"></span></td>
+            </tr>
+            <tr>
+                <td>ตำบล</td>
+                <td><span data-bind="text: hospitalSubDistrict"></span></td>
+            </tr>
+            <tr>
+                <td>อำเภอ</td>
+                <td><span data-bind="text: hospitalDistrict"></span></td>
+            </tr>
+            <tr>
+                <td>จังหวัด</td>
+                <td><span data-bind="text: hospitalProvince"></span></td>
+            </tr>
+            <tr>
+                <td>รหัสไปรษณีย์</td>
+                <td><span data-bind="text: hospitalZipcode"></span></td>
+            </tr>
+            <tr>
+                <td>โทรศัพท์</td>
+                <td><span data-bind="text: hospitalTel"></span></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><span data-bind="text: hospitalEmail"></span></td>
+            </tr>
+            <tr>
+                <td>ประเภทหน่วยงาน</td>
+                <td><span data-bind="text: hospitalServicePlan"></span></td>
+            </tr>
+            <tr>
+                <td>จำนวนเตียง</td>
+                <td><span data-bind="text: hospitalNumBed"></span></td>
+            </tr>
+            <tr>
+                <td>รหัสพื้นที่</td>
+                <td><span data-bind="text: hospitalAreaId"></span></td>
+            </tr>
+            <tr>
+                <td>เขตบริการสุขภาพ</td>
+                <td><span data-bind="text: healthServiceAreaId"></span></td>
+            </tr>
+            <tr>
+                <td>มาตรฐานที่โรงพยาบาลได้รับ</td>
+                <td><span data-bind="text: hospitalAccredits"></span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="divider"></div>
+    <h5>ข้อมูลทั่วไปของผู้ป่วย</h5>
+    <div class="section">
+        <table>
+            <tr>
+                <td>ชื่อจริง</td>
+                <td><span data-bind="text: pntFirstName() + ' ' + pntLastName()"></span></td>
+            </tr>
+            <tr>
+                <td>อายุ</td>
+                <td><span data-bind="text: pntAge"></span></td>
+            </tr>
+            <tr>
+                <td>เพศ</td>
+                <td><span data-bind="text: pntGender"></span></td>
+            </tr>
+            <tr>
+                <td>รับเข้า</td>
+                <td><span data-bind="text: pntAdmittedDate"></span></td>
+            </tr>
+            <tr>
+                <td>จำหน่าย</td>
+                <td><span data-bind="text: pntDischargedDate"></span></td>
+            </tr>
+            <tr>
+                <td>การวินิจฉัย</td>
+                <td><span data-bind="text: pntDiagnosis"></span></td>
+            </tr>
+        </table>
+    <div class="divider"></div>
+</div>
+<script>
+    var hospital_id = {{hospital_id|tojson|safe}};
+    var survey_id = {{survey_id|tojson|safe}};
+    var vm = {};
+    $.getJSON('/api/v1/results/'+hospital_id+'/'+survey_id).done(function(data) {
+        vm = ko.mapping.fromJS(data['response'][0]['data'])
+        var gender = vm['pntGender']() === "1" ? "ชาย" : "หญิง";
+        vm['pntGender'](gender);
+        ko.applyBindings(vm);
+    });
+</script>
+{% endblock page_content %}
